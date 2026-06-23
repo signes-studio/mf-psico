@@ -3,369 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Mireia Felici · Psicóloga General Sanitaria en Valencia</title>
-    <meta name="description" content="Psicóloga General Sanitaria en Valencia. Terapia individual y de pareja para ansiedad, depresión, duelos y crecimiento personal. Nº Col. CV17270.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://mireiafelici.com/">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mireiafelici.com/">
-    <meta property="og:title" content="Mireia Felici · Psicóloga en Valencia">
-    <meta property="og:description" content="Terapia individual y de pareja en Valencia. Un espacio seguro para el cambio.">
-    <meta property="og:image" content="https://mireiafelici.com/og-image.jpg">
-    <meta property="og:locale" content="es_ES">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": ["Person", "LocalBusiness"],
-      "name": "Mireia Felici",
-      "jobTitle": "Psicóloga General Sanitaria",
-      "description": "Psicóloga General Sanitaria en Valencia. Terapia individual y de pareja. Ansiedad, depresión, duelo, autoestima y gestión emocional.",
-      "url": "https://mireiafelici.com",
-      "telephone": "+34614172009",
-      "email": "mireiafelici.psicologa@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Calle San Vicente Mártir, 85",
-        "addressLocality": "Valencia",
-        "postalCode": "46007",
-        "addressCountry": "ES"
-      },
-      "areaServed": "Valencia",
-      "sameAs": [
-        "https://www.linkedin.com/in/mireia-felici-peris/",
-        "https://www.instagram.com/mireiafelici.psico/"
-      ]
-    }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta name="description" content="Psicóloga General Sanitaria en Valencia. Terapia individual y de pareja basada en la evidencia. Un espacio seguro para tu bienestar emocional.">
+    
+    <!-- (Mantén aquí tus etiquetas meta y JSON-LD anteriores) -->
 
     <style>
-        :root {
-            --bg:     #faf9f6;
-            --text:   #1e1e1e;
-            --soft:   #6b6b6b;
-            --accent: #b19151;
-            --border: #e0dbd3;
-            --white:  #ffffff;
-            --ff-d: 'Playfair Display', Georgia, serif;
-            --ff-b: 'DM Sans', system-ui, sans-serif;
-            --ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+        /* [Mantén tus variables CSS, reset y estilos generales anteriores] */
 
-            /* altura fija del panel cerrado y abierto */
-            --panel-peek: 36px;   /* lo que asoma cuando está cerrado */
-            --panel-open: 200px;  /* altura al expandirse */
-        }
-
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html, body {
-            height: 100%;
-            overflow: hidden; /* nunca scroll en la home */
-        }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: var(--ff-b);
-            font-weight: 300;
+        /* Nueva estructura: Tarjetas + Botón inferior */
+        .main-content {
+            flex: 1;
             display: flex;
             flex-direction: column;
-        }
-
-        a { text-decoration: none; color: inherit; }
-        img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-        /* ── CABECERA ── */
-        .home-header {
-            padding: clamp(28px, 4.5vw, 56px) clamp(24px, 5vw, 60px) clamp(14px, 2vw, 24px);
-            text-align: center;
-            flex-shrink: 0;
-        }
-
-        .home-header h1 {
-            font-family: var(--ff-d);
-            font-size: clamp(1.9rem, 3.8vw, 3.2rem);
-            font-weight: 400;
-            letter-spacing: -0.01em;
-            line-height: 1.1;
-            margin-bottom: 8px;
-        }
-
-        .home-header h1 em { font-style: italic; color: var(--accent); }
-
-        .home-header .tagline {
-            font-size: clamp(0.72rem, 1vw, 0.85rem);
-            font-weight: 300;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: var(--soft);
-        }
-
-        /* ── CARDS ── */
-        .cards-wrap {
-            flex: 1 1 0;
-            min-height: 0;
-            padding: 0 clamp(14px, 2.5vw, 36px);
+            padding: 0 clamp(24px, 5vw, 60px);
+            gap: 20px;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            height: 100%;
+            gap: 16px;
+            height: 60vh; /* Ajuste para dejar espacio al botón */
         }
 
-        .card {
-            position: relative;
-            border-radius: 4px;
-            overflow: hidden;
-            background: #e5e2de;
-            display: block;
-        }
-
-        .card img {
-            filter: brightness(0.87) saturate(0.82);
-            transition: transform 0.55s var(--ease), filter 0.55s var(--ease);
-        }
-
-        .card:hover img {
-            transform: scale(1.04);
-            filter: brightness(0.74) saturate(0.9);
-        }
-
-        .card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.52) 0%, transparent 52%);
-            pointer-events: none;
-        }
-
-        .card-body {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            z-index: 2;
-            color: var(--white);
-        }
-
-        .card-eyebrow {
-            display: block;
-            font-size: 0.6rem;
-            font-weight: 400;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            opacity: 0.7;
-            margin-bottom: 3px;
-        }
-
-        .card-title {
-            display: block;
-            font-family: var(--ff-d);
-            font-size: clamp(1rem, 1.6vw, 1.4rem);
-            font-weight: 400;
-        }
-
-        /* ── PANEL DESLIZANTE ── */
-        .drawer {
-            flex-shrink: 0;
-            position: relative;
-            /* el panel tiene su propia altura total */
-            height: calc(var(--panel-peek) + var(--panel-open));
-            /* empieza oculto: solo asoma --panel-peek */
-            transform: translateY(var(--panel-open));
-            transition: transform 0.52s var(--ease);
-            will-change: transform;
-        }
-
-        .drawer.open {
-            transform: translateY(0);
-        }
-
-        /* tirador — zona clicable que siempre se ve */
-        .drawer-handle {
-            height: var(--panel-peek);
+        /* Botón de texto inferior */
+        .cta-bottom {
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 10px;
-            cursor: pointer;
-            user-select: none;
-            border-top: 1px solid var(--border);
-            background: var(--bg);
+            padding: 20px;
         }
 
-        .handle-label {
-            font-size: 0.68rem;
-            font-weight: 400;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--soft);
-            transition: color 0.3s;
-        }
-
-        .drawer-handle:hover .handle-label { color: var(--accent); }
-
-        .handle-arrow {
-            width: 14px;
-            height: 14px;
-            border-right: 1px solid var(--soft);
-            border-top: 1px solid var(--soft);
-            transform: rotate(-45deg) translateY(3px);
-            transition: transform 0.45s var(--ease), border-color 0.3s;
-            flex-shrink: 0;
-        }
-
-        .drawer.open .handle-arrow {
-            transform: rotate(135deg) translateY(3px);
-        }
-
-        .drawer-handle:hover .handle-arrow { border-color: var(--accent); }
-
-        /* contenido del panel */
-        .drawer-body {
-            height: var(--panel-open);
-            background: var(--bg);
-            border-top: 1px solid var(--border);
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            align-items: center;
-            padding: 0 clamp(24px, 5vw, 60px);
-            gap: clamp(24px, 4vw, 56px);
-            overflow: hidden;
-        }
-
-        /* columna izquierda: texto de acompañamiento */
-        .drawer-intro {
-            border-right: 1px solid var(--border);
-            padding-right: clamp(20px, 3vw, 44px);
-        }
-
-        .drawer-intro p {
-            font-family: var(--ff-d);
-            font-size: clamp(0.92rem, 1.2vw, 1.1rem);
-            font-weight: 400;
-            font-style: italic;
-            line-height: 1.55;
-            color: var(--text);
-        }
-
-        .drawer-intro a {
-            display: inline-block;
-            margin-top: 14px;
+        .btn-text {
             font-family: var(--ff-b);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.14em;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
+            color: var(--text);
+            padding: 12px 30px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .btn-text:hover {
+            border-color: var(--accent);
             color: var(--accent);
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
         }
 
-        .drawer-intro a:hover { border-bottom-color: var(--accent); }
-
-        /* pasos del proceso */
-        .step {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
+        /* Sección de proceso fija */
+        .process-section {
+            background: #f4f2ef;
+            padding: 60px clamp(24px, 5vw, 60px);
+            border-top: 1px solid var(--border);
         }
 
-        .step-num {
-            font-family: var(--ff-d);
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: var(--accent);
-            opacity: 0.35;
-            line-height: 1;
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .step h3 {
-            font-family: var(--ff-d);
-            font-size: clamp(0.88rem, 1.1vw, 1rem);
-            font-weight: 400;
-            margin-bottom: 2px;
-        }
-
-        .step p {
-            font-size: clamp(0.72rem, 0.9vw, 0.82rem);
-            color: var(--soft);
-            line-height: 1.6;
-        }
-
-        /* ── FOOTER ── */
+        /* [Mantén tus estilos de .step y .home-footer previos] */
         .home-footer {
-            flex-shrink: 0;
-            padding: 14px clamp(24px, 5vw, 60px);
+            padding: 20px clamp(24px, 5vw, 60px);
+            border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            border-top: 1px solid var(--border);
-            background: var(--bg);
-        }
-
-        .home-footer p {
-            font-size: 0.72rem;
-            color: var(--soft);
-            letter-spacing: 0.03em;
-        }
-
-        .home-footer nav { display: flex; gap: 18px; }
-
-        .home-footer nav a {
-            font-size: 0.68rem;
-            font-weight: 400;
-            letter-spacing: 0.13em;
-            text-transform: uppercase;
-            color: var(--soft);
-            transition: color 0.3s;
-        }
-
-        .home-footer nav a:hover { color: var(--accent); }
-
-        /* ── RESPONSIVE móvil ── */
-        @media (max-width: 640px) {
-            html, body { overflow: auto; } /* en móvil permitimos scroll */
-
-            .grid {
-                grid-template-columns: 1fr;
-                height: auto;
-                gap: 10px;
-            }
-
-            .card { height: 56vw; }
-
-            .drawer {
-                height: auto;
-                transform: none;
-            }
-
-            .drawer-handle { display: none; }
-
-            .drawer-body {
-                grid-template-columns: 1fr;
-                height: auto;
-                padding: 32px clamp(20px, 5vw, 40px);
-                gap: 28px;
-                border-top: 1px solid var(--border);
-            }
-
-            .drawer-intro { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 28px; }
-
-            .home-footer { flex-direction: column; align-items: center; text-align: center; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .card img, .drawer, .handle-arrow { transition: none; }
         }
     </style>
 </head>
@@ -376,94 +82,66 @@
         <p class="tagline">Psicóloga General Sanitaria · Valencia</p>
     </header>
 
-    <main class="cards-wrap">
-        <nav class="grid" aria-label="Secciones">
-            <a href="sobre-mi.html" class="card" aria-label="Sobre mí">
-                <img src="foto1.jpg" alt="Mireia Felici, psicóloga en Valencia" loading="eager">
+    <main class="main-content">
+        <nav class="grid">
+            <a href="sobre-mi.html" class="card">
+                <img src="foto1.jpg" alt="Sobre mí">
                 <div class="card-body">
                     <span class="card-eyebrow">Quién soy</span>
-                    <span class="card-title">Sobre mí</span>
+                    <span class="card-title">Biografía</span>
                 </div>
             </a>
-            <a href="servicios.html" class="card" aria-label="Servicios">
-                <img src="foto2.jpg" alt="Terapia individual y de pareja en Valencia" loading="eager">
+            <a href="enfoque.html" class="card">
+                <img src="foto2.jpg" alt="Enfoque">
                 <div class="card-body">
                     <span class="card-eyebrow">Cómo puedo ayudarte</span>
-                    <span class="card-title">Servicios</span>
+                    <span class="card-title">Enfoque y Metodología</span>
                 </div>
             </a>
-            <a href="contacto.html" class="card" aria-label="Contacto">
-                <img src="foto3.jpg" alt="Consulta de psicología en Valencia" loading="eager">
+            <a href="servicios.html" class="card">
+                <img src="foto3.jpg" alt="Servicios">
                 <div class="card-body">
-                    <span class="card-eyebrow">Primer paso</span>
-                    <span class="card-title">Contacto</span>
+                    <span class="card-eyebrow">Información</span>
+                    <span class="card-title">Servicios y Tarifas</span>
                 </div>
             </a>
         </nav>
+
+        <div class="cta-bottom">
+            <a href="contacto.html" class="btn-text">Solicitar primera sesión</a>
+        </div>
     </main>
 
-    <!-- Panel deslizante -->
-    <aside class="drawer" id="drawer" aria-expanded="false">
-
-        <div class="drawer-handle" id="drawer-handle" role="button" tabindex="0" aria-controls="drawer" aria-label="Mostrar cómo funciona el proceso">
-            <span class="handle-label">Empezar es más sencillo de lo que parece</span>
-            <span class="handle-arrow" aria-hidden="true"></span>
-        </div>
-
-        <div class="drawer-body" id="drawer-body" aria-hidden="true">
-
-            <div class="drawer-intro">
-                <p>Te acompaño a entender lo que sientes y a construir el cambio que buscas.</p>
-                <a href="sobre-mi.html">Conocer mi enfoque →</a>
-            </div>
-
+    <section class="process-section">
+        <div class="process-grid">
             <div class="step">
                 <span class="step-num">01</span>
-                <h3>Escríbeme</h3>
-                <p>Mándame un mensaje por WhatsApp o email contándome brevemente qué te está pasando. No hace falta tenerlo todo claro.</p>
+                <h3>Primer contacto</h3>
+                <p>Escríbeme por WhatsApp o email. Buscamos un momento para iniciar el proceso.</p>
             </div>
-
             <div class="step">
                 <span class="step-num">02</span>
-                <h3>Primera sesión</h3>
-                <p>Nos conocemos, escucho tu situación sin juicios y valoramos juntos cómo puedo acompañarte. Sin compromisos.</p>
+                <h3>Valoración</h3>
+                <p>En la primera sesión escucho tu motivo de consulta y establecemos objetivos claros.</p>
             </div>
-
             <div class="step">
                 <span class="step-num">03</span>
-                <h3>Tu proceso</h3>
-                <p>Trabajamos a tu ritmo con un enfoque adaptado a ti, con herramientas concretas para avanzar hacia el bienestar que buscas.</p>
+                <h3>Trabajo terapéutico</h3>
+                <p>Sesiones estructuradas con herramientas concretas para tu bienestar.</p>
             </div>
-
         </div>
-    </aside>
+    </section>
 
     <footer class="home-footer">
-        <p>mireiafelici.psicologa@gmail.com · +34 614 17 20 09 · Nº Col. CV17270</p>
-        <nav aria-label="Redes sociales">
-            <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
+        <div>
+            <p><strong>Mireia Felici · Psicóloga</strong></p>
+            <p>mireiafelici.psicologa@gmail.com · +34 614 17 20 09</p>
+        </div>
+        <nav>
+            <a href="https://wa.me/34614172009">WhatsApp</a>
+            <a href="https://www.instagram.com/mireiafelici.psico/">Instagram</a>
         </nav>
     </footer>
-
-    <script>
-        const drawer = document.getElementById('drawer');
-        const handle = document.getElementById('drawer-handle');
-        const body   = document.getElementById('drawer-body');
-
-        function toggle() {
-            const open = drawer.classList.toggle('open');
-            drawer.setAttribute('aria-expanded', open);
-            body.setAttribute('aria-hidden', !open);
-            handle.setAttribute('aria-label', open ? 'Cerrar panel' : 'Mostrar cómo funciona el proceso');
-        }
-
-        handle.addEventListener('click', toggle);
-        handle.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-        });
-    </script>
 
 </body>
 </html>
