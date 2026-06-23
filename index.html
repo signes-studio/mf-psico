@@ -16,10 +16,6 @@
     <meta property="og:image" content="https://mireiafelici.com/og-image.jpg">
     <meta property="og:locale" content="es_ES">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mireia Felici · Psicóloga en Valencia">
-    <meta name="twitter:description" content="Terapia individual y de pareja en Valencia.">
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -47,24 +43,31 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* ── Variables ── */
         :root {
-            --bg:      #faf9f6;
-            --text:    #1e1e1e;
-            --soft:    #6b6b6b;
-            --accent:  #b19151;
-            --border:  #e0dbd3;
-            --white:   #ffffff;
+            --bg:     #faf9f6;
+            --text:   #1e1e1e;
+            --soft:   #6b6b6b;
+            --accent: #b19151;
+            --border: #e0dbd3;
+            --white:  #ffffff;
             --ff-d: 'Playfair Display', Georgia, serif;
             --ff-b: 'DM Sans', system-ui, sans-serif;
             --ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+            /* altura fija del panel cerrado y abierto */
+            --panel-peek: 36px;   /* lo que asoma cuando está cerrado */
+            --panel-open: 200px;  /* altura al expandirse */
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { height: 100%; }
+
+        html, body {
+            height: 100%;
+            overflow: hidden; /* nunca scroll en la home */
+        }
 
         body {
             background: var(--bg);
@@ -73,52 +76,49 @@
             font-weight: 300;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
         }
 
         a { text-decoration: none; color: inherit; }
-        img { display: block; max-width: 100%; }
+        img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-        /* ── Cabecera mínima ── */
+        /* ── CABECERA ── */
         .home-header {
-            padding: clamp(40px, 7vw, 80px) clamp(24px, 5vw, 60px) clamp(20px, 3vw, 36px);
+            padding: clamp(28px, 4.5vw, 56px) clamp(24px, 5vw, 60px) clamp(14px, 2vw, 24px);
             text-align: center;
+            flex-shrink: 0;
         }
 
         .home-header h1 {
             font-family: var(--ff-d);
-            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-size: clamp(1.9rem, 3.8vw, 3.2rem);
             font-weight: 400;
             letter-spacing: -0.01em;
             line-height: 1.1;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        .home-header h1 em {
-            font-style: italic;
-            color: var(--accent);
-        }
+        .home-header h1 em { font-style: italic; color: var(--accent); }
 
         .home-header .tagline {
-            font-family: var(--ff-b);
-            font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+            font-size: clamp(0.72rem, 1vw, 0.85rem);
             font-weight: 300;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--soft);
         }
 
-        /* ── Grid de cards ── */
+        /* ── CARDS ── */
         .cards-wrap {
-            flex: 1;
-            padding: 0 clamp(16px, 3vw, 40px) clamp(16px, 3vw, 32px);
+            flex: 1 1 0;
+            min-height: 0;
+            padding: 0 clamp(14px, 2.5vw, 36px);
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            height: clamp(300px, 50vw, 540px);
+            gap: 12px;
+            height: 100%;
         }
 
         .card {
@@ -127,84 +127,204 @@
             overflow: hidden;
             background: #e5e2de;
             display: block;
-            height: 100%;
         }
 
         .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             filter: brightness(0.87) saturate(0.82);
             transition: transform 0.55s var(--ease), filter 0.55s var(--ease);
         }
 
         .card:hover img {
             transform: scale(1.04);
-            filter: brightness(0.76) saturate(0.9);
+            filter: brightness(0.74) saturate(0.9);
         }
 
-        /* degradado inferior */
         .card::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.52) 0%, transparent 50%);
+            background: linear-gradient(to top, rgba(0,0,0,0.52) 0%, transparent 52%);
             pointer-events: none;
         }
 
         .card-body {
             position: absolute;
-            bottom: 22px;
-            left: 22px;
+            bottom: 20px;
+            left: 20px;
             z-index: 2;
             color: var(--white);
         }
 
         .card-eyebrow {
             display: block;
-            font-family: var(--ff-b);
-            font-size: 0.62rem;
+            font-size: 0.6rem;
             font-weight: 400;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
-            opacity: 0.72;
+            opacity: 0.7;
             margin-bottom: 3px;
         }
 
         .card-title {
             display: block;
             font-family: var(--ff-d);
-            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+            font-size: clamp(1rem, 1.6vw, 1.4rem);
             font-weight: 400;
         }
 
-        /* ── Footer umbral ── */
+        /* ── PANEL DESLIZANTE ── */
+        .drawer {
+            flex-shrink: 0;
+            position: relative;
+            /* el panel tiene su propia altura total */
+            height: calc(var(--panel-peek) + var(--panel-open));
+            /* empieza oculto: solo asoma --panel-peek */
+            transform: translateY(var(--panel-open));
+            transition: transform 0.52s var(--ease);
+            will-change: transform;
+        }
+
+        .drawer.open {
+            transform: translateY(0);
+        }
+
+        /* tirador — zona clicable que siempre se ve */
+        .drawer-handle {
+            height: var(--panel-peek);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            user-select: none;
+            border-top: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .handle-label {
+            font-size: 0.68rem;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--soft);
+            transition: color 0.3s;
+        }
+
+        .drawer-handle:hover .handle-label { color: var(--accent); }
+
+        .handle-arrow {
+            width: 14px;
+            height: 14px;
+            border-right: 1px solid var(--soft);
+            border-top: 1px solid var(--soft);
+            transform: rotate(-45deg) translateY(3px);
+            transition: transform 0.45s var(--ease), border-color 0.3s;
+            flex-shrink: 0;
+        }
+
+        .drawer.open .handle-arrow {
+            transform: rotate(135deg) translateY(3px);
+        }
+
+        .drawer-handle:hover .handle-arrow { border-color: var(--accent); }
+
+        /* contenido del panel */
+        .drawer-body {
+            height: var(--panel-open);
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            align-items: center;
+            padding: 0 clamp(24px, 5vw, 60px);
+            gap: clamp(24px, 4vw, 56px);
+            overflow: hidden;
+        }
+
+        /* columna izquierda: texto de acompañamiento */
+        .drawer-intro {
+            border-right: 1px solid var(--border);
+            padding-right: clamp(20px, 3vw, 44px);
+        }
+
+        .drawer-intro p {
+            font-family: var(--ff-d);
+            font-size: clamp(0.92rem, 1.2vw, 1.1rem);
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.55;
+            color: var(--text);
+        }
+
+        .drawer-intro a {
+            display: inline-block;
+            margin-top: 14px;
+            font-family: var(--ff-b);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .drawer-intro a:hover { border-bottom-color: var(--accent); }
+
+        /* pasos del proceso */
+        .step {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .step-num {
+            font-family: var(--ff-d);
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--accent);
+            opacity: 0.35;
+            line-height: 1;
+        }
+
+        .step h3 {
+            font-family: var(--ff-d);
+            font-size: clamp(0.88rem, 1.1vw, 1rem);
+            font-weight: 400;
+            margin-bottom: 2px;
+        }
+
+        .step p {
+            font-size: clamp(0.72rem, 0.9vw, 0.82rem);
+            color: var(--soft);
+            line-height: 1.6;
+        }
+
+        /* ── FOOTER ── */
         .home-footer {
-            padding: clamp(20px, 3vw, 36px) clamp(24px, 5vw, 60px);
+            flex-shrink: 0;
+            padding: 14px clamp(24px, 5vw, 60px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 8px;
             border-top: 1px solid var(--border);
+            background: var(--bg);
         }
 
         .home-footer p {
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             color: var(--soft);
-            letter-spacing: 0.04em;
+            letter-spacing: 0.03em;
         }
 
-        .home-footer nav {
-            display: flex;
-            gap: 20px;
-        }
+        .home-footer nav { display: flex; gap: 18px; }
 
         .home-footer nav a {
-            font-family: var(--ff-b);
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             font-weight: 400;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.13em;
             text-transform: uppercase;
             color: var(--soft);
             transition: color 0.3s;
@@ -212,18 +332,40 @@
 
         .home-footer nav a:hover { color: var(--accent); }
 
-        /* ── Responsive ── */
+        /* ── RESPONSIVE móvil ── */
         @media (max-width: 640px) {
+            html, body { overflow: auto; } /* en móvil permitimos scroll */
+
             .grid {
                 grid-template-columns: 1fr;
                 height: auto;
+                gap: 10px;
             }
-            .card { height: 220px; }
-            .home-footer { justify-content: center; text-align: center; }
+
+            .card { height: 56vw; }
+
+            .drawer {
+                height: auto;
+                transform: none;
+            }
+
+            .drawer-handle { display: none; }
+
+            .drawer-body {
+                grid-template-columns: 1fr;
+                height: auto;
+                padding: 32px clamp(20px, 5vw, 40px);
+                gap: 28px;
+                border-top: 1px solid var(--border);
+            }
+
+            .drawer-intro { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 28px; }
+
+            .home-footer { flex-direction: column; align-items: center; text-align: center; }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .card img { transition: none; }
+            .card img, .drawer, .handle-arrow { transition: none; }
         }
     </style>
 </head>
@@ -260,6 +402,42 @@
         </nav>
     </main>
 
+    <!-- Panel deslizante -->
+    <aside class="drawer" id="drawer" aria-expanded="false">
+
+        <div class="drawer-handle" id="drawer-handle" role="button" tabindex="0" aria-controls="drawer" aria-label="Mostrar cómo funciona el proceso">
+            <span class="handle-label">Empezar es más sencillo de lo que parece</span>
+            <span class="handle-arrow" aria-hidden="true"></span>
+        </div>
+
+        <div class="drawer-body" id="drawer-body" aria-hidden="true">
+
+            <div class="drawer-intro">
+                <p>Te acompaño a entender lo que sientes y a construir el cambio que buscas.</p>
+                <a href="sobre-mi.html">Conocer mi enfoque →</a>
+            </div>
+
+            <div class="step">
+                <span class="step-num">01</span>
+                <h3>Escríbeme</h3>
+                <p>Mándame un mensaje por WhatsApp o email contándome brevemente qué te está pasando. No hace falta tenerlo todo claro.</p>
+            </div>
+
+            <div class="step">
+                <span class="step-num">02</span>
+                <h3>Primera sesión</h3>
+                <p>Nos conocemos, escucho tu situación sin juicios y valoramos juntos cómo puedo acompañarte. Sin compromisos.</p>
+            </div>
+
+            <div class="step">
+                <span class="step-num">03</span>
+                <h3>Tu proceso</h3>
+                <p>Trabajamos a tu ritmo con un enfoque adaptado a ti, con herramientas concretas para avanzar hacia el bienestar que buscas.</p>
+            </div>
+
+        </div>
+    </aside>
+
     <footer class="home-footer">
         <p>mireiafelici.psicologa@gmail.com · +34 614 17 20 09 · Nº Col. CV17270</p>
         <nav aria-label="Redes sociales">
@@ -268,6 +446,24 @@
             <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
         </nav>
     </footer>
+
+    <script>
+        const drawer = document.getElementById('drawer');
+        const handle = document.getElementById('drawer-handle');
+        const body   = document.getElementById('drawer-body');
+
+        function toggle() {
+            const open = drawer.classList.toggle('open');
+            drawer.setAttribute('aria-expanded', open);
+            body.setAttribute('aria-hidden', !open);
+            handle.setAttribute('aria-label', open ? 'Cerrar panel' : 'Mostrar cómo funciona el proceso');
+        }
+
+        handle.addEventListener('click', toggle);
+        handle.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+    </script>
 
 </body>
 </html>
