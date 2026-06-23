@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sobre mí · Mireia Felici, Psicóloga en Valencia</title>
+    <meta name="description" content="Soy Mireia Felici, Psicóloga General Sanitaria en Valencia. Trabajo desde un enfoque integrador con cercanía, empatía y un espacio seguro y sin juicios.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mireiafelici.com/sobre-mi.html">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://mireiafelici.com/sobre-mi.html">
+    <meta property="og:title" content="Sobre mí · Mireia Felici, Psicóloga en Valencia">
+    <meta property="og:description" content="Psicóloga General Sanitaria en Valencia. Enfoque integrador, cercanía y espacio seguro sin juicios.">
+    <meta property="og:image" content="https://mireiafelici.com/og-image.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mireia Felici",
+      "jobTitle": "Psicóloga General Sanitaria",
+      "worksFor": {
+        "@type": "LocalBusiness",
+        "name": "Mireia Felici Psicología",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle San Vicente Mártir, 85",
+          "addressLocality": "Valencia",
+          "postalCode": "46007",
+          "addressCountry": "ES"
+        }
+      },
+      "url": "https://mireiafelici.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/mireia-felici-peris/",
+        "https://www.instagram.com/mireiafelici.psico/"
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
+        <div class="logo">
+            <a href="index.html">Mireia Felici</a>
+        </div>
+        <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="sobre-mi.html" class="active">Sobre mí</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="https://wa.me/34614172009" class="nav-btn" target="_blank" rel="noopener">Pedir cita</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="about-grid" aria-label="Sobre Mireia Felici">
+        <div class="about-image">
+            <img
+                src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768/YNqrkxjKBESLaZQZ/img_3328-YBgryNoEz7iNOVMq.jpg"
+                alt="Mireia Felici, psicóloga general sanitaria en Valencia"
+                width="600"
+                height="750"
+                loading="eager"
+            >
+        </div>
+
+        <div class="about-text">
+            <h1>Mireia Felici</h1>
+            <span class="subtitle">Psicóloga General Sanitaria · Nº Col. CV17270</span>
+
+            <p>Mi experiencia como psicoterapeuta me ha enseñado lo valiosa que puede ser esta profesión: ayudar a las personas a encontrar un <strong>apoyo</strong>, una <strong>guía</strong> y <strong>herramientas</strong> concretas para mejorar su vida y sus relaciones.</p>
+
+            <p>Actualmente estoy centrada en el <strong>ámbito de la salud mental</strong>, acompañando a personas con trastornos de ansiedad, depresión, procesos de duelo, y a quienes buscan mayor autoconocimiento o nuevos objetivos vitales. Anteriormente trabajé en Servicios Sociales y en el Centro Mujer Rural.</p>
+
+            <p>Mi manera de trabajar parte de un <strong>enfoque integrador</strong>: adapto las herramientas terapéuticas a cada persona y a su momento. Lo que siempre estará presente si acudes a terapia conmigo es la <strong>cercanía</strong>, la <strong>empatía</strong> y un <strong>espacio seguro, sin juicios</strong>, donde poder ser honesta/o contigo misma/o.</p>
+
+            <div class="credentials" role="list" aria-label="Formación y experiencia">
+                <div class="credential" role="listitem">Graduada en Psicología · Universitat de València</div>
+                <div class="credential" role="listitem">Máster en Psicología General Sanitaria</div>
+                <div class="credential" role="listitem">Experiencia en Servicios Sociales y Centro Mujer Rural</div>
+                <div class="credential" role="listitem">Colegiada CV17270 · Colegio Oficial de Psicólogos de la CV</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-info">
+            <p class="footer-brand">Mireia Felici</p>
+            <p>mireiafelici.psicologa@gmail.com</p>
+            <p>+34 614 17 20 09</p>
+            <p>Nº Colegiación CV17270</p>
+        </div>
+        <nav class="footer-social" aria-label="Redes sociales">
+            <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
+        </nav>
+        <p class="footer-copy">© 2025 Mireia Felici · Valencia</p>
+    </div>
+</footer>
+
+<script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+    const toggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
+    });
+</script>
+</body>
+</html>
