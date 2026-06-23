@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO primario -->
     <title>Mireia Felici · Psicóloga General Sanitaria en Valencia</title>
-    <meta name="description" content="Psicóloga General Sanitaria en Valencia. Terapia individual y de pareja para ansiedad, depresión, duelos y crecimiento personal. Consulta presencial y online. Nº Col. CV17270.">
-    <meta name="keywords" content="psicóloga Valencia, terapia individual Valencia, psicóloga ansiedad Valencia, terapia pareja Valencia, psicóloga online Valencia">
+    <meta name="description" content="Psicóloga General Sanitaria en Valencia. Terapia individual y de pareja para ansiedad, depresión, duelos y crecimiento personal. Nº Col. CV17270.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mireiafelici.com/">
 
-    <!-- Open Graph (redes sociales) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mireiafelici.com/">
     <meta property="og:title" content="Mireia Felici · Psicóloga en Valencia">
@@ -19,20 +16,17 @@
     <meta property="og:image" content="https://mireiafelici.com/og-image.jpg">
     <meta property="og:locale" content="es_ES">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mireia Felici · Psicóloga en Valencia">
-    <meta name="twitter:description" content="Terapia individual y de pareja en Valencia. Un espacio seguro para el cambio.">
-    <meta name="twitter:image" content="https://mireiafelici.com/og-image.jpg">
+    <meta name="twitter:description" content="Terapia individual y de pareja en Valencia.">
 
-    <!-- Schema.org: Person + LocalBusiness -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["Person", "LocalBusiness"],
       "name": "Mireia Felici",
       "jobTitle": "Psicóloga General Sanitaria",
-      "description": "Psicóloga General Sanitaria en Valencia especializada en terapia individual y de pareja. Áreas: ansiedad, depresión, duelo, autoestima y gestión emocional.",
+      "description": "Psicóloga General Sanitaria en Valencia. Terapia individual y de pareja. Ansiedad, depresión, duelo, autoestima y gestión emocional.",
       "url": "https://mireiafelici.com",
       "telephone": "+34614172009",
       "email": "mireiafelici.psicologa@gmail.com",
@@ -44,7 +38,6 @@
         "addressCountry": "ES"
       },
       "areaServed": "Valencia",
-      "priceRange": "€€",
       "sameAs": [
         "https://www.linkedin.com/in/mireia-felici-peris/",
         "https://www.instagram.com/mireiafelici.psico/"
@@ -52,142 +45,229 @@
     }
     </script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* ── Variables ── */
+        :root {
+            --bg:      #faf9f6;
+            --text:    #1e1e1e;
+            --soft:    #6b6b6b;
+            --accent:  #b19151;
+            --border:  #e0dbd3;
+            --white:   #ffffff;
+            --ff-d: 'Playfair Display', Georgia, serif;
+            --ff-b: 'DM Sans', system-ui, sans-serif;
+            --ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--ff-b);
+            font-weight: 300;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { display: block; max-width: 100%; }
+
+        /* ── Cabecera mínima ── */
+        .home-header {
+            padding: clamp(40px, 7vw, 80px) clamp(24px, 5vw, 60px) clamp(20px, 3vw, 36px);
+            text-align: center;
+        }
+
+        .home-header h1 {
+            font-family: var(--ff-d);
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .home-header h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .home-header .tagline {
+            font-family: var(--ff-b);
+            font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+            font-weight: 300;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--soft);
+        }
+
+        /* ── Grid de cards ── */
+        .cards-wrap {
+            flex: 1;
+            padding: 0 clamp(16px, 3vw, 40px) clamp(16px, 3vw, 32px);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            height: clamp(300px, 50vw, 540px);
+        }
+
+        .card {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #e5e2de;
+            display: block;
+            height: 100%;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.87) saturate(0.82);
+            transition: transform 0.55s var(--ease), filter 0.55s var(--ease);
+        }
+
+        .card:hover img {
+            transform: scale(1.04);
+            filter: brightness(0.76) saturate(0.9);
+        }
+
+        /* degradado inferior */
+        .card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.52) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .card-body {
+            position: absolute;
+            bottom: 22px;
+            left: 22px;
+            z-index: 2;
+            color: var(--white);
+        }
+
+        .card-eyebrow {
+            display: block;
+            font-family: var(--ff-b);
+            font-size: 0.62rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.72;
+            margin-bottom: 3px;
+        }
+
+        .card-title {
+            display: block;
+            font-family: var(--ff-d);
+            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+            font-weight: 400;
+        }
+
+        /* ── Footer umbral ── */
+        .home-footer {
+            padding: clamp(20px, 3vw, 36px) clamp(24px, 5vw, 60px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .home-footer p {
+            font-size: 0.78rem;
+            color: var(--soft);
+            letter-spacing: 0.04em;
+        }
+
+        .home-footer nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .home-footer nav a {
+            font-family: var(--ff-b);
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--soft);
+            transition: color 0.3s;
+        }
+
+        .home-footer nav a:hover { color: var(--accent); }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .card { height: 220px; }
+            .home-footer { justify-content: center; text-align: center; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .card img { transition: none; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header>
-    <nav class="navbar" id="navbar" aria-label="Navegación principal">
-        <div class="logo">
-            <a href="index.html" aria-label="Inicio · Mireia Felici">Mireia Felici</a>
-        </div>
-        <ul class="nav-links" id="nav-links" role="list">
-            <li><a href="sobre-mi.html">Sobre mí</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://wa.me/34614172009" class="nav-btn" target="_blank" rel="noopener" aria-label="Pedir cita por WhatsApp">Pedir cita</a></li>
-        </ul>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-</header>
-
-<main>
-    <!-- HERO -->
-    <section class="hero" aria-label="Presentación">
+    <header class="home-header">
         <h1>Hola, soy <em>Mireia</em></h1>
-        <p class="lead">Psicóloga General Sanitaria en Valencia. Te acompaño a entender lo que sientes y a construir el cambio que buscas.</p>
-        <div class="hero-ctas">
-            <a href="https://wa.me/34614172009" class="btn-primary" target="_blank" rel="noopener">Reservar primera sesión</a>
-            <a href="sobre-mi.html" class="btn-secondary">Conocer mi enfoque</a>
-        </div>
-    </section>
+        <p class="tagline">Psicóloga General Sanitaria · Valencia</p>
+    </header>
 
-    <!-- CARDS -->
-    <section class="cards-section" aria-label="Secciones de la web">
-        <div class="grid-container">
-            <a href="sobre-mi.html" class="card" aria-label="Ir a Sobre mí">
-                <img src="foto1.jpg" alt="Mireia Felici, psicóloga en Valencia, en su consulta" loading="lazy">
+    <main class="cards-wrap">
+        <nav class="grid" aria-label="Secciones">
+            <a href="sobre-mi.html" class="card" aria-label="Sobre mí">
+                <img src="foto1.jpg" alt="Mireia Felici, psicóloga en Valencia" loading="eager">
                 <div class="card-body">
-                    <span class="card-label">Quién soy</span>
+                    <span class="card-eyebrow">Quién soy</span>
                     <span class="card-title">Sobre mí</span>
                 </div>
             </a>
-            <a href="servicios.html" class="card" aria-label="Ir a Servicios">
-                <img src="foto2.jpg" alt="Espacio de terapia individual y de pareja en Valencia" loading="lazy">
+            <a href="servicios.html" class="card" aria-label="Servicios">
+                <img src="foto2.jpg" alt="Terapia individual y de pareja en Valencia" loading="eager">
                 <div class="card-body">
-                    <span class="card-label">Cómo puedo ayudarte</span>
+                    <span class="card-eyebrow">Cómo puedo ayudarte</span>
                     <span class="card-title">Servicios</span>
                 </div>
             </a>
-            <a href="contacto.html" class="card" aria-label="Ir a Contacto">
-                <img src="foto3.jpg" alt="Consulta de psicología en Valencia, Calle San Vicente Mártir" loading="lazy">
+            <a href="contacto.html" class="card" aria-label="Contacto">
+                <img src="foto3.jpg" alt="Consulta de psicología en Valencia" loading="eager">
                 <div class="card-body">
-                    <span class="card-label">Primer paso</span>
+                    <span class="card-eyebrow">Primer paso</span>
                     <span class="card-title">Contacto</span>
                 </div>
             </a>
-        </div>
-    </section>
-
-    <!-- CÓMO FUNCIONA -->
-    <section class="process-section" aria-labelledby="process-heading">
-        <div class="process-inner">
-            <span class="section-label">El proceso</span>
-            <h2 class="section-title" id="process-heading">Empezar es más sencillo de lo que parece</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <h3>Escríbeme</h3>
-                    <p>Mándame un mensaje por WhatsApp o email contándome brevemente qué te está pasando. No hace falta tenerlo todo claro.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <h3>Primera sesión</h3>
-                    <p>Nos conocemos, escucho tu situación sin juicios y valoramos juntos cómo puedo acompañarte. Sin compromisos.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <h3>Tu proceso</h3>
-                    <p>Trabajamos a tu ritmo con un enfoque adaptado a ti, con herramientas concretas para avanzar hacia el bienestar que buscas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<!-- FOOTER -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-info">
-            <p class="footer-brand">Mireia Felici</p>
-            <p>mireiafelici.psicologa@gmail.com</p>
-            <p>+34 614 17 20 09</p>
-            <p>Nº Colegiación CV17270</p>
-        </div>
-
-        <nav class="footer-social" aria-label="Redes sociales">
-            <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener" aria-label="LinkedIn de Mireia Felici">LinkedIn</a>
-            <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener" aria-label="Instagram de Mireia Felici">Instagram</a>
-            <a href="https://wa.me/34614172009" target="_blank" rel="noopener" aria-label="WhatsApp de Mireia Felici">WhatsApp</a>
         </nav>
+    </main>
 
-        <p class="footer-copy">© 2025 Mireia Felici · Valencia</p>
-    </div>
-</footer>
+    <footer class="home-footer">
+        <p>mireiafelici.psicologa@gmail.com · +34 614 17 20 09 · Nº Col. CV17270</p>
+        <nav aria-label="Redes sociales">
+            <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
+        </nav>
+    </footer>
 
-<script>
-    // Navbar scroll shadow
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
-
-    // Hamburguesa móvil
-    const toggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-    toggle.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open);
-        document.body.style.overflow = open ? 'hidden' : '';
-    });
-
-    // Cerrar menu al hacer clic en un link
-    navLinks.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        });
-    });
-
-    // Marcar link activo
-    const currentPage = location.pathname.split('/').pop() || 'index.html';
-    navLinks.querySelectorAll('a:not(.nav-btn)').forEach(a => {
-        if (a.getAttribute('href') === currentPage) a.classList.add('active');
-    });
-</script>
 </body>
 </html>
