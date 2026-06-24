@@ -819,3 +819,52 @@ body, html { height: 100%; margin: 0; overflow: hidden; display: flex; flex-dire
 footer { height: 100px; padding: 0 5%; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; border-top: 1px solid #e0dbd3; font-size: 0.75rem; }
 .footer-social { display: flex; gap: 15px; justify-content: center; }
 .footer-right { text-align: right; }
+
+/* Jerarquía Hero */
+.hero .job-title { 
+    font-size: 1.2rem; 
+    font-weight: 600; 
+    letter-spacing: 0.15em; 
+    color: var(--text); 
+    margin-bottom: 8px; 
+}
+.hero .lead { 
+    font-size: 0.85rem; 
+    color: #888; 
+    font-weight: 300; 
+}
+
+/* CTA Centrado */
+.cta-container { 
+    text-align: center; 
+    margin: 20px 0; 
+}
+
+/* Franja de proceso */
+.process-section { 
+    padding: 15px 0; 
+    border-top: 1px solid #e0dbd3; 
+}
+.process-title { 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.1em; 
+    text-align: center; 
+    margin-bottom: 12px; 
+}
+.process-steps { 
+    display: flex; 
+    justify-content: space-around; 
+}
+
+/* Footer de 3 columnas */
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 0 5%;
+    border-top: 1px solid #e0dbd3;
+    height: 120px;
+}
+.footer-social { display: flex; gap: 15px; justify-content: center; }
+.footer-right { text-align: right; }
