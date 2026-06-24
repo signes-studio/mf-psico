@@ -4,62 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mireia Felici · Psicóloga General Sanitaria en Valencia</title>
-    <meta name="description" content="Psicóloga General Sanitaria en Valencia. Terapia individual y de pareja.">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Ajustes específicos para forzar una sola pantalla */
         body, html { height: 100%; overflow: hidden; display: flex; flex-direction: column; }
-        .main-index { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 20px 0; }
-        .hero { padding: 20px 0 30px 0; }
-        .hero h1 { margin-bottom: 10px; }
-        .hero .lead { margin-bottom: 20px; }
-        .grid-container { gap: 10px; margin-bottom: 20px; }
-        .card { height: 220px; } /* Tarjetas más compactas */
-        .process-section { padding: 20px; background: none; }
-        .process-steps { gap: 20px; }
-        .step { padding-top: 10px; }
-        .step-num { font-size: 1.5rem; margin-bottom: 5px; }
+        .main-index { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 10px 0; }
+        
+        /* Ajuste de Hero */
+        .hero { padding: 10px 0; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 5px; }
+        .hero .job-title { font-size: 1.1rem; color: var(--accent); margin-bottom: 5px; }
+        .hero .lead { font-size: 0.95rem; color: var(--text-soft); font-weight: 300; max-width: 400px; margin: 0 auto; }
+        
+        /* Ajuste de Tarjetas 4:5 */
+        .grid-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 15px; }
+        .card { height: 240px; } /* Ajustado para formato 4:5 */
+        
+        /* Ajuste de Proceso */
+        .process-section { padding: 10px 0; }
+        .process-steps { gap: 15px; }
+        .step h3 { font-size: 0.9rem; }
+        .step p { font-size: 0.75rem; line-height: 1.3; }
     </style>
 </head>
 <body>
 
 <main class="main-index container">
-    <!-- HERO -->
-    <section class="hero" aria-label="Presentación">
+    <section class="hero">
         <h1>Hola, soy <em>Mireia</em></h1>
-        <p class="lead">Psicóloga General Sanitaria en Valencia. Te acompaño a entender lo que sientes y a construir el cambio que buscas.</p>
+        <p class="job-title">Psicóloga General Sanitaria</p>
+        <p class="lead">Te acompaño a entender lo que sientes y a construir el cambio que buscas.</p>
     </section>
 
-    <!-- CARDS -->
-    <section class="cards-section" style="padding-bottom: 20px;">
+    <section class="cards-section">
         <div class="grid-container">
-            <a href="sobre-mi.html" class="card"><div class="card-body"><span class="card-title">Sobre mí</span></div></a>
-            <a href="enfoque.html" class="card"><div class="card-body"><span class="card-title">Enfoque</span></div></a>
-            <a href="servicios.html" class="card"><div class="card-body"><span class="card-title">Servicios</span></div></a>
+            <a href="sobre-mi.html" class="card"><img src="foto1.jpg" alt="Sobre mí"><div class="card-body"><span class="card-title">Sobre mí</span></div></a>
+            <a href="enfoque.html" class="card"><img src="foto2.jpg" alt="Enfoque"><div class="card-body"><span class="card-title">Enfoque</span></div></a>
+            <a href="servicios.html" class="card"><img src="foto3.jpg" alt="Servicios"><div class="card-body"><span class="card-title">Servicios</span></div></a>
         </div>
-        <div style="text-align: center;">
-            <a href="contacto.html" class="btn-primary">Contacto</a>
+        <div style="text-align: center; margin-bottom: 15px;">
+            <p style="font-size: 0.8rem; margin-bottom: 5px;">¿Empezamos a trabajar juntos?</p>
+            <a href="contacto.html" class="btn-primary" style="padding: 10px 30px;">Contacto</a>
         </div>
     </section>
 
-    <!-- PROCESO (Pequeño al final) -->
     <section class="process-section">
         <div class="process-inner">
-            <h2 style="font-size: 0.9rem; margin-bottom: 15px;">Empezar es más sencillo de lo que parece</h2>
+            <h2 style="font-size: 0.85rem; margin-bottom: 10px;">Empezar es más sencillo de lo que parece</h2>
             <div class="process-steps">
-                <div class="step"><div class="step-num">01</div><h3>Escríbeme</h3></div>
-                <div class="step"><div class="step-num">02</div><h3>Primera sesión</h3></div>
-                <div class="step"><div class="step-num">03</div><h3>Tu proceso</h3></div>
+                <div class="step"><div class="step-num">01</div><h3>Escríbeme</h3><p>Contacta vía WhatsApp o mail.</p></div>
+                <div class="step"><div class="step-num">02</div><h3>Valoración</h3><p>Primera sesión de escucha activa.</p></div>
+                <div class="step"><div class="step-num">03</div><h3>Tu proceso</h3><p>Herramientas adaptadas a ti.</p></div>
             </div>
         </div>
     </section>
 </main>
 
-<!-- FOOTER -->
-<footer style="padding: 10px var(--pad-x);">
-    <div class="footer-content">
-        <div class="footer-info"><p>mireiafelici.psicologa@gmail.com · +34 614 17 20 09</p></div>
-        <p class="footer-copy">© 2026 Mireia Felici · Valencia</p>
+<footer>
+    <div class="footer-content" style="padding: 10px 0;">
+        <div class="footer-info">
+            <p>hola@mireiafelici.es · +34 614 17 20 09 · CV17270</p>
+        </div>
+        <nav class="footer-social">
+            <a href="https://www.instagram.com/mireiafelici.psico/">Instagram</a>
+            <a href="https://www.linkedin.com/in/mireia-felici-peris/">LinkedIn</a>
+            <a href="https://wa.me/34614172009">WhatsApp</a>
+        </nav>
     </div>
 </footer>
 
