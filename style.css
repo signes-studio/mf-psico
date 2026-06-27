@@ -80,10 +80,16 @@ ul { list-style: none; }
 
 .logo a {
     font-family: var(--ff-display);
-    font-size: 1.15rem;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    color: var(--text);
+    font-size: 1.35rem;         /* ▲ Aumentado de 1.15rem a 1.35rem para que tenga más presencia */
+    font-weight: 600;           /* ▲ Cambiado a negrita (utiliza el peso 600 cargado de Playfair) */
+    letter-spacing: 0.01em;
+    color: var(--accent);       /* ◄ Aplicado el color de énfasis marroncito/bronce */
+    transition: color 0.3s ease;
+}
+
+/* Pequeño detalle de diseño: Al pasar el cursor por encima, se oscurece sutilmente */
+.logo a:hover {
+    color: var(--accent-dk);
 }
 
 .nav-links {
