@@ -5,48 +5,36 @@
   <url>
     <loc>https://mireiafelici.es/</loc>
     <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.00</priority>
   </url>
 
   <!-- Página Sobre Mí -->
   <url>
-    <loc>https://mireiafelici.es/sobre-mi.html</loc>
+    <loc>https://mireiafelici.es/sobre-mi</loc>
     <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
   </url>
 
   <!-- Página Enfoque -->
   <url>
-    <loc>https://mireiafelici.es/enfoque.html</loc>
+    <loc>https://mireiafelici.es/enfoque</loc>
     <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
   </url>
 
   <!-- Página Servicios -->
   <url>
-    <loc>https://mireiafelici.es/servicios.html</loc>
+    <loc>https://mireiafelici.es/servicios</loc>
     <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
   </url>
 
   <!-- Página Contacto -->
   <url>
-    <loc>https://mireiafelici.es/contacto.html</loc>
+    <loc>https://mireiafelici.es/contacto</loc>
     <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
   </url>
 
   <!-- Preguntas Frecuentes -->
   <url>
-    <loc>https://mireiafelici.es/preguntas-frecuentes.html</loc>
+    <loc>https://mireiafelici.es/preguntas-frecuentes</loc>
     <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
   </url>
   
 </urlset>
