@@ -949,3 +949,674 @@ footer {
         text-align: center;
     }
 }
+/* ============================================
+   ESTRUCTURA DE PÁGINA ÚNICA (SIN SCROLL)
+   ============================================ */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Evita por completo que aparezca la barra de scroll */
+    background: var(--bg);
+}
+
+/* Contenedor principal ocupando el 100% real de la pantalla */
+.fullscreen-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 2vh var(--pad-x) 0; /* Padding responsivo basado en el alto */
+}
+
+.main-index {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Reparte equitativamente el espacio vertical */
+    max-width: var(--max-w);
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ============================================
+   REDUCCIÓN DE MÁRGENES EN LAS SECCIONES
+   ============================================ */
+
+.hero {
+    text-align: center;
+    margin-bottom: 0;
+}
+.hero h1 {
+    font-size: clamp(2rem, 4vh, 3.5rem); /* Escalado fluido por altura */
+    margin-bottom: 5px;
+}
+.hero .job-title {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+.hero .lead {
+    font-size: clamp(0.95rem, 2vh, 1.15rem);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Ajuste en el Grid de tarjetas */
+.cards-section {
+    padding: 0;
+}
+.grid-container {
+    gap: 20px;
+}
+.card {
+    height: clamp(160px, 22vh, 240px); /* El alto de la tarjeta se adapta al monitor */
+}
+
+/* Ajuste en el CTA central */
+.cta-final-section {
+    padding: 0;
+    margin: 0 auto;
+}
+.cta-final-content {
+    gap: 8px;
+}
+.cta-final-content h2 {
+    font-size: clamp(1.3rem, 2.5vh, 1.8rem);
+}
+.btn-primary {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+}
+
+/* Ajuste en la sección de los tres pasos */
+.process-section {
+    padding: 0;
+}
+.process-steps {
+    gap: 30px;
+}
+.step {
+    text-align: center;
+}
+.step-num {
+    font-size: clamp(1.5rem, 3vh, 2.2rem);
+    margin-bottom: 2px;
+}
+.step h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+.step p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* Ajuste en el Footer */
+footer {
+    background: transparent; /* Se integra con el fondo limpio para ahorrar peso visual */
+    border-top: 1px solid var(--border);
+    padding: 15px 0 20px 0;
+    margin-top: auto;
+}
+.footer-content-three-cols {
+    border-bottom: none;
+    padding-bottom: 0;
+    gap: 20px;
+}
+.footer-col-left a, 
+.footer-col-right p,
+.footer-social-links a {
+    font-size: 0.8rem;
+}
+.footer-col-right .col-name {
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE / MÓVILES (Permitir scroll solo si es pantalla pequeña)
+   ============================================ */
+@media (max-width: 900px) {
+    html, body {
+        overflow: auto; /* En móviles el espacio vertical no basta, activamos scroll */
+        height: auto;
+    }
+    .fullscreen-container {
+        height: auto;
+        padding: 40px 20px;
+    }
+    .main-index {
+        gap: 40px;
+    }
+    .card {
+        height: 250px;
+    }
+    .footer-content-three-cols {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-col-left, .footer-col-center, .footer-col-right {
+        align-items: center;
+        text-align: center;
+    }
+}
+/* ============================================
+   ESTRUCTURA DE PÁGINA ÚNICA OPTIMIZADA
+   ============================================ */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Evita scroll en escritorio */
+    background: var(--bg);
+}
+
+.fullscreen-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.main-index {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye las secciones de arriba a abajo */
+    width: 100%;
+    margin: 0 auto;
+    padding: 2vh 0 4vh 0; /* Espaciado interno vertical */
+}
+
+/* 1. HERO: Máximo hacia arriba */
+.hero {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 1vh; /* Lo pega al límite superior de la pantalla */
+}
+.hero h1 {
+    font-size: clamp(2rem, 4.5vh, 3.8rem);
+    margin-bottom: 4px;
+}
+.hero .job-title {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+.hero .lead {
+    font-size: clamp(0.95rem, 1.8vh, 1.1rem);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 2. TARJETAS WIDE: Ocupan casi todo el ancho de la pantalla */
+.cards-section {
+    width: 100%;
+    padding: 0 4vw; /* Pequeño margen estético a los lados */
+}
+.grid-containerwide {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+.card {
+    height: clamp(160px, 24vh, 280px); /* Ligeramente más altas al expandirse a lo ancho */
+}
+
+/* 3. CTA: Más sutil y elegante */
+.cta-final-section {
+    padding: 0;
+    text-align: center;
+}
+.cta-final-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.cta-text-elegant {
+    font-family: var(--ff-display);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2vh, 1.35rem); /* Reducido de tamaño, refinado y sutil */
+    color: var(--text-soft);
+    letter-spacing: 0.02em;
+}
+.btn-primary {
+    padding: 10px 26px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* 4. PROCESO: Rediseño sofisticado (Números discretos alineados) */
+.process-section {
+    padding: 0 6vw;
+}
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+.step {
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    text-align: left;
+}
+.step-header {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+.step-num {
+    font-family: var(--ff-body); /* Cambiado a tipografía de cuerpo para integrarse mejor */
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent);
+    opacity: 0.8;
+}
+.step h3 {
+    font-family: var(--ff-display);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text);
+}
+.step p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-soft);
+}
+
+/* 5. FOOTER: Recupera el fondo crema original y se ajusta a la base */
+.footer-fixed-bottom {
+    background: var(--bg-alt); /* Color crema de fondo (`#f2efe9`) solicitado */
+    border-top: 1px solid var(--border);
+    padding: 24px var(--pad-x);
+    width: 100%;
+}
+.footer-content-three-cols {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 20px;
+}
+.footer-col-left { align-items: flex-start; }
+.footer-col-center { align-items: center; }
+.footer-col-right { align-items: flex-end; text-align: right; }
+
+.footer-col-left a, 
+.footer-col-right p,
+.footer-social-links a {
+    font-size: 0.8rem;
+}
+
+/* ============================================
+   RESPONSIVE / MÓVILES
+   ============================================ */
+@media (max-width: 900px) {
+    html, body {
+        overflow: auto; /* Permite scroll en smartphones */
+        height: auto;
+    }
+    .fullscreen-container {
+        height: auto;
+    }
+    .main-index {
+        gap: 45px;
+        padding: 40px 20px;
+    }
+    .grid-containerwide {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        height: 260px;
+    }
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .footer-content-three-cols {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 28px;
+    }
+    .footer-col-left, .footer-col-center, .footer-col-right {
+        align-items: center;
+        text-align: center;
+    }
+}
+/* ============================================
+   AJUSTE DE PROPORCIÓN DE TARJETAS (NUEVO)
+   ============================================ */
+
+/* Reemplaza o añade esta regla para fijar la proporción 4:5 */
+.card {
+    /* Mantiene el ancho flexible del grid, pero fuerza la altura */
+    width: 100%; 
+    
+    /* La magia está aquí: Usamos el aspect-ratio nativo.
+       Al establecer ancho 100% y alto auto, la proporción dicta el tamaño.
+       En monitores muy anchos, el ancho de la tarjeta es mayor, 
+       por lo que la altura también crecerá proporcionalmente.
+       En monitores más estrechos, el ancho disminuye y la altura también. */
+    height: auto; 
+    aspect-ratio: 4 / 5; /* Ancho / Alto */
+
+    /* Importante: Mantenemos el comportamiento de la imagen dentro */
+    overflow: hidden; 
+}
+
+/* Nos aseguramos de que la imagen dentro ocupe todo el espacio */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen si es necesario para llenar la caja */
+    transition: transform var(--trans);
+}
+
+
+/* ============================================
+   RESPONSIVE / MÓVILES (Para asegurar proporciones)
+   ============================================ */
+@media (max-width: 900px) {
+    /* En móviles, las tarjetas suelen ir en columna simple.
+       Forzamos una altura base máxima si no queremos que crezcan infinitamente.
+       El aspect-ratio seguirá funcionando, pero el ancho en columna simple
+       puede ser excesivo. Lo limitamos un poco si es necesario */
+    .grid-containerwide {
+        justify-items: center; /* Centra las tarjetas si limitamos el ancho */
+    }
+    .card {
+        max-width: 380px; /* Limita el ancho máximo en móviles para que no sean gigantes */
+        height: auto; /* Permite que el aspect-ratio funcione de nuevo */
+        aspect-ratio: 4 / 5;
+    }
+}
+/* ============================================
+   TARJETAS: Mantiene ancho expandido y ratio 4:5
+   ============================================ */
+.cards-section {
+    width: 100%;
+    padding: 0 4vw;
+}
+.grid-containerwide {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+.card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+/* ============================================
+   PROCESO: Diseño Diferenciador, Sutil y Elegante
+   ============================================ */
+.process-section {
+    padding: 0 4vw; /* Alineado perfectamente con los extremos de las imágenes de arriba */
+    margin-bottom: 2vh; /* Espacio de seguridad antes de que empiece el footer crema */
+}
+
+/* Línea superior minimalista para enmarcar la zona de pasos separada del resto */
+.process-inner {
+    border-top: 1px solid var(--border);
+    padding-top: 3vh;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Reducimos ligeramente el gap para que los bloques respiren por dentro */
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.4); /* Un fondo blanco translúcido ultraligero */
+    border: 1px solid rgba(224, 219, 211, 0.5); /* Borde suavizado muy sutil */
+    border-radius: 4px;
+    padding: 20px 24px; /* Espacio interno para dar sensación de "tarjeta limpia" */
+    text-align: left;
+    transition: background 0.3s ease;
+}
+
+/* Pequeño detalle: Cuando pasas el cursor se aclara de forma elegante */
+.step:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.step-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.step-num {
+    font-family: var(--ff-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+}
+
+.step h3 {
+    font-family: var(--ff-display);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.step p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-soft);
+}
+
+
+/* ============================================
+   FOOTER: Fijado abajo con color de énfasis Crema
+   ============================================ */
+.footer-fixed-bottom {
+    background: var(--bg-alt); /* El color crema (#f2efe9) que asienta el diseño */
+    border-top: 1px solid var(--border);
+    padding: 24px var(--pad-x);
+    width: 100%;
+    margin-top: auto; /* Empuja el footer siempre a la línea inferior */
+}
+
+.footer-content-three-cols {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* ============================================
+   RESPONSIVE / MÓVILES
+   ============================================ */
+@media (max-width: 900px) {
+    html, body {
+        overflow: auto;
+        height: auto;
+    }
+    .fullscreen-container {
+        height: auto;
+    }
+    .main-index {
+        gap: 40px;
+        padding: 40px 20px;
+    }
+    .grid-containerwide,
+    .process-steps,
+    .footer-content-three-cols {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+    .step {
+        padding: 20px;
+        text-align: center;
+    }
+    .step-header {
+        justify-content: center;
+    }
+    .footer-col-left, .footer-col-center, .footer-col-right {
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+    }
+}
+/* ============================================
+   PROCESO: Corrección de Fondos y Limpieza Visual
+   ============================================ */
+.process-section {
+    width: 100%;
+    padding: 0 4vw;     /* Alineación exacta con los bordes de las tarjetas */
+    background: transparent; /* Eliminamos cualquier fondo beige de la franja general */
+    margin-bottom: 3vh; /* Espacio limpio antes de que empiece el footer crema */
+}
+
+.process-inner {
+    border-top: 1px solid var(--border); /* Línea divisoria fina y elegante */
+    padding-top: 3vh;
+    background: transparent;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px; /* Espacio equilibrado entre los rectángulos */
+}
+
+.step {
+    /* El rectángulo individual sí lleva el sutil tono crema claro (bg-alt) 
+       para diferenciarse del fondo blanco de la web y del footer inferior */
+    background: var(--bg-alt); 
+    border: 1px solid rgba(224, 219, 211, 0.3); /* Borde casi imperceptible */
+    border-radius: 6px;
+    padding: 22px 26px; /* Espaciado interno para que respire el texto */
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Sutil efecto interactivo al pasar el cursor sin perder la elegancia */
+.step:hover {
+    background: var(--white); /* Cambia suavemente a blanco limpio */
+    transform: translateY(-2px); /* Micro-movimiento hacia arriba */
+}
+
+.step-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.step-num {
+    font-family: var(--ff-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+}
+
+.step h3 {
+    font-family: var(--ff-display);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.step p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-soft);
+}
+/* ============================================
+   PROCESO: Fondos Suavizados al 50% y Sin Línea Divisoria
+   ============================================ */
+.process-section {
+    width: 100%;
+    padding: 0 4vw;          /* Alineación exacta con los bordes de las tarjetas */
+    background: transparent;  /* Sin franjas de color añadidas */
+    margin-bottom: 3vh;      /* Espacio limpio antes del footer crema */
+}
+
+.process-inner {
+    /* SE ELIMINÓ EL BORDER-TOP QUE GENERABA LA LÍNEA ENTRE CONTACTO Y PASOS */
+    border-top: none; 
+    padding-top: 1vh;
+    background: transparent;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.step {
+    /* Suavizado al 50%: Traducido el color crema (#f2efe9) a formato RGBA 
+       con una opacidad de solo el 0.5 (50%) para que sea un matiz levísimo */
+    background: rgba(242, 239, 233, 0.5); 
+    border: 1px solid rgba(224, 219, 211, 0.25); /* Borde aún más suave acorde al fondo */
+    border-radius: 6px;
+    padding: 22px 26px;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* El efecto hover cambia limpiamente a blanco puro al pasar el cursor */
+.step:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+}
+
+.step-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.step-num {
+    font-family: var(--ff-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+}
+
+.step h3 {
+    font-family: var(--ff-display);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.step p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-soft);
+}
