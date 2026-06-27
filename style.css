@@ -861,3 +861,16 @@ ul { list-style: none; }
     transform: translateY(-1px);
     color: var(--white);
 }
+/* ============================================
+   ETIQUETAS DE CABECERA (Bronce y Mayúsculas)
+   ============================================ */
+.section-label {
+    font-family: var(--ff-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;     /* Da un espaciado elegante entre letras */
+    text-transform: uppercase;   /* Fuerza las mayúsculas automáticamente sin tocar el HTML */
+    color: var(--accent);       /* El color marroncito/bronce de la paleta */
+    margin-bottom: 12px;
+    display: inline-block;       /* Asegura que respete los márgenes correctos */
+}
