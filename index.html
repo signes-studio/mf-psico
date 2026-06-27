@@ -37,20 +37,21 @@
     <meta name="theme-color" content="#faf9f6">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <!-- Schema: LocalBusiness + Person -->
+    <!-- Schema: MedicalBusiness + Person + WebSite -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "LocalBusiness",
+          "@type": ["MedicalBusiness", "LocalBusiness"],
           "@id": "https://mireiafelici.com/#business",
           "name": "Mireia Felici Psicología",
           "url": "https://mireiafelici.com",
           "telephone": "+34614172009",
           "email": "hola@mireiafelici.es",
           "image": "https://mireiafelici.com/og-image.jpg",
-          "description": "Psicóloga General Sanitaria en Valencia. Terapia individual y de pareja. Ansiedad, depresión, duelo y autoconocimiento.",
+          "description": "Psicóloga General Sanitaria en Valencia. Terapia individual y de pareja. Especializada en ansiedad, depresión, duelo y autoconocimiento.",
+          "medicalSpecialty": "Psychiatry",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Calle San Vicente Mártir, 85",
@@ -63,22 +64,32 @@
             "latitude": 39.4643,
             "longitude": -0.3817
           },
-          "openingHours": "Mo-Fr 09:00-20:00",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+              "opens": "09:00",
+              "closes": "20:00"
+            }
+          ],
           "priceRange": "€€",
+          "currenciesAccepted": "EUR",
+          "paymentAccepted": "Transferencia bancaria, Efectivo",
           "sameAs": [
             "https://www.instagram.com/mireiafelici.psico/",
             "https://www.linkedin.com/in/mireia-felici-peris/"
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Servicios de psicología",
+            "name": "Servicios de psicología en Valencia",
             "itemListElement": [
               {
                 "@type": "Offer",
                 "itemOffered": {
-                  "@type": "Service",
+                  "@type": "MedicalTherapy",
                   "name": "Terapia individual",
-                  "description": "Espacio seguro para explorar emociones y gestionar el estrés, la ansiedad, la tristeza y otros momentos difíciles."
+                  "description": "Espacio seguro para explorar emociones y gestionar el estrés, la ansiedad, la tristeza y otros momentos difíciles. Sesiones de 1 hora.",
+                  "relevantSpecialty": "Psychiatry"
                 },
                 "price": "65",
                 "priceCurrency": "EUR"
@@ -86,11 +97,22 @@
               {
                 "@type": "Offer",
                 "itemOffered": {
-                  "@type": "Service",
+                  "@type": "MedicalTherapy",
                   "name": "Terapia de pareja",
-                  "description": "Espacio para reconectar, mejorar la comunicación y trabajar en el vínculo."
+                  "description": "Espacio neutral para reconectar, mejorar la comunicación y trabajar en el vínculo. Sesiones de 75 minutos.",
+                  "relevantSpecialty": "Psychiatry"
                 },
                 "price": "80",
+                "priceCurrency": "EUR"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "MedicalTherapy",
+                  "name": "Terapia online",
+                  "description": "Sesiones de psicología por videollamada, con la misma duración y precio que las presenciales."
+                },
+                "price": "65",
                 "priceCurrency": "EUR"
               }
             ]
