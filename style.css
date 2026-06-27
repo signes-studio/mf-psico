@@ -78,18 +78,22 @@ ul { list-style: none; }
     box-shadow: 0 2px 20px rgba(0,0,0,0.06);
 }
 
-.logo a {
-    font-family: var(--ff-display);
-    font-size: 1.35rem;         /* ▲ Aumentado de 1.15rem a 1.35rem para que tenga más presencia */
-    font-weight: 600;           /* ▲ Cambiado a negrita (utiliza el peso 600 cargado de Playfair) */
+/* Forzamos la ruta exacta desde la navbar para ganarle a cualquier otra regla */
+.navbar .logo a,
+.navbar .logo a:link,
+.navbar .logo a:visited {
+    font-family: var(--ff-display) !important; /* Asegura la tipografía serif */
+    font-size: 1.35rem !important;            /* Fuerza el tamaño más grande */
+    font-weight: 600 !important;              /* Fuerza la negrita */
     letter-spacing: 0.01em;
-    color: var(--accent);       /* ◄ Aplicado el color de énfasis marroncito/bronce */
+    color: var(--accent) !important;          /* Fuerza el color bronce */
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
-/* Pequeño detalle de diseño: Al pasar el cursor por encima, se oscurece sutilmente */
-.logo a:hover {
-    color: var(--accent-dk);
+/* El efecto al pasar el cursor */
+.navbar .logo a:hover {
+    color: var(--accent-dk) !important;
 }
 
 .nav-links {
