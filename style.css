@@ -156,7 +156,7 @@ ul { list-style: none; }
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    max-width: var(--max-w);
+    max-width: 1400px;
     margin: 0 auto;
     padding: 4vh 0;
 }
