@@ -1620,214 +1620,48 @@ html, body {
     line-height: 1.5;
     color: var(--text-soft);
 }
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* ============================================
+   ESTRUCTURA GENERAL (Para todas las páginas)
+   ============================================ */
+html {
+    scroll-behavior: smooth;
+}
 
-    <title>Servicios · Terapia Individual y de Pareja en Valencia | Mireia Felici</title>
-    <meta name="description" content="Terapia individual (65€/h) y terapia de pareja (80€/75 min) en Valencia con Mireia Felici, Psicóloga General Sanitaria. Ansiedad, depresión, duelo, comunicación y más.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://mireiafelici.com/servicios.html">
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--ff-body);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden; /* Evita solo el scroll horizontal molesto */
+    height: auto;       /* Permite que las páginas crezcan hacia abajo libremente */
+}
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mireiafelici.com/servicios.html">
-    <meta property="og:title" content="Servicios · Terapia Individual y de Pareja en Valencia">
-    <meta property="og:description" content="Terapia individual (65€/h) y terapia de pareja (80€/75 min) en Valencia.">
-    <meta property="og:image" content="https://mireiafelici.com/og-image.jpg">
+/* ============================================
+   REGLAS EXCLUSIVAS PARA LA HOME (SIN SCROLL)
+   ============================================ */
+/* Esta clase forzará el comportamiento de pantalla única solo donde se ponga */
+.home-body {
+    height: 100vh;
+    overflow: hidden; 
+}
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Servicios de psicología · Mireia Felici",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "Service",
-            "name": "Terapia individual",
-            "description": "Espacio seguro para explorar emociones y gestionar el estrés, la ansiedad, la tristeza y otros momentos difíciles. 65€ por sesión de 1 hora.",
-            "provider": { "@type": "Person", "name": "Mireia Felici" },
-            "areaServed": "Valencia",
-            "offers": {
-              "@type": "Offer",
-              "price": "65",
-              "priceCurrency": "EUR"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "Service",
-            "name": "Terapia de pareja",
-            "description": "Espacio para reconectar, mejorar la comunicación y trabajar en el vínculo. 80€ por sesión de 75 minutos.",
-            "provider": { "@type": "Person", "name": "Mireia Felici" },
-            "areaServed": "Valencia",
-            "offers": {
-              "@type": "Offer",
-              "price": "80",
-              "priceCurrency": "EUR"
-            }
-          }
-        }
-      ]
-    }
-    </script>
+/* El contenedor de la home ahora se adapta a la clase exclusiva */
+.home-body .fullscreen-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-    <nav class="navbar" id="navbar" aria-label="Navegación principal">
-        <div class="logo">
-            <a href="index.html">Mireia Felici</a>
-        </div>
-        <!-- Menú de navegación unificado con todas las secciones del sitio web -->
-        <ul class="nav-links" id="nav-links" role="list">
-            <li><a href="sobre-mi.html">Sobre mí</a></li>
-            <li><a href="enfoque.html">Enfoque</a></li>
-            <li><a href="servicios.html" class="active">Servicios</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://wa.me/34614172009" class="nav-btn" target="_blank" rel="noopener">Pedir cita</a></li>
-        </ul>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-</header>
-
-<main class="container">
-
-    <div class="services-hero">
-        <span class="section-label">Lo que ofrezco</span>
-        <h1>Servicios</h1>
-        <p>Un espacio adaptado a ti, con herramientas concretas para avanzar.</p>
-    </div>
-
-    <!-- TERAPIA INDIVIDUAL -->
-    <section class="service-section" aria-labelledby="srv-individual">
-        <div class="service-content">
-            <h2 id="srv-individual">Terapia individual</h2>
-            <p>La terapia es un espacio seguro donde poder parar, mirar hacia dentro y entender mejor lo que sientes. Te acompaño a explorar tus emociones para gestionar el estrés, la ansiedad, la tristeza u otros momentos difíciles.</p>
-
-            <h3>Áreas de trabajo</h3>
-            <ul>
-                <li>Autoestima y autoconocimiento</li>
-                <li>Ansiedad y estrés</li>
-                <li>Depresión</li>
-                <li>Pérdidas y procesos de duelo</li>
-                <li>Gestión emocional</li>
-            </ul>
-
-            <div class="price-tag" aria-label="Precio: 65 euros por sesión de una hora">
-                <span class="amount">65 €</span>
-                <span class="duration">Sesión de 1 hora</span>
-            </div>
-
-            <a href="https://wa.me/34614172009" class="btn-primary" target="_blank" rel="noopener">Reservar sesión</a>
-        </div>
-
-        <!-- Contenedor adaptado para forzar la proporción 4:5 -->
-        <div class="service-image service-image-ratio">
-            <img
-                src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768/YNqrkxjKBESLaZQZ/pexels-mart-production-7699429-m5KMk0Ro04C412DP.jpg"
-                alt="Sesión de terapia individual con psicóloga en Valencia"
-                width="600"
-                height="750"
-                loading="lazy"
-            >
-        </div>
-    </section>
-
-    <!-- TERAPIA DE PAREJA -->
-    <section class="service-section reverse" aria-labelledby="srv-pareja">
-        <div class="service-content">
-            <h2 id="srv-pareja">Terapia de pareja</h2>
-            <p>La terapia de pareja ofrece un espacio neutral para reconectar, mejorar la comunicación y trabajar en los objetivos que fortalezcan vuestro vínculo. Un lugar donde hablar con honestidad y avanzar juntos.</p>
-
-            <h3>Áreas de trabajo</h3>
-            <ul>
-                <li>Comunicación y gestión de conflictos</li>
-                <li>Intimidad y sexualidad</li>
-                <li>Confianza y celos</li>
-                <li>Estilos de apego y crianza</li>
-            </ul>
-
-            <div class="price-tag" aria-label="Precio: 80 euros por sesión de 75 minutos">
-                <span class="amount">80 €</span>
-                <span class="duration">Sesión de 75 minutos</span>
-            </div>
-
-            <a href="https://wa.me/34614172009" class="btn-primary" target="_blank" rel="noopener">Reservar sesión</a>
-        </div>
-
-        <!-- Contenedor adaptado para forzar la proporción 4:5 -->
-        <div class="service-image service-image-ratio">
-            <img
-                src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768/YNqrkxjKBESLaZQZ/pexels-shkrabaanthony-5217829-YrDWbVKM8ruJb9zZ.jpg"
-                alt="Terapia de pareja en Valencia con Mireia Felici"
-                width="600"
-                height="750"
-                loading="lazy"
-            >
-        </div>
-    </section>
-
-</main>
-
-<!-- Pie de página unificado idéntico al de la Home -->
-<footer class="footer-fixed-bottom">
-    <div class="footer-content-three-cols">
-        <!-- Columna Izquierda: Contacto -->
-        <div class="footer-col footer-col-left">
-            <a href="mailto:hola@mireiafelici.es">hola@mireiafelici.es</a>
-            <a href="tel:+34614172009">+34 614 17 20 09</a>
-        </div>
-        <!-- Columna Central: Redes Sociales -->
-        <div class="footer-col footer-col-center">
-            <nav class="footer-social-links">
-                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
-                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
-            </nav>
-        </div>
-        <!-- Columna Derecha: Datos Legales y Sanitarios -->
-        <div class="footer-col footer-col-right">
-            <p class="col-num">Nº Col. CV17270</p>
-            <p class="col-name">Mireia Felici Peris</p>
-            <p class="col-address">Valencia, España</p>
-        </div>
-    </div>
-    <div class="footer-bottom-copy">
-        <p>© 2026 Mireia Felici. Todos los derechos reservados.</p>
-    </div>
-</footer>
-
-<script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
-    const toggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-    toggle.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open);
-        document.body.style.overflow = open ? 'hidden' : '';
-    });
-    navLinks.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        });
-    });
-</script>
-</body>
-</html>
+/* Mantenemos tu configuración adaptativa de reparto vertical en la home */
+.home-body .main-index {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2vh 0 4vh 0;
+}
