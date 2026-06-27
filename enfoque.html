@@ -17,6 +17,7 @@
         </div>
         <ul class="nav-links" id="nav-links" role="list">
             <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="enfoque.html" class="active">Enfoque</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="https://wa.me/34614172009" class="nav-btn" target="_blank" rel="noopener">Pedir cita</a></li>
@@ -28,8 +29,17 @@
 </header>
 
 <main class="container">
-    <section class="about-grid" aria-label="Enfoque y metodología">
-        <div class="about-image">
+
+    <!-- CABECERA: Con el mismo diseño, espaciados y tipografía unificada -->
+    <div class="services-hero">
+        <span class="section-label">Mi metodología</span>
+        <h1>Enfoque</h1>
+        <p>Acompañamiento profesional desde una perspectiva integradora y rigurosa.</p>
+    </div>
+
+    <!-- CUADRÍCULA: Con la línea horizontal superior (border-top) exacta y la proporción 4:5 -->
+    <section class="about-grid" style="border-top: 1px solid var(--border); padding-top: clamp(60px, 7vw, 90px);" aria-label="Enfoque y metodología">
+        <div class="about-image about-image-ratio">
             <img
                 src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768/YNqrkxjKBESLaZQZ/img_3328-YBgryNoEz7iNOVMq.jpg"
                 alt="Enfoque de trabajo terapéutico"
@@ -40,7 +50,8 @@
         </div>
 
         <div class="about-text">
-            <h1>Enfoque y Metodología</h1>
+            <!-- Título del bloque interno unificado en tamaño y escala fluida -->
+            <h2 style="font-family: var(--ff-display); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; margin-bottom: 16px; color: var(--text);">Enfoque y Metodología</h2>
             <span class="subtitle">Acompañamiento profesional y cercano</span>
 
             <p>La terapia no es solo un espacio para hablar; es un proceso de construcción. Mi enfoque parte de la premisa de que tú eres quien mejor conoce tu historia, y mi papel es ofrecerte la <strong>perspectiva</strong> y las <strong>herramientas</strong> necesarias para navegar las dificultades que hoy te bloquean.</p>
@@ -60,34 +71,52 @@
     </section>
 </main>
 
-<footer>
-    <div class="footer-content">
-        <div class="footer-info">
-            <p class="footer-brand">Mireia Felici</p>
-            <p>mireiafelici.psicologa@gmail.com</p>
-            <p>+34 614 17 20 09</p>
+<!-- Pie de página idéntico y corporativo -->
+<footer class="footer-fixed-bottom">
+    <div class="footer-content-three-cols">
+        <div class="footer-col footer-col-left">
+            <a href="mailto:hola@mireiafelici.es">hola@mireiafelici.es</a>
+            <a href="tel:+34614172009">+34 614 17 20 09</a>
         </div>
-        <nav class="footer-social" aria-label="Redes sociales">
-            <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
-        </nav>
-        <p class="footer-copy">© 2025 Mireia Felici · Valencia</p>
+        <div class="footer-col footer-col-center">
+            <nav class="footer-social-links">
+                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
+            </nav>
+        </div>
+        <div class="footer-col footer-col-right">
+            <p class="col-num">Nº Col. CV17270</p>
+            <p class="col-name">Mireia Felici Peris</p>
+            <p class="col-address">Valencia, España</p>
+        </div>
+    </div>
+    <div class="footer-bottom-copy">
+        <p>© 2026 Mireia Felici. Todos los derechos reservados.</p>
     </div>
 </footer>
 
 <script>
-    // Mantengo el mismo script para asegurar la funcionalidad del menú[span_2](start_span)[span_2](end_span)
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
+    
     const toggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
+    
     toggle.addEventListener('click', () => {
         const open = navLinks.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open);
         document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
     });
 </script>
 </body>
