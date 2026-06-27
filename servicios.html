@@ -66,8 +66,10 @@
         <div class="logo">
             <a href="index.html">Mireia Felici</a>
         </div>
+        <!-- Menú de navegación unificado con todas las secciones del sitio web -->
         <ul class="nav-links" id="nav-links" role="list">
             <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="enfoque.html">Enfoque</a></li>
             <li><a href="servicios.html" class="active">Servicios</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="https://wa.me/34614172009" class="nav-btn" target="_blank" rel="noopener">Pedir cita</a></li>
@@ -109,12 +111,13 @@
             <a href="https://wa.me/34614172009" class="btn-primary" target="_blank" rel="noopener">Reservar sesión</a>
         </div>
 
-        <div class="service-image">
+        <!-- Contenedor adaptado para forzar la proporción 4:5 -->
+        <div class="service-image service-image-ratio">
             <img
                 src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768/YNqrkxjKBESLaZQZ/pexels-mart-production-7699429-m5KMk0Ro04C412DP.jpg"
                 alt="Sesión de terapia individual con psicóloga en Valencia"
                 width="600"
-                height="700"
+                height="750"
                 loading="lazy"
             >
         </div>
@@ -142,12 +145,13 @@
             <a href="https://wa.me/34614172009" class="btn-primary" target="_blank" rel="noopener">Reservar sesión</a>
         </div>
 
-        <div class="service-image">
+        <!-- Contenedor adaptado para forzar la proporción 4:5 -->
+        <div class="service-image service-image-ratio">
             <img
                 src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768/YNqrkxjKBESLaZQZ/pexels-shkrabaanthony-5217829-YrDWbVKM8ruJb9zZ.jpg"
                 alt="Terapia de pareja en Valencia con Mireia Felici"
                 width="600"
-                height="700"
+                height="750"
                 loading="lazy"
             >
         </div>
@@ -155,20 +159,31 @@
 
 </main>
 
-<footer>
-    <div class="footer-content">
-        <div class="footer-info">
-            <p class="footer-brand">Mireia Felici</p>
-            <p>mireiafelici.psicologa@gmail.com</p>
-            <p>+34 614 17 20 09</p>
-            <p>Nº Colegiación CV17270</p>
+<!-- Pie de página unificado idéntico al de la Home -->
+<footer class="footer-fixed-bottom">
+    <div class="footer-content-three-cols">
+        <!-- Columna Izquierda: Contacto -->
+        <div class="footer-col footer-col-left">
+            <a href="mailto:hola@mireiafelici.es">hola@mireiafelici.es</a>
+            <a href="tel:+34614172009">+34 614 17 20 09</a>
         </div>
-        <nav class="footer-social" aria-label="Redes sociales">
-            <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
-        </nav>
-        <p class="footer-copy">© 2025 Mireia Felici · Valencia</p>
+        <!-- Columna Central: Redes Sociales -->
+        <div class="footer-col footer-col-center">
+            <nav class="footer-social-links">
+                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
+            </nav>
+        </div>
+        <!-- Columna Derecha: Datos Legales y Sanitarios -->
+        <div class="footer-col footer-col-right">
+            <p class="col-num">Nº Col. CV17270</p>
+            <p class="col-name">Mireia Felici Peris</p>
+            <p class="col-address">Valencia, España</p>
+        </div>
+    </div>
+    <div class="footer-bottom-copy">
+        <p>© 2026 Mireia Felici. Todos los derechos reservados.</p>
     </div>
 </footer>
 
