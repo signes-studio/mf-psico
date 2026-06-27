@@ -836,3 +836,28 @@ ul { list-style: none; }
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { transition: none !important; }
 }
+/* ============================================
+   BOTONES PRINCIPALES (Formato Globo Restaurado)
+   ============================================ */
+.btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    padding: 12px 32px;          /* Espaciado interno generoso */
+    border-radius: 999px;        /* Esto fuerza la forma de globo / píldora */
+    font-family: var(--ff-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: var(--accent-dk);
+    transform: translateY(-1px);
+    color: var(--white);
+}
