@@ -64,27 +64,18 @@
 
 <main class="container">
 
-    <!-- CABECERA: Ahora usa exactamente las clases globales de Servicios y Contacto -->
+    <!-- CABECERA GLOBAL -->
     <div class="services-hero">
         <span class="section-label">Conóceme</span>
         <h1>Sobre mí</h1>
         <p>Mi trayectoria profesional y mi manera de entender el acompañamiento terapéutico.</p>
     </div>
 
-    <!-- BIOGRAFÍA: La cuadrícula ahora hereda de forma nativa la línea horizontal superior (border-top) de style.css -->
+    <!-- BIOGRAFÍA CON ORDEN INVERTIDO (Texto primero, imagen segundo) -->
     <section class="about-grid" style="border-top: 1px solid var(--border); padding-top: clamp(60px, 7vw, 90px);" aria-label="Biografía de Mireia Felici">
-        <div class="about-image about-image-ratio">
-            <img
-                src="img/foto1.jpg"
-                alt="Mireia Felici, psicóloga general sanitaria en Valencia"
-                width="600"
-                height="750"
-                loading="eager"
-            >
-        </div>
-
+        
+        <!-- Bloque de Texto (Ahora a la izquierda) -->
         <div class="about-text">
-            <!-- Tipografías mapeadas con las clases nativas del CSS corporativo -->
             <h2 style="font-family: var(--ff-display); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; margin-bottom: 16px; color: var(--text);">Mireia Felici Peris</h2>
             <span class="subtitle">Psicóloga General Sanitaria · Nº Col. CV17270</span>
 
@@ -101,6 +92,18 @@
                 <div class="credential" role="listitem">Colegiada CV17270 · Colegio Oficial de Psicólogos de la CV</div>
             </div>
         </div>
+
+        <!-- Bloque de Imagen (Ahora a la derecha) -->
+        <div class="about-image about-image-ratio">
+            <img
+                src="img/foto1.jpg"
+                alt="Mireia Felici, psicóloga general sanitaria en Valencia"
+                width="600"
+                height="750"
+                loading="eager"
+            >
+        </div>
+
     </section>
 </main>
 
