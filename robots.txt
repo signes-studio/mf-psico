@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Ubicación del archivo sitemap para los rastreadores
+Sitemap: https://mireiafelici.com/sitemap.xml
