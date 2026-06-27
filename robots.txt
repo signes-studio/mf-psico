@@ -52,4 +52,4 @@ User-agent: Applebot
 Allow: /
 
 # Sitemap
-Sitemap: https://mireiafelici.com/sitemap.xml
+Sitemap: https://mireiafelici.es/sitemap.xml
