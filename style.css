@@ -787,3 +787,165 @@ footer {
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { transition: none !important; }
 }
+/* ============================================
+   MODIFICACIONES EN HERO (Añadir o actualizar)
+   ============================================ */
+.hero .job-title {
+    font-family: var(--ff-body);
+    font-size: 0.95rem;          /* Ligeramente mayor */
+    font-weight: 500;            /* Más fuerza visual */
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);        /* Color de énfasis (bronce) */
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+
+/* ============================================
+   NUEVA SECCIÓN: CTA FINAL (Añadir al final de GRID DE CARDS)
+   ============================================ */
+.cta-final-section {
+    padding: clamp(40px, 6vw, 80px) 0;
+    text-align: center;
+    background: var(--bg); /* Mantiene fondo limpio */
+}
+
+.cta-final-content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.cta-final-content h2 {
+    font-family: var(--ff-display);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 400;
+    color: var(--text);
+}
+
+.cta-final-content p {
+    font-family: var(--ff-body);
+    font-size: 1rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+
+/* ============================================
+   REDISEÑO DE FOOTER EN 3 COLUMNAS (Reemplazar la sección FOOTER actual)
+   ============================================ */
+footer {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    padding: 64px var(--pad-x) 32px;
+}
+
+.footer-content-three-cols {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crea exactamente 3 columnas idénticas */
+    align-items: start;
+    gap: 40px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 40px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Columna Izquierda: Contacto */
+.footer-col-left {
+    align-items: flex-start;
+}
+.footer-col-left a {
+    font-family: var(--ff-body);
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: color 0.3s;
+}
+.footer-col-left a:hover {
+    color: var(--accent);
+}
+
+/* Columna Central: Redes Sociales */
+.footer-col-center {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.footer-social-links {
+    display: flex;
+    gap: 20px;
+}
+.footer-social-links a {
+    font-family: var(--ff-body);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    transition: color 0.3s;
+}
+.footer-social-links a:hover {
+    color: var(--accent);
+}
+
+/* Columna Derecha: Datos legales y Colegiada */
+.footer-col-right {
+    align-items: flex-end;
+    text-align: right;
+}
+.footer-col-right p {
+    font-family: var(--ff-body);
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    line-height: 1.5;
+}
+.footer-col-right .col-name {
+    font-family: var(--ff-display); /* Toque elegante para el nombre */
+    color: var(--text);
+    font-size: 0.95rem;
+}
+.footer-col-right .col-num {
+    color: var(--accent); /* Resalta el número de colegiada */
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+}
+
+/* Copyright inferior */
+.footer-bottom-copy {
+    max-width: var(--max-w);
+    margin: 24px auto 0;
+    text-align: center;
+}
+.footer-bottom-copy p {
+    font-size: 0.75rem;
+    color: var(--text-soft);
+    opacity: 0.6;
+}
+
+
+/* ============================================
+   RESPONSIVE ADAPTATIONS (Añadir al final de la media query de 900px o menos)
+   ============================================ */
+@media (max-width: 900px) {
+    .footer-content-three-cols {
+        grid-template-columns: 1fr; /* Pasa a una sola fila en móviles ordenadamente */
+        text-align: center;
+        gap: 32px;
+    }
+    .footer-col-left, .footer-col-center, .footer-col-right {
+        align-items: center;
+        text-align: center;
+    }
+}
