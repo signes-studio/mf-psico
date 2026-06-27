@@ -3,7 +3,7 @@
 
   <!-- Página de Inicio / Home -->
   <url>
-    <loc>https://mireiafelici.com/</loc>
+    <loc>https://mireiafelici.es/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
@@ -11,7 +11,7 @@
 
   <!-- Página Sobre Mí -->
   <url>
-    <loc>https://mireiafelici.com/sobre-mi.html</loc>
+    <loc>https://mireiafelici.es/sobre-mi.html</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -19,7 +19,7 @@
 
   <!-- Página Enfoque -->
   <url>
-    <loc>https://mireiafelici.com/enfoque.html</loc>
+    <loc>https://mireiafelici.es/enfoque.html</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -27,7 +27,7 @@
 
   <!-- Página Servicios -->
   <url>
-    <loc>https://mireiafelici.com/servicios.html</loc>
+    <loc>https://mireiafelici.es/servicios.html</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
@@ -35,7 +35,7 @@
 
   <!-- Página Contacto -->
   <url>
-    <loc>https://mireiafelici.com/contacto.html</loc>
+    <loc>https://mireiafelici.es/contacto.html</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
@@ -43,7 +43,7 @@
 
   <!-- Preguntas Frecuentes -->
   <url>
-    <loc>https://mireiafelici.com/preguntas-frecuentes.html</loc>
+    <loc>https://mireiafelici.es/preguntas-frecuentes.html</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
