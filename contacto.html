@@ -43,8 +43,10 @@
         <div class="logo">
             <a href="index.html">Mireia Felici</a>
         </div>
+        <!-- Menú de navegación unificado con todas las secciones de la web -->
         <ul class="nav-links" id="nav-links" role="list">
             <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="enfoque.html">Enfoque</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="contacto.html" class="active">Contacto</a></li>
             <li><a href="https://wa.me/34614172009" class="nav-btn" target="_blank" rel="noopener">Pedir cita</a></li>
@@ -119,20 +121,31 @@
     </section>
 </main>
 
-<footer>
-    <div class="footer-content">
-        <div class="footer-info">
-            <p class="footer-brand">Mireia Felici</p>
-            <p>mireiafelici.psicologa@gmail.com</p>
-            <p>+34 614 17 20 09</p>
-            <p>Nº Colegiación CV17270</p>
+<!-- Pie de página corporativo simétrico e idéntico al de la Home -->
+<footer class="footer-fixed-bottom">
+    <div class="footer-content-three-cols">
+        <!-- Columna Izquierda: Contacto -->
+        <div class="footer-col footer-col-left">
+            <a href="mailto:hola@mireiafelici.es">hola@mireiafelici.es</a>
+            <a href="tel:+34614172009">+34 614 17 20 09</a>
         </div>
-        <nav class="footer-social" aria-label="Redes sociales">
-            <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
-        </nav>
-        <p class="footer-copy">© 2025 Mireia Felici · Valencia</p>
+        <!-- Columna Central: Redes Sociales -->
+        <div class="footer-col footer-col-center">
+            <nav class="footer-social-links">
+                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
+            </nav>
+        </div>
+        <!-- Columna Derecha: Datos Legales y Sanitarios -->
+        <div class="footer-col footer-col-right">
+            <p class="col-num">Nº Col. CV17270</p>
+            <p class="col-name">Mireia Felici Peris</p>
+            <p class="col-address">Valencia, España</p>
+        </div>
+    </div>
+    <div class="footer-bottom-copy">
+        <p>© 2026 Mireia Felici. Todos los derechos reservados.</p>
     </div>
 </footer>
 
@@ -141,13 +154,16 @@
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
+    
     const toggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
+    
     toggle.addEventListener('click', () => {
         const open = navLinks.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open);
         document.body.style.overflow = open ? 'hidden' : '';
     });
+    
     navLinks.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
             navLinks.classList.remove('open');
@@ -164,8 +180,6 @@
             alert('Por favor, rellena al menos tu nombre y email.');
             return;
         }
-        // Aquí conectarías con tu backend / Formspree / Netlify Forms
-        // Por ahora abre el cliente de correo como fallback
         const subject = encodeURIComponent('Consulta desde la web · ' + nombre);
         const body = encodeURIComponent('Hola Mireia,\n\n' + mensaje + '\n\n' + nombre + '\n' + email);
         window.location.href = 'mailto:mireiafelici.psicologa@gmail.com?subject=' + subject + '&body=' + body;
