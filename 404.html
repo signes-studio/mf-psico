@@ -1,0 +1,101 @@
+<!--
+    Diseño, desarrollo web y comunicación por SIGNES.STUDIO
+    https://signes.studio · 2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada · Mireia Felici</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
+    
+    <!-- Favicon Estándar y para Dispositivos Móviles -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+</head>
+<body>
+
+<header>
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
+        <div class="logo">
+            <a href="/">Mireia Felici</a>
+        </div>
+        <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="sobre-mi">Sobre mí</a></li>
+            <li><a href="enfoque">Enfoque</a></li>
+            <li><a href="servicios">Servicios</a></li>
+            <li><a href="contacto">Contacto</a></li>
+            <li><a href="https://wa.me/34614172009" class="nav-btn" target="_blank" rel="noopener">Pedir cita</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<main class="container" style="text-align: center; padding-top: clamp(100px, 14vh, 160px); padding-bottom: clamp(100px, 14vh, 160px);">
+    <span class="section-label">Error 404</span>
+    <h1 style="font-family: var(--ff-display); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; margin-bottom: 16px;">Página no encontrada</h1>
+    <p style="color: var(--text-soft); max-width: 460px; margin: 0 auto 36px auto; font-size: 1.02rem; line-height: 1.7;">El enlace que has seguido puede estar roto, haber cambiado de dirección o la página ya no existe.</p>
+    <a href="/" class="btn-primary">Volver a la página de inicio</a>
+</main>
+
+<footer class="footer-fixed-bottom">
+    <div class="footer-content-three-cols">
+        <div class="footer-col footer-col-left">
+            <a href="mailto:hola@mireiafelici.es">hola@mireiafelici.es</a>
+            <a href="tel:+34614172009">+34 614 17 20 09</a>
+        </div>
+        <div class="footer-col footer-col-center">
+            <nav class="footer-social-links">
+                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
+            </nav>
+            <a href="/preguntas-frecuentes" style="display: inline-block; margin-top: 12px; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-soft); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-soft)'">Preguntas frecuentes</a>
+        </div>
+        <div class="footer-col footer-col-right">
+            <p class="col-num">Nº Col. CV17270</p>
+            <p class="col-name">Mireia Felici Peris</p>
+            <p class="col-address">Valencia, España</p>
+        </div>
+    </div>
+    <div class="footer-bottom-copy">
+        <p>© 2026 Mireia Felici. Todos los derechos reservados.</p>
+        <p style="margin-top: 8px; font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase;">
+            <a href="/aviso-legal" style="color: var(--text-soft); text-decoration: none; margin: 0 8px; transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-soft)'">Aviso Legal</a> | 
+            <a href="/politica-privacidad" style="color: var(--text-soft); text-decoration: none; margin: 0 8px; transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-soft)'">Política de Privacidad</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+    
+    const toggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
+    });
+</script>
+</body>
+</html>
