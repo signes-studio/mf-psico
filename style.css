@@ -882,3 +882,106 @@ ul { list-style: none; }
     margin-bottom: 12px;
     display: inline-block;       /* Asegura que respete los márgenes correctos */
 }
+/* ── BANNER DE COOKIES MINIMALISTA ── */
+.cookie-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    max-width: 400px;
+    background-color: var(--bg-alt); /* Tu fondo crema/alterativo */
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: none;
+}
+
+.cookie-banner.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cookie-content p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-soft);
+    margin-bottom: 16px;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-cookie-primary, .btn-cookie-secondary {
+    font-family: var(--ff-body);
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cookie-primary {
+    background-color: var(--text);
+    color: var(--bg);
+    border: 1px solid var(--text);
+}
+
+.btn-cookie-primary:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.btn-cookie-secondary {
+    background-color: transparent;
+    color: var(--text-soft);
+    border: 1px solid var(--border);
+}
+
+.btn-cookie-secondary:hover {
+    border-color: var(--text-soft);
+    color: var(--text);
+}
+
+@media (max-width: 480px) {
+    .cookie-banner {
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+        max-width: 100%;
+    }
+}
+/* ── MICRO-INTERACCIONES PREMIUM ── */
+
+/* Transición suave por defecto para todos los elementos interactivos */
+.card, .btn-primary, .nav-links a, .footer-col a {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                background-color 0.3s ease, 
+                color 0.3s ease, 
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+/* Efecto de elevación sutil en las tarjetas de la home al pasar el cursor */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+/* Micro-escala para el botón principal al clicarlo (efecto feedback físico) */
+.btn-primary:active {
+    transform: scale(0.98) translateY(0);
+}
+
+/* Enlaces del menú y pie de página: transición de color fluida */
+.nav-links a:hover, .footer-col a:hover {
+    color: var(--accent);
+}

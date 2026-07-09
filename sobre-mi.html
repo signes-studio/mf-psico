@@ -116,7 +116,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<!-- Banner de Cookies Minimalista -->
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true">
+    <div class="cookie-content">
+        <p>Utilizamos cookies propias y de terceros para analizar de forma anónima el tráfico de la web y mejorar tu experiencia.</p>
+        <div class="cookie-buttons">
+            <button id="accept-cookies" class="btn-cookie-primary">Aceptar</button>
+            <button id="reject-cookies" class="btn-cookie-secondary">Rechazar</button>
+        </div>
+    </div>
+</div>
 <header>
     <nav class="navbar" id="navbar" aria-label="Navegación principal">
         <div class="logo">
@@ -226,22 +235,51 @@
         });
     });
 </script>
-<!-- Default Statcounter code for Mireia Felici
-https://mireiafelici.es/ -->
 <script type="text/javascript">
-var sc_project=13335409; 
-var sc_invisible=1; 
-var sc_security="c7c7c2c2"; 
+// Función para cargar Statcounter de forma dinámica si hay consentimiento
+function cargarStatcounter() {
+    window.sc_project = 13335409; 
+    window.sc_invisible = 1; 
+    window.sc_security = "c7c7c2c2"; 
+
+    var sc = document.createElement('script');
+    sc.type = 'text/javascript';
+    sc.async = true;
+    sc.src = 'https://www.statcounter.com/counter/counter.js';
+    document.head.appendChild(sc);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var banner = document.getElementById("cookie-banner");
+    var btnAccept = document.getElementById("accept-cookies");
+    var btnReject = document.getElementById("reject-cookies");
+    var consentimiento = localStorage.getItem("cookie-consent");
+
+    // Si ya aceptó antes, cargamos directamente
+    if (consentimiento === "accepted") {
+        cargarStatcounter();
+    } 
+    // Si no ha decidido nada aún, mostramos el banner con un ligero retardo elegante
+    else if (consentimiento === null) {
+        setTimeout(function() {
+            banner.classList.add("show");
+            banner.setAttribute("aria-hidden", "false");
+        }, 1200);
+    }
+
+    btnAccept.addEventListener("click", function() {
+        localStorage.setItem("cookie-consent", "accepted");
+        banner.classList.remove("show");
+        banner.setAttribute("aria-hidden", "true");
+        cargarStatcounter();
+    });
+
+    btnReject.addEventListener("click", function() {
+        localStorage.setItem("cookie-consent", "rejected");
+        banner.classList.remove("show");
+        banner.setAttribute("aria-hidden", "true");
+    });
+});
 </script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="https://c.statcounter.com/13335409/0/c7c7c2c2/1/"
-alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
 </body>
 </html>
