@@ -5,101 +5,120 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
     
+    <link rel="stylesheet" href="style.css">
+
     <!-- Favicon Estándar y para Dispositivos Móviles -->
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.png">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Servicios · Terapia Individual y de Pareja en Valencia | Mireia Felici</title>
-    <meta name="description" content="Terapia individual (65€/h) y terapia de pareja (80€/75 min) en Valencia con Mireia Felici, Psicóloga General Sanitaria. Ansiedad, depresión, duelo, comunicación y más.">
+    <meta name="description" content="Terapia individual (65€/h) y terapia de pareja (80€/75 min) en Valencia con Mireia Felici, Psicóloga General Sanitaria (CV17270). Ansiedad, depresión, duelo y comunicación.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mireiafelici.es/servicios">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mireiafelici.es/servicios">
     <meta property="og:title" content="Servicios · Terapia Individual y de Pareja en Valencia">
-    <meta property="og:description" content="Terapia individual (65€/h) y terapia de pareja (80€/75 min) en Valencia.">
-    <meta property="og:image" content="https://mireiafelici.es/og-image.jpg">
+    <meta property="og:description" content="Terapia individual (65€/h) y terapia de pareja (80€/75 min) en Valencia. Consulta presencial y online.">
+    <meta property="og:image" content="https://mireiafelici.es/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Mireia Felici Psicología">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Servicios de Psicología en Valencia · Mireia Felici">
+    <meta name="twitter:description" content="Terapia individual y de pareja en Valencia. Tarifas claras y espacio seguro.">
+    <meta name="twitter:image" content="https://mireiafelici.es/img/og-image.jpg">
+
+    <meta name="theme-color" content="#faf9f6">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Servicios de psicología · Mireia Felici",
-      "itemListElement": [
+      "@graph": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "Service",
-            "name": "Terapia individual",
-            "description": "Espacio seguro para explorar emociones y gestionar el estrés, la ansiedad, la tristeza y otros momentos difíciles. 65€ por sesión de 1 hora.",
-            "provider": { "@type": "Person", "name": "Mireia Felici" },
-            "areaServed": "Valencia",
-            "offers": {
-              "@type": "Offer",
-              "price": "65",
-              "priceCurrency": "EUR"
-            }
+          "@type": ["MedicalBusiness", "LocalBusiness"],
+          "@id": "https://mireiafelici.es/#business",
+          "name": "Mireia Felici Psicología",
+          "url": "https://mireiafelici.es",
+          "telephone": "+34614172009",
+          "email": "hola@mireiafelici.es",
+          "image": "https://mireiafelici.es/img/og-image.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle San Vicente Mártir, 85",
+            "addressLocality": "Valencia",
+            "postalCode": "46007",
+            "addressCountry": "ES"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios terapéuticos",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "MedicalTherapy",
+                  "name": "Terapia individual",
+                  "description": "Espacio seguro para explorar emociones y gestionar el estrés, la ansiedad, la tristeza y otros momentos difíciles. Sesiones de 1 hora.",
+                  "relevantSpecialty": "Psychology"
+                },
+                "price": "65",
+                "priceCurrency": "EUR"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "MedicalTherapy",
+                  "name": "Terapia de pareja",
+                  "description": "Espacio neutral para reconectar, mejorar la comunicación y trabajar en el vínculo. Sesiones de 75 minutos.",
+                  "relevantSpecialty": "Psychology"
+                },
+                "price": "80",
+                "priceCurrency": "EUR"
+              }
+            ]
           }
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "Service",
-            "name": "Terapia de pareja",
-            "description": "Espacio para reconectar, mejorar la comunicación y trabajar en el vínculo. 80€ por sesión de 75 minutos.",
-            "provider": { "@type": "Person", "name": "Mireia Felici" },
-            "areaServed": "Valencia",
-            "offers": {
-              "@type": "Offer",
-              "price": "80",
-              "priceCurrency": "EUR"
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://mireiafelici.es/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Servicios",
+              "item": "https://mireiafelici.es/servicios"
             }
-          }
+          ]
         }
       ]
     }
     </script>
-
-<!-- Schema: BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Inicio",
-          "item": "https://mireiafelici.es/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Servicios",
-          "item": "https://mireiafelici.es/servicios"
-        }
-      ]
-    }
-    </script>
-    
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <!-- Banner de Cookies Minimalista -->
-<div id="cookie-banner" class="cookie-banner" aria-hidden="true">
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true" role="dialog" aria-label="Consentimiento de cookies">
     <div class="cookie-content">
         <p>Utilizamos cookies propias y de terceros para analizar de forma anónima el tráfico de la web y mejorar tu experiencia.</p>
         <div class="cookie-buttons">
@@ -108,17 +127,18 @@
         </div>
     </div>
 </div>
+
 <header>
     <nav class="navbar" id="navbar" aria-label="Navegación principal">
         <div class="logo">
             <a href="/">Mireia Felici</a>
         </div>
         <ul class="nav-links" id="nav-links" role="list">
-            <li><a href="sobre-mi">Sobre mí</a></li>
-            <li><a href="enfoque">Enfoque</a></li>
-            <li><a href="servicios" class="active">Servicios</a></li>
-            <li><a href="contacto">Contacto</a></li>
-            <li><a href="https://wa.me/34614172009" class="nav-btn" target="_blank" rel="noopener">Pedir cita</a></li>
+            <li><a href="/sobre-mi">Sobre mí</a></li>
+            <li><a href="/enfoque">Enfoque</a></li>
+            <li><a href="/servicios" class="active">Servicios</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20visto%20tu%20web%20y%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20para%20una%20primera%20cita." class="nav-btn" target="_blank" rel="noopener noreferrer" aria-label="Pedir cita por WhatsApp (abre en nueva pestaña)">Pedir cita</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
             <span></span><span></span><span></span>
@@ -127,7 +147,6 @@
 </header>
 
 <main class="container">
-
     <div class="services-hero">
         <span class="section-label">Lo que ofrezco</span>
         <h1>Servicios</h1>
@@ -144,9 +163,9 @@
             <ul>
                 <li>Autoestima y autoconocimiento</li>
                 <li>Ansiedad y estrés</li>
-                <li>Depresión</li>
+                <li>Depresión y estado de ánimo</li>
                 <li>Pérdidas y procesos de duelo</li>
-                <li>Gestión emocional</li>
+                <li>Gestión emocional y regulación</li>
             </ul>
 
             <div class="price-tag" aria-label="Precio: 65 euros por sesión de una hora">
@@ -154,7 +173,9 @@
                 <span class="duration">Sesión de 1 hora</span>
             </div>
 
-            <a href="https://wa.me/34614172009" class="btn-primary" target="_blank" rel="noopener">Reservar sesión</a>
+            <div>
+                <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20una%20sesi%C3%B3n%20de%20terapia%20individual." class="btn-primary" target="_blank" rel="noopener noreferrer">Reservar sesión</a>
+            </div>
         </div>
 
         <div class="service-image service-image-ratio">
@@ -163,7 +184,7 @@
                 alt="Sesión de terapia individual con psicóloga en Valencia"
                 width="600"
                 height="750"
-                loading="lazy"
+                fetchpriority="high"
             >
         </div>
     </section>
@@ -176,10 +197,10 @@
 
             <h3>Áreas de trabajo</h3>
             <ul>
-                <li>Comunicación y gestión de conflictos</li>
-                <li>Intimidad y sexualidad</li>
-                <li>Confianza y celos</li>
-                <li>Estilos de apego y crianza</li>
+                <li>Comunicación y resolución constructiva de conflictos</li>
+                <li>Intimidad, conexión y sexualidad</li>
+                <li>Confianza y gestión de celos</li>
+                <li>Estilos de apego y crianza compartida</li>
             </ul>
 
             <div class="price-tag" aria-label="Precio: 80 euros por sesión de 75 minutos">
@@ -187,7 +208,9 @@
                 <span class="duration">Sesión de 75 minutos</span>
             </div>
 
-            <a href="https://wa.me/34614172009" class="btn-primary" target="_blank" rel="noopener">Reservar sesión</a>
+            <div>
+                <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20una%20sesi%C3%B3n%20de%20terapia%20de%20pareja." class="btn-primary" target="_blank" rel="noopener noreferrer">Reservar sesión</a>
+            </div>
         </div>
 
         <div class="service-image service-image-ratio">
@@ -197,10 +220,10 @@
                 width="600"
                 height="750"
                 loading="lazy"
+                decoding="async"
             >
         </div>
     </section>
-
 </main>
 
 <footer class="footer-fixed-bottom">
@@ -210,13 +233,12 @@
             <a href="tel:+34614172009">+34 614 17 20 09</a>
         </div>
         <div class="footer-col footer-col-center">
-            <nav class="footer-social-links">
-                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener">Instagram</a>
-                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://wa.me/34614172009" target="_blank" rel="noopener">WhatsApp</a>
+            <nav class="footer-social-links" aria-label="Redes sociales del pie">
+                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20visto%20tu%20web%20y%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20para%20una%20primera%20cita." target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </nav>
-            <!-- Enlace colocado debajo y centrado, exactamente igual que en la Home -->
-            <a href="/preguntas-frecuentes" style="display: inline-block; margin-top: 12px; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-soft); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-soft)'">Preguntas frecuentes</a>
+            <a href="/preguntas-frecuentes" class="footer-faq-link">Preguntas frecuentes</a>
         </div>
         <div class="footer-col footer-col-right">
             <p class="col-num">Nº Col. CV17270</p>
@@ -224,80 +246,15 @@
             <p class="col-address">Valencia, España</p>
         </div>
     </div>
-    <div class="footer-bottom-copy" style="text-align: center;">
-    <p>© 2026 Mireia Felici. Todos los derechos reservados.</p>
-    <p style="margin-top: 8px; font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase;">
-        <a href="/aviso-legal" style="color: var(--text-soft); text-decoration: none; margin: 0 8px; transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-soft)'">Aviso Legal</a> | 
-        <a href="/politica-privacidad" style="color: var(--text-soft); text-decoration: none; margin: 0 8px; transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-soft)'">Política de Privacidad</a>
-    </p>
+    <div class="footer-bottom-copy">
+        <p>© 2026 Mireia Felici. Todos los derechos reservados.</p>
+        <p style="margin-top: 8px;">
+            <a href="/aviso-legal" class="footer-legal-link">Aviso Legal</a> | 
+            <a href="/politica-privacidad" class="footer-legal-link">Política de Privacidad</a>
+        </p>
     </div>
 </footer>
 
-<script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
-    const toggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-    toggle.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open);
-        document.body.style.overflow = open ? 'hidden' : '';
-    });
-    navLinks.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        });
-    });
-</script>
-<script type="text/javascript">
-// Función para cargar Statcounter de forma dinámica si hay consentimiento
-function cargarStatcounter() {
-    window.sc_project = 13335409; 
-    window.sc_invisible = 1; 
-    window.sc_security = "c7c7c2c2"; 
-
-    var sc = document.createElement('script');
-    sc.type = 'text/javascript';
-    sc.async = true;
-    sc.src = 'https://www.statcounter.com/counter/counter.js';
-    document.head.appendChild(sc);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    var banner = document.getElementById("cookie-banner");
-    var btnAccept = document.getElementById("accept-cookies");
-    var btnReject = document.getElementById("reject-cookies");
-    var consentimiento = localStorage.getItem("cookie-consent");
-
-    // Si ya aceptó antes, cargamos directamente
-    if (consentimiento === "accepted") {
-        cargarStatcounter();
-    } 
-    // Si no ha decidido nada aún, mostramos el banner con un ligero retardo elegante
-    else if (consentimiento === null) {
-        setTimeout(function() {
-            banner.classList.add("show");
-            banner.setAttribute("aria-hidden", "false");
-        }, 1200);
-    }
-
-    btnAccept.addEventListener("click", function() {
-        localStorage.setItem("cookie-consent", "accepted");
-        banner.classList.remove("show");
-        banner.setAttribute("aria-hidden", "true");
-        cargarStatcounter();
-    });
-
-    btnReject.addEventListener("click", function() {
-        localStorage.setItem("cookie-consent", "rejected");
-        banner.classList.remove("show");
-        banner.setAttribute("aria-hidden", "true");
-    });
-});
-</script>
+<script src="main.js" defer></script>
 </body>
 </html>
