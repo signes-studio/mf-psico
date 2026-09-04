@@ -1,40 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Página de Inicio / Home -->
   <url>
     <loc>https://mireiafelici.es/</loc>
-    <lastmod>2026-06-27</lastmod>
-  </url>
-
-  <!-- Página Sobre Mí -->
-  <url>
-    <loc>https://mireiafelici.es/sobre-mi</loc>
-    <lastmod>2026-06-27</lastmod>
-  </url>
-
-  <!-- Página Enfoque -->
-  <url>
-    <loc>https://mireiafelici.es/enfoque</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto1.webp</image:loc>
+      <image:title>Mireia Felici - Psicóloga General Sanitaria en Valencia y Online España</image:title>
+      <image:caption>Retrato profesional de Mireia Felici, psicóloga sanitaria colegiada CV17270</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto2.webp</image:loc>
+      <image:title>Consulta de psicología en Valencia - Mireia Felici</image:title>
+      <image:caption>Espacio de consulta de psicología presencial en Valencia y terapia online</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto3.webp</image:loc>
+      <image:title>Sesiones de psicoterapia individual y de pareja en España</image:title>
+      <image:caption>Terapia psicológica individual y de pareja presencial y online</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/og-image.jpg</image:loc>
+      <image:title>Mireia Felici Psicología - Valencia y Online España</image:title>
+      <image:caption>Consulta de Psicología General Sanitaria en Valencia y terapia online</image:caption>
+    </image:image>
   </url>
 
   <!-- Página Servicios -->
   <url>
     <loc>https://mireiafelici.es/servicios</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto3.webp</image:loc>
+      <image:title>Terapia individual presencial en Valencia y online en España</image:title>
+      <image:caption>Sesiones de terapia psicológica individual para adultos</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto4.webp</image:loc>
+      <image:title>Terapia de pareja en Valencia y online</image:title>
+      <image:caption>Sesiones de terapia de pareja y comunicación relacional</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Página Sobre Mí -->
+  <url>
+    <loc>https://mireiafelici.es/sobre-mi</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto1.webp</image:loc>
+      <image:title>Mireia Felici Peris - Psicóloga Colegiada CV17270</image:title>
+      <image:caption>Formación y trayectoria de Mireia Felici, psicóloga general sanitaria</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Página Enfoque -->
+  <url>
+    <loc>https://mireiafelici.es/enfoque</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto2.webp</image:loc>
+      <image:title>Enfoque terapéutico integrador basado en la evidencia</image:title>
+      <image:caption>Metodología terapéutica basada en la evidencia científica y visión humanista</image:caption>
+    </image:image>
   </url>
 
   <!-- Página Contacto -->
   <url>
     <loc>https://mireiafelici.es/contacto</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Preguntas Frecuentes -->
   <url>
     <loc>https://mireiafelici.es/preguntas-frecuentes</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-  
+
 </urlset>

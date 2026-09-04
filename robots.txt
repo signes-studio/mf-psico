@@ -1,6 +1,5 @@
 # https://www.robotstxt.org/
-
-# Rastreadores generales
+# Rastreadores y motores de búsqueda web
 User-agent: *
 Allow: /
 
@@ -11,11 +10,23 @@ Allow: /
 User-agent: Googlebot-Image
 Allow: /
 
-# Bing / Microsoft Copilot
+User-agent: GoogleOther
+Allow: /
+
+# Microsoft Bing & Copilot
 User-agent: Bingbot
 Allow: /
 
-# ChatGPT / OpenAI
+# Apple
+User-agent: Applebot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Motores de Búsqueda Generativa e Inteligencia Artificial (GEO / AI Overviews)
+# OpenAI / ChatGPT / SearchGPT
 User-agent: GPTBot
 Allow: /
 
@@ -25,14 +36,14 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-# Claude / Anthropic
+# Anthropic / Claude
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-# Perplexity
+# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
 
@@ -40,16 +51,18 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: GoogleOther
-Allow: /
-
 # Meta AI
 User-agent: meta-externalagent
 Allow: /
 
-# Apple
-User-agent: Applebot
+# Cohere
+User-agent: cohere-ai
 Allow: /
 
-# Sitemap
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Sitemap y Host Canónico
 Sitemap: https://mireiafelici.es/sitemap.xml
+Host: mireiafelici.es
