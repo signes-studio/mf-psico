@@ -343,6 +343,117 @@ textarea:focus:not(:focus-visible) {
 }
 
 /* ============================================
+   SECCIÓN EDITORIAL DE LA HOME (SEO ON-PAGE)
+   ============================================ */
+.home-editorial-section {
+    width: 100%;
+    padding: 3vh 4vw 2vh;
+    margin: 1vh 0;
+    box-sizing: border-box;
+}
+
+.home-editorial-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.home-editorial-intro {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 36px auto;
+}
+
+.home-editorial-intro .section-label {
+    display: inline-block;
+    font-family: var(--ff-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.home-editorial-intro h2 {
+    font-family: var(--ff-display);
+    font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+    font-weight: 400;
+    line-height: 1.28;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.home-editorial-intro p {
+    font-size: 0.98rem;
+    color: var(--text-soft);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.home-editorial-intro .home-lead-p {
+    font-size: 1.04rem;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.home-editorial-intro p strong,
+.pillar-card p strong {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.home-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.pillar-card {
+    background: rgba(242, 239, 233, 0.6);
+    border: 1px solid rgba(224, 219, 211, 0.5);
+    border-radius: 6px;
+    padding: 24px 26px;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-card:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+}
+
+.pillar-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.pillar-num {
+    font-family: var(--ff-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+}
+
+.pillar-card h3 {
+    font-family: var(--ff-display);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.pillar-card p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+}
+
+/* ============================================
    CTA FINAL (ELEGANTE Y SUTIL)
    ============================================ */
 .cta-final-section {
@@ -1243,6 +1354,7 @@ textarea:focus:not(:focus-visible) {
    ============================================ */
 @media (max-width: 900px) {
     .grid-containerwide,
+    .home-pillars-grid,
     .process-steps,
     .footer-content-three-cols {
         grid-template-columns: 1fr;

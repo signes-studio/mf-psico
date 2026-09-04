@@ -1,0 +1,59 @@
+# ==============================================================================
+# Mireia Felici Psicología · mireiafelici.es
+# Configuración Apache de Servidor, Redirección 301 HTTPS y Rendimiento SEO
+# ==============================================================================
+
+# Habilitar el motor de reescritura
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 1. Redirección 301 permanente HTTP -> HTTPS y WWW -> non-www
+    # Asegura que todo el tráfico http://mireiafelici.es o http://www.mireiafelici.es
+    # se redirija permanentemente con código 301 a https://mireiafelici.es
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} ^www\.mireiafelici\.es$ [NC]
+    RewriteRule ^(.*)$ https://mireiafelici.es/$1 [L,R=301]
+
+    # 2. Rutas limpias sin extensión .html
+    # Si la petición incluye .html en la URL visible, redirigir 301 a la versión limpia
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.*?)\.html[\s?] [NC]
+    RewriteRule ^ /%1 [R=301,L]
+
+    # Si se solicita una ruta limpia y existe su archivo .html físico, servirlo internamente
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+    RewriteRule ^([^/]+)/?$ $1.html [L]
+</IfModule>
+
+# Página de error 404 personalizada
+ErrorDocument 404 /404.html
+
+# Cabeceras de Seguridad y Referrer Policy
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    # Forzar HSTS (Strict-Transport-Security) en navegadores
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# Compresión Gzip / Deflate para optimizar Core Web Vitals (FCP / LCP)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Caché del navegador para recursos estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
