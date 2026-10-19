@@ -819,58 +819,98 @@ textarea:focus:not(:focus-visible) {
     margin: 0 auto;
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: clamp(40px, 7vw, 80px);
-    padding-bottom: clamp(60px, 8vw, 100px);
+/* ============================================
+   CANALES DE CONTACTO (3 TARJETAS HORIZONTALES)
+   ============================================ */
+.contact-channels {
     border-top: 1px solid var(--border);
-    padding-top: 60px;
-    align-items: start;
+    padding-top: clamp(36px, 5vw, 48px);
+    margin-bottom: clamp(48px, 6vw, 64px);
 }
 
-.contact-info h2 {
-    font-family: var(--ff-display);
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 10px;
+.contact-channels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2.5vw, 24px);
 }
 
-.contact-info > p {
-    font-size: 0.92rem;
-    color: var(--text-soft);
-    margin-bottom: 36px;
-    line-height: 1.8;
+.contact-channel-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: clamp(22px, 3vw, 28px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info-block {
-    margin-bottom: 28px;
+.contact-channel-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(136, 102, 41, 0.08);
 }
 
-.info-block h3 {
+.channel-icon {
+    color: var(--accent);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-channel-card h3 {
     font-family: var(--ff-body);
-    font-size: 0.72rem;
+    font-size: 0.74rem;
     font-weight: 600;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 8px;
 }
 
-.info-block p, .info-block a {
-    font-size: 0.92rem;
+.contact-channel-card p,
+.contact-channel-card a {
+    font-size: 0.94rem;
     color: var(--text);
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
-.info-block a:hover { 
-    color: var(--accent); 
+.contact-channel-card a:hover {
+    color: var(--accent);
+}
+
+.channel-link {
+    font-size: 0.84rem !important;
+    color: var(--accent) !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+    margin-top: auto;
+    padding-top: 8px;
+    transition: color 0.2s ease;
+}
+
+.channel-link:hover {
+    color: var(--accent-dk) !important;
+}
+
+.channel-col-num {
+    font-size: 0.82rem;
+    color: var(--text-soft);
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.contact-social-center {
+    justify-content: center;
+    margin-top: 28px;
 }
 
 .social-links {
     display: flex;
     gap: 12px;
-    margin-top: 32px;
+    margin-top: 28px;
     flex-wrap: wrap;
 }
 
@@ -882,7 +922,7 @@ textarea:focus:not(:focus-visible) {
     text-transform: uppercase;
     color: var(--text-soft);
     border: 1px solid var(--border);
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 999px;
     transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
 }
@@ -896,27 +936,42 @@ textarea:focus:not(:focus-visible) {
 /* ============================================
    ZONA DE RESERVA DE CITAS (GOOGLE CALENDAR)
    ============================================ */
+.calendar-booking-section {
+    margin-bottom: clamp(48px, 6vw, 64px);
+}
+
 .calendar-booking-card {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: clamp(24px, 3.5vw, 36px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border-radius: 12px;
+    padding: clamp(28px, 4vw, 44px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
+}
+
+.calendar-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.calendar-header .section-label {
+    margin-bottom: 8px;
+    display: inline-block;
 }
 
 .calendar-header h2 {
     font-family: var(--ff-display);
-    font-size: 1.5rem;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
     font-weight: 400;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     color: var(--text);
 }
 
 .calendar-header p {
-    font-size: 0.92rem;
+    font-size: 0.96rem;
     color: var(--text-soft);
     line-height: 1.7;
 }
@@ -924,12 +979,13 @@ textarea:focus:not(:focus-visible) {
 .calendar-iframe-wrapper {
     width: 100%;
     height: 720px;
-    min-height: 650px;
-    border-radius: 6px;
+    min-height: 660px;
+    border-radius: 8px;
     overflow: hidden;
     background: var(--bg);
     border: 1px solid var(--border);
     position: relative;
+    overscroll-behavior: contain;
 }
 
 .calendar-iframe-wrapper iframe {
@@ -945,7 +1001,7 @@ textarea:focus:not(:focus-visible) {
     justify-content: space-between;
     gap: 16px;
     flex-wrap: wrap;
-    padding-top: 18px;
+    padding-top: 20px;
     border-top: 1px solid var(--border);
 }
 
@@ -965,26 +1021,9 @@ textarea:focus:not(:focus-visible) {
     align-items: center;
     justify-content: center;
     white-space: nowrap;
-    padding: 10px 22px;
-    font-size: 0.78rem;
+    padding: 12px 28px;
+    font-size: 0.8rem;
     text-decoration: none;
-}
-
-.calendar-extra-contact {
-    font-size: 0.84rem;
-    color: var(--text-soft);
-    line-height: 1.6;
-    margin-top: 2px;
-}
-
-.calendar-extra-contact a {
-    color: var(--accent);
-    font-weight: 500;
-    text-decoration: underline;
-}
-
-.calendar-extra-contact a:hover {
-    color: var(--accent-dk);
 }
 
 /* Formulario accesible */
@@ -1096,9 +1135,10 @@ textarea:focus:not(:focus-visible) {
 .crisis-notice {
     background: rgba(242, 239, 233, 0.7);
     border-left: 3px solid var(--accent);
-    padding: 16px 20px;
+    padding: 18px 24px;
     border-radius: 4px;
-    margin-top: 32px;
+    margin-top: 0;
+    margin-bottom: clamp(60px, 8vw, 100px);
     font-size: 0.85rem;
     line-height: 1.6;
     color: var(--text);
@@ -1514,9 +1554,10 @@ textarea:focus:not(:focus-visible) {
 
     .about-grid,
     .service-section,
-    .contact-grid {
+    .contact-grid,
+    .contact-channels-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 16px;
     }
 
     .service-section.reverse .service-image-ratio { order: 0; }
