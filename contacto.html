@@ -178,16 +178,16 @@
 <main class="container">
     <div class="contact-intro">
         <span class="section-label">Primer paso</span>
-        <h1>Contacto · Hablemos</h1>
-        <p>No hace falta tenerlo todo claro para escribirme. Cuéntame brevemente qué te está pasando y encontramos el mejor momento.</p>
+        <h1>Contacto · Pedir cita</h1>
+        <p>No hace falta tenerlo todo claro para dar el primer paso. Elige fecha y hora directamente en el calendario para tu primera sesión o contáctame si tienes cualquier duda.</p>
     </div>
 
-    <section class="contact-grid" aria-label="Información de contacto y formulario">
+    <section class="contact-grid" aria-label="Información de contacto y reserva de cita">
         
         <!-- Bloque de Información -->
         <div class="contact-info">
             <h2>Información de la consulta</h2>
-            <p>Puedes escribirme por formulario, enviarme un correo electrónico o contactarme de forma ágil por WhatsApp.</p>
+            <p>Puedes reservar tu cita directamente a través del calendario online, enviarme un correo electrónico o contactarme de forma ágil por WhatsApp.</p>
 
             <div class="info-block">
                 <h3>Consulta Presencial</h3>
@@ -231,60 +231,43 @@
             </aside>
         </div>
 
-        <!-- Formulario funcional y accesible con RGPD -->
-        <div>
-            <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                <!-- Reemplazar con access key propia cuando esté disponible -->
-                <input type="hidden" name="access_key" value="00000000-0000-0000-0000-000000000000">
-                <input type="hidden" name="subject" value="Nueva consulta web - Mireia Felici Psicología">
-                <input type="hidden" name="from_name" value="Web Mireia Felici">
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                <div class="form-group">
-                    <label for="nombre">Nombre <span aria-hidden="true" style="color: var(--accent);">*</span></label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+        <!-- Zona de reserva de cita de Google Calendar -->
+        <div class="calendar-booking-section">
+            <div class="calendar-booking-card">
+                <div class="calendar-header">
+                    <h2>Reserva tu primera sesión</h2>
+                    <p>Selecciona a continuación el día y la hora que mejor se adapten a tu horario para tu consulta (presencial en Valencia u online para toda España).</p>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email <span aria-hidden="true" style="color: var(--accent);">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
+                <div class="calendar-iframe-wrapper">
+                    <iframe 
+                        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0N-yloEDRl4NsjerJCOXi95Y7PE0CD2AYT821FQk8xcefTFoOxp-LrCsIfixaWIeGWYpMBmHE4?gv=true" 
+                        title="Calendario para reserva de cita con Mireia Felici"
+                        loading="lazy"
+                        allow="fullscreen">
+                    </iframe>
                 </div>
 
-                <div class="form-group">
-                    <label for="telefono">Teléfono (opcional)</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="600 000 000" autocomplete="tel">
+                <div class="calendar-footer-note">
+                    <div class="calendar-footer-text">
+                        <p><strong>¿Prefieres reservar a pantalla completa?</strong></p>
+                        <p>Puedes abrir directamente la plataforma oficial de citas de Google Calendar.</p>
+                    </div>
+                    <a href="https://calendar.app.google/Rb6xVey4wbDNE3jT8" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-primary calendar-direct-btn"
+                       aria-label="Abrir calendario de citas en Google Calendar (abre en nueva pestaña)">
+                        Abrir en Google Calendar ↗
+                    </a>
                 </div>
 
-                <div class="form-group">
-                    <label for="mensaje">Mensaje <span aria-hidden="true" style="color: var(--accent);">*</span></label>
-                    <textarea id="mensaje" name="mensaje" placeholder="Cuéntame brevemente qué te está pasando o qué tipo de ayuda buscas…" rows="5" required></textarea>
-                </div>
-
-                <!-- Checkbox RGPD -->
-                <div class="form-checkbox-group">
-                    <input type="checkbox" id="rgpd" name="rgpd" required>
-                    <label for="rgpd">He leído y acepto la <a href="/politica-privacidad" target="_blank" rel="noopener noreferrer">política de privacidad</a> para el tratamiento de mis datos de contacto. <span aria-hidden="true" style="color: var(--accent);">*</span></label>
-                </div>
-
-                <button type="submit" class="btn-primary" id="btn-submit">Enviar mensaje</button>
-                
-                <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
-
-                <p style="font-size: 0.82rem; color: var(--text-soft); margin-top: 8px;">
-                    También puedes escribirme directamente por 
-                    <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20visto%20tu%20web%20y%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20para%20una%20primera%20cita." target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 500;">WhatsApp</a> 
-                    si lo prefieres.
+                <p class="calendar-extra-contact">
+                    ¿Tienes alguna pregunta previa o prefieres consultar otros horarios? Escríbeme por 
+                    <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20visto%20tu%20web%20y%20me%20gustar%C3%ADa%20consultar%20disponibilidad%20para%20una%20cita." target="_blank" rel="noopener noreferrer">WhatsApp</a> 
+                    o por correo a <a href="mailto:hola@mireiafelici.es">hola@mireiafelici.es</a>.
                 </p>
-
-                <!-- Primera capa informativa RGPD -->
-                <div class="legal-first-layer">
-                    <p><strong>Información básica sobre protección de datos:</strong><br>
-                    <strong>Responsable:</strong> Mireia Felici Peris (Colegiada CV17270).<br>
-                    <strong>Finalidad:</strong> Gestionar tu consulta terapéutica y agendar cita.<br>
-                    <strong>Legitimación:</strong> Tu consentimiento expreso al enviar el formulario.<br>
-                    <strong>Derechos:</strong> Acceso, rectificación y supresión enviando un email a hola@mireiafelici.es.</p>
-                </div>
-            </form>
+            </div>
         </div>
 
     </section>
