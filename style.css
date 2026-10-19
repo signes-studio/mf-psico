@@ -801,179 +801,40 @@ textarea:focus:not(:focus-visible) {
    CONTACTO & FORMULARIO CLÍNICO
    ============================================ */
 .contact-intro {
-    padding: clamp(60px, 8vw, 100px) 0 clamp(40px, 5vw, 60px);
+    padding: clamp(28px, 4.5vw, 48px) 0 clamp(16px, 2vw, 24px);
     text-align: center;
 }
 
 .contact-intro h1 {
     font-family: var(--ff-display);
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-size: clamp(2rem, 3.4vw, 2.7rem);
     font-weight: 400;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 }
 
 .contact-intro p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-soft);
-    max-width: 500px;
+    max-width: 580px;
     margin: 0 auto;
 }
 
 /* ============================================
-   CANALES DE CONTACTO (3 TARJETAS HORIZONTALES)
-   ============================================ */
-.contact-channels {
-    border-top: 1px solid var(--border);
-    padding-top: clamp(36px, 5vw, 48px);
-    margin-bottom: clamp(48px, 6vw, 64px);
-}
-
-.contact-channels-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(16px, 2.5vw, 24px);
-}
-
-.contact-channel-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: clamp(22px, 3vw, 28px);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
-    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-channel-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(136, 102, 41, 0.08);
-}
-
-.channel-icon {
-    color: var(--accent);
-    margin-bottom: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-channel-card h3 {
-    font-family: var(--ff-body);
-    font-size: 0.74rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-}
-
-.contact-channel-card p,
-.contact-channel-card a {
-    font-size: 0.94rem;
-    color: var(--text);
-    line-height: 1.6;
-}
-
-.contact-channel-card a:hover {
-    color: var(--accent);
-}
-
-.channel-link {
-    font-size: 0.84rem !important;
-    color: var(--accent) !important;
-    text-decoration: underline !important;
-    font-weight: 500;
-    margin-top: auto;
-    padding-top: 8px;
-    transition: color 0.2s ease;
-}
-
-.channel-link:hover {
-    color: var(--accent-dk) !important;
-}
-
-.channel-col-num {
-    font-size: 0.82rem;
-    color: var(--text-soft);
-    margin-top: auto;
-    padding-top: 8px;
-}
-
-.contact-social-center {
-    justify-content: center;
-    margin-top: 28px;
-}
-
-.social-links {
-    display: flex;
-    gap: 12px;
-    margin-top: 28px;
-    flex-wrap: wrap;
-}
-
-.social-link {
-    font-family: var(--ff-body);
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-soft);
-    border: 1px solid var(--border);
-    padding: 8px 18px;
-    border-radius: 999px;
-    transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
-}
-
-.social-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: var(--bg-alt);
-}
-
-/* ============================================
-   ZONA DE RESERVA DE CITAS (GOOGLE CALENDAR)
+   ZONA DE RESERVA DE CITAS (ARRIBA - ANCHO COMPLETO)
    ============================================ */
 .calendar-booking-section {
-    margin-bottom: clamp(48px, 6vw, 64px);
+    margin-bottom: clamp(40px, 5vw, 56px);
 }
 
 .calendar-booking-card {
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: clamp(28px, 4vw, 44px);
+    padding: clamp(20px, 3vw, 32px);
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
-    gap: 22px;
-}
-
-.calendar-header {
-    text-align: center;
-    max-width: 680px;
-    margin: 0 auto;
-}
-
-.calendar-header .section-label {
-    margin-bottom: 8px;
-    display: inline-block;
-}
-
-.calendar-header h2 {
-    font-family: var(--ff-display);
-    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-    font-weight: 400;
-    margin-bottom: 10px;
-    color: var(--text);
-}
-
-.calendar-header p {
-    font-size: 0.96rem;
-    color: var(--text-soft);
-    line-height: 1.7;
+    gap: 16px;
 }
 
 .calendar-iframe-wrapper {
@@ -1001,7 +862,7 @@ textarea:focus:not(:focus-visible) {
     justify-content: space-between;
     gap: 16px;
     flex-wrap: wrap;
-    padding-top: 20px;
+    padding-top: 16px;
     border-top: 1px solid var(--border);
 }
 
@@ -1021,9 +882,155 @@ textarea:focus:not(:focus-visible) {
     align-items: center;
     justify-content: center;
     white-space: nowrap;
-    padding: 12px 28px;
+    padding: 10px 24px;
     font-size: 0.8rem;
     text-decoration: none;
+}
+
+/* ============================================
+   FRANJA HORIZONTAL ÚNICA DE CONTACTO (DEBAJO)
+   ============================================ */
+.contact-strip-section {
+    border-top: 1px solid var(--border);
+    padding-top: clamp(36px, 5vw, 48px);
+    margin-bottom: clamp(40px, 5vw, 56px);
+}
+
+.contact-strip-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto clamp(20px, 3vw, 28px);
+}
+
+.contact-strip-header .section-label {
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+.contact-strip-header h2 {
+    font-family: var(--ff-display);
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+    font-weight: 400;
+    margin-bottom: 6px;
+    color: var(--text);
+}
+
+.contact-strip-header p {
+    font-size: 0.94rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+}
+
+.contact-strip-bar {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: clamp(22px, 3vw, 32px);
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: clamp(16px, 2.5vw, 32px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.strip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+}
+
+.strip-icon {
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.strip-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.strip-label {
+    font-family: var(--ff-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.strip-info address,
+.strip-info p,
+.strip-info .strip-main {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.strip-info a.strip-main:hover {
+    color: var(--accent);
+}
+
+.strip-link {
+    font-size: 0.82rem;
+    color: var(--accent);
+    text-decoration: underline;
+    font-weight: 500;
+    margin-top: 2px;
+    transition: color 0.2s ease;
+}
+
+.strip-link:hover {
+    color: var(--accent-dk);
+}
+
+.strip-sub {
+    font-size: 0.82rem;
+    color: var(--text-soft);
+    margin-top: 2px;
+}
+
+.strip-divider {
+    width: 1px;
+    background: var(--border);
+    align-self: stretch;
+    flex-shrink: 0;
+}
+
+.contact-social-center {
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    font-family: var(--ff-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    border: 1px solid var(--border);
+    padding: 8px 18px;
+    border-radius: 999px;
+    transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.social-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--bg-alt);
 }
 
 /* Formulario accesible */
@@ -1554,10 +1561,19 @@ textarea:focus:not(:focus-visible) {
 
     .about-grid,
     .service-section,
-    .contact-grid,
-    .contact-channels-grid {
+    .contact-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 24px;
+    }
+
+    .contact-strip-bar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .strip-divider {
+        width: 100%;
+        height: 1px;
     }
 
     .service-section.reverse .service-image-ratio { order: 0; }
