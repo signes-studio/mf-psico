@@ -99,7 +99,59 @@
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto1.webp</image:loc>
       <image:title>Mireia Felici - Psicóloga en Valencia Centro</image:title>
-      <image:caption>Consulta presencial en Calle San Vicente Mártir 85 Valencia</image:caption>
+      <image:caption>Consulta presencial en Carrer de Sant Vicent Màrtir 85 Valencia</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Landing Page Especialidad: Ansiedad y Estrés -->
+  <url>
+    <loc>https://mireiafelici.es/terapia-ansiedad-valencia</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto2.webp</image:loc>
+      <image:title>Terapia de Ansiedad y Estrés en Valencia - Mireia Felici</image:title>
+      <image:caption>Tratamiento de ansiedad y pánico en Valencia centro</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Landing Page Especialidad: Terapia de Pareja -->
+  <url>
+    <loc>https://mireiafelici.es/terapia-de-pareja-valencia</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto3.webp</image:loc>
+      <image:title>Terapia de Pareja en Valencia - Mireia Felici</image:title>
+      <image:caption>Sesiones de pareja en Valencia centro</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Landing Page Especialidad: Autoestima y Gestión Emocional -->
+  <url>
+    <loc>https://mireiafelici.es/terapia-autoestima-valencia</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto4.webp</image:loc>
+      <image:title>Terapia de Autoestima en Valencia - Mireia Felici</image:title>
+      <image:caption>Fortalecimiento de autoestima y asertividad en Valencia</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Landing Page Especialidad: Duelo y Procesos de Cambio -->
+  <url>
+    <loc>https://mireiafelici.es/terapia-duelo-valencia</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto1.webp</image:loc>
+      <image:title>Terapia de Duelo y Pérdidas en Valencia - Mireia Felici</image:title>
+      <image:caption>Acompañamiento clínico en procesos de duelo en Valencia</image:caption>
     </image:image>
   </url>
 
