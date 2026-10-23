@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Gestión del consentimiento de cookies (RGPD / LOPD-GDD)
+ * Gestión del consentimiento de cookies (RGPD / LOPD-GDD / Consent Mode v2)
  */
 function initCookieConsent() {
     const banner = document.getElementById("cookie-banner");
@@ -56,7 +56,7 @@ function initCookieConsent() {
 
     const consent = localStorage.getItem("cookie-consent");
     if (consent === "accepted") {
-        cargarStatcounter();
+        actualizarConsentimiento("accepted");
     } else if (consent === null) {
         setTimeout(() => {
             banner.classList.add("show");
@@ -68,14 +68,34 @@ function initCookieConsent() {
         localStorage.setItem("cookie-consent", "accepted");
         banner.classList.remove("show");
         banner.setAttribute("aria-hidden", "true");
-        cargarStatcounter();
+        actualizarConsentimiento("accepted");
     });
 
     btnReject.addEventListener("click", () => {
         localStorage.setItem("cookie-consent", "rejected");
         banner.classList.remove("show");
         banner.setAttribute("aria-hidden", "true");
+        actualizarConsentimiento("rejected");
     });
+}
+
+/**
+ * Actualiza el estado de Google Consent Mode v2 y servicios analíticos
+ */
+function actualizarConsentimiento(estado) {
+    if (typeof gtag === "function") {
+        const grantedOrDenied = estado === "accepted" ? "granted" : "denied";
+        gtag("consent", "update", {
+            "analytics_storage": grantedOrDenied,
+            "ad_storage": grantedOrDenied,
+            "ad_user_data": grantedOrDenied,
+            "ad_personalization": grantedOrDenied
+        });
+    }
+
+    if (estado === "accepted") {
+        cargarStatcounter();
+    }
 }
 
 /**

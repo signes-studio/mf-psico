@@ -4,6 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Consent Mode v2 & Google Analytics 4 (GA4) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        var consentChoice = localStorage.getItem('cookie-consent');
+        var initialConsent = consentChoice === 'accepted' ? 'granted' : 'denied';
+
+        gtag('consent', 'default', {
+            'analytics_storage': initialConsent,
+            'ad_storage': initialConsent,
+            'ad_user_data': initialConsent,
+            'ad_personalization': initialConsent,
+            'wait_for_update': 500
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T9QL4373');</script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5LLV906RW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F5LLV906RW');
+    </script>
+
     <!-- SEO & Metadatos específicos: Terapia de Pareja Valencia -->
     <title>Terapia de Pareja en Valencia | Psicóloga Especializada</title>
     <meta name="description" content="Espacio neutral en Valencia centro para resolver crisis, mejorar la comunicación y reconstruir el vínculo. Sesiones de 75 min. Pide tu cita.">
@@ -121,6 +152,10 @@
     </style>
 </head>
 <body class="bg-cream text-charcoal font-body antialiased selection:bg-bronze selection:text-white">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9QL4373"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- CABECERA SIN MENÚ TRADICIONAL -->
     <header class="w-full bg-cream/90 backdrop-blur-md border-b border-borderline sticky top-0 z-40 transition-all">
@@ -573,7 +608,7 @@
     </footer>
 
     <!-- BOTÓN FLOTANTE PERSISTENTE DE WHATSAPP -->
-    <aside class="fixed bottom-6 right-6 z-50">
+    <aside class="fixed bottom-6 right-6 z-40">
         <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20nos%20gustar%C3%ADa%20consultar%20dudas%20para%20una%20sesi%C3%B3n%20de%20pareja%20en%20Valencia." 
            target="_blank" 
            rel="noopener noreferrer"
@@ -588,13 +623,85 @@
         </a>
     </aside>
 
+    <!-- BANNER DE COOKIES RGPD (Consent Mode v2) -->
+    <div id="cookie-banner" 
+         role="dialog" 
+         aria-label="Consentimiento de cookies" 
+         aria-hidden="true" 
+         class="fixed bottom-6 left-6 right-6 sm:right-auto sm:max-w-md bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-borderline shadow-hover-card z-50 transition-all duration-300 translate-y-4 opacity-0 pointer-events-none [&.show]:translate-y-0 [&.show]:opacity-100 [&.show]:pointer-events-auto">
+        <div class="text-xs text-charcoal-soft leading-relaxed mb-4">
+            <p>
+                Utilizamos cookies analíticas para medir de forma anónima el tráfico de la web y mejorar tu experiencia. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="/politica-privacidad" class="underline text-bronze hover:text-bronze-dark">política de privacidad</a>.
+            </p>
+        </div>
+        <div class="flex items-center gap-3">
+            <button id="accept-cookies" 
+                    type="button" 
+                    class="flex-1 py-2.5 px-4 rounded-full bg-charcoal hover:bg-bronze text-white text-xs font-semibold uppercase tracking-wider transition-colors text-center cursor-pointer">
+                Aceptar
+            </button>
+            <button id="reject-cookies" 
+                    type="button" 
+                    class="py-2.5 px-4 rounded-full bg-transparent hover:bg-cream-alt text-charcoal-soft hover:text-charcoal border border-borderline text-xs font-semibold uppercase tracking-wider transition-colors text-center cursor-pointer">
+                Rechazar
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE MEDICIÓN GTM Y CONSENTIMIENTO DE COOKIES -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             window.dataLayer = window.dataLayer || [];
+
+            // 1. Gestión del banner de cookies y Consent Mode v2
+            const banner = document.getElementById('cookie-banner');
+            const btnAccept = document.getElementById('accept-cookies');
+            const btnReject = document.getElementById('reject-cookies');
+            const consent = localStorage.getItem('cookie-consent');
+
+            if (banner && btnAccept && btnReject) {
+                if (consent === null) {
+                    setTimeout(() => {
+                        banner.classList.add('show');
+                        banner.setAttribute('aria-hidden', 'false');
+                    }, 1000);
+                }
+
+                btnAccept.addEventListener('click', () => {
+                    localStorage.setItem('cookie-consent', 'accepted');
+                    banner.classList.remove('show');
+                    banner.setAttribute('aria-hidden', 'true');
+                    if (typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                            'analytics_storage': 'granted',
+                            'ad_storage': 'granted',
+                            'ad_user_data': 'granted',
+                            'ad_personalization': 'granted'
+                        });
+                    }
+                });
+
+                btnReject.addEventListener('click', () => {
+                    localStorage.setItem('cookie-consent', 'rejected');
+                    banner.classList.remove('show');
+                    banner.setAttribute('aria-hidden', 'true');
+                    if (typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                            'analytics_storage': 'denied',
+                            'ad_storage': 'denied',
+                            'ad_user_data': 'denied',
+                            'ad_personalization': 'denied'
+                        });
+                    }
+                });
+            }
+
+            // 2. Medición de clics en llamadas a la acción (Event Tracking)
             document.querySelectorAll('[data-gtm]').forEach(element => {
                 element.addEventListener('click', () => {
+                    const eventName = element.getAttribute('data-gtm');
                     window.dataLayer.push({
-                        event: element.getAttribute('data-gtm'),
+                        event: eventName,
                         ctaText: element.textContent.trim(),
                         destination: element.getAttribute('href') || '',
                         pageLocation: window.location.pathname,
