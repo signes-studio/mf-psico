@@ -90,4 +90,17 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Landing Page Presencial Valencia Centro -->
+  <url>
+    <loc>https://mireiafelici.es/psicologa-valencia</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mireiafelici.es/img/foto1.webp</image:loc>
+      <image:title>Mireia Felici - Psicóloga en Valencia Centro</image:title>
+      <image:caption>Consulta presencial en Calle San Vicente Mártir 85 Valencia</image:caption>
+    </image:image>
+  </url>
+
 </urlset>
