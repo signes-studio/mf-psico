@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="ca" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Comprobació de preferència d'idioma -->
+    <script>
+        (function() {
+            try {
+                var pref = localStorage.getItem('mf_lang');
+                if (pref === 'es') {
+                    var p = window.location.pathname;
+                    var target = p.replace(/^\/va(\/|$)/, '/');
+                    window.location.replace(target + window.location.search + window.location.hash);
+                }
+            } catch(e) {}
+        })();
+    </script>
+
+
+    <!-- Google Consent Mode v2 & Google Analytics 4 (GA4) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        var consentChoice = localStorage.getItem('cookie-consent');
+        var initialConsent = consentChoice === 'accepted' ? 'granted' : 'denied';
+
+        gtag('consent', 'default', {
+            'analytics_storage': initialConsent,
+            'ad_storage': initialConsent,
+            'ad_user_data': initialConsent,
+            'ad_personalization': initialConsent,
+            'wait_for_update': 500
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T9QL4373');</script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5LLV906RW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F5LLV906RW');
+    </script>
+
+    <!-- SEO & Metadatos específicos: Terapia Autoestima Valencia -->
+    <title>Teràpia d'Autoestima a València | Mireia Felici CV17270</title>
+    <meta name="description" content="Aprén a posar límits, frenar l'autoexigència i millorar la relació amb tu mateixa/mateix. Teràpia presencial a València centre i online.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mireiafelici.es/va/terapia-autoestima-valencia">
+    <link rel="alternate" hreflang="es" href="https://mireiafelici.es/terapia-autoestima-valencia">
+    <link rel="alternate" hreflang="ca" href="https://mireiafelici.es/va/terapia-autoestima-valencia">
+    <link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/terapia-autoestima-valencia">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Teràpia d'Autoestima a València | Mireia Felici CV17270">
+    <meta property="og:description" content="Aprén a posar límits sense culpa i enforteix el teu autoconcepte amb teràpia psicològica sanitària a València centre (Sant Vicent Màrtir, 85).">
+    <meta property="og:url" content="https://mireiafelici.es/va/terapia-autoestima-valencia">
+    <meta property="og:image" content="https://mireiafelici.es/img/foto4.webp">
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:site_name" content="Mireia Felici Psicología">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+
+    <!-- Google Fonts: Playfair Display + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN Oficial) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#faf9f6',
+                        'cream-alt': '#f2efe9',
+                        bronze: {
+                            DEFAULT: '#886629',
+                            dark: '#6c511f',
+                            light: '#a8833d',
+                            surface: '#f9f5ed'
+                        },
+                        charcoal: {
+                            DEFAULT: '#1e1e1e',
+                            soft: '#595959',
+                            muted: '#767676'
+                        },
+                        borderline: '#dfd9cf',
+                        whatsapp: '#25D366',
+                        'whatsapp-dark': '#128C7E'
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'Georgia', 'serif'],
+                        body: ['"DM Sans"', 'system-ui', '-apple-system', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'soft-card': '0 4px 20px -2px rgba(30, 30, 30, 0.05)',
+                        'hover-card': '0 12px 30px -4px rgba(136, 102, 41, 0.12)',
+                        'float-btn': '0 8px 24px -2px rgba(37, 211, 102, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Schema.org estructurado para Terapia de Autoestima en Valencia -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Psychologist", "MedicalBusiness", "LocalBusiness"],
+      "@id": "https://mireiafelici.es/#organization",
+      "name": "Mireia Felici · Psicóloga Valencia",
+      "legalName": "Mireia Felici Peris",
+      "url": "https://mireiafelici.es/terapia-autoestima-valencia",
+      "image": "https://mireiafelici.es/img/foto4.webp",
+      "telephone": "+34614172009",
+      "email": "hola@mireiafelici.es",
+      "priceRange": "65€",
+      "paymentAccepted": "Cash, Bank Transfer",
+      "currenciesAccepted": "EUR",
+      "isAcceptingNewPatients": true,
+      "medicalSpecialty": "Psychiatric",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carrer de Sant Vicent Màrtir, 85",
+        "addressLocality": "València",
+        "postalCode": "46007",
+        "addressRegion": "Valencia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.4671135,
+        "longitude": -0.3804634
+      },
+      "hasMap": "https://maps.app.goo.gl/LkHjTh6MvpqpQiar5",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        details[open] summary svg {
+            transform: rotate(180deg);
+        }
+        :focus-visible {
+            outline: 2px solid #886629;
+            outline-offset: 3px;
+        }
+        .calendar-embed-box {
+            overscroll-behavior: contain;
+        }
+    </style>
+</head>
+<body class="bg-cream text-charcoal font-body antialiased selection:bg-bronze selection:text-white">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9QL4373"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- CABECERA SIN MENÚ TRADICIONAL -->
+    <header class="w-full bg-cream/90 backdrop-blur-md border-b border-borderline sticky top-0 z-40 transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <div>
+                <a href="/psicologa-valencia" class="group block focus-visible:outline-none" aria-label="Mireia Felici - Inicio">
+                    <span class="font-display text-xl sm:text-2xl font-semibold tracking-tight text-charcoal group-hover:text-bronze transition-colors">
+                        Mireia Felici
+                    </span>
+                    <span class="block text-xs uppercase tracking-widest text-charcoal-muted font-medium">
+                        Psicóloga Sanitaria · Autoestima y Asertividad
+                    </span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <!-- Selector de idioma -->
+                <div class="inline-flex items-center text-xs font-semibold rounded-full border border-borderline bg-white px-2.5 py-1 text-charcoal shadow-sm mr-1">
+                    <a href="/terapia-autoestima-valencia" class="lang-btn text-charcoal-soft hover:text-bronze px-1" data-lang="es" aria-label="Castellà">ES</a>
+                    <span class="text-charcoal-muted px-0.5" aria-hidden="true">/</span>
+                    <a href="/va/terapia-autoestima-valencia" class="lang-btn text-bronze font-bold hover:text-bronze-dark px-1" data-lang="va" aria-label="Valencià">VA</a>
+                </div>
+                
+                <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20me%20gustar%C3%ADa%20consultar%20dudas%20para%20terapia%20de%20autoestima%20en%20Valencia." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   data-gtm="cta-header-whatsapp"
+                   class="hidden sm:inline-flex items-center text-xs font-semibold text-charcoal-soft hover:text-bronze transition-colors py-2 px-3 border border-borderline rounded-full bg-white hover:bg-cream-alt">
+                    <svg class="w-4 h-4 mr-1.5 text-whatsapp" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.396A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.062c-1.614 0-3.12-.465-4.401-1.273l-.316-.197-2.97.832.846-2.898-.205-.327A8.04 8.04 0 013.938 12c0-4.446 3.616-8.062 8.062-8.062s8.062 3.616 8.062 8.062-3.616 8.062-8.062 8.062z"/>
+                    </svg>
+                    <span>Dudas por WhatsApp</span>
+                </a>
+
+                <a href="#reservar" 
+                   data-gtm="cta-header-agenda"
+                   class="inline-flex items-center text-xs font-semibold uppercase tracking-wider bg-bronze hover:bg-bronze-dark text-white py-2 px-4 rounded-full transition-colors shadow-sm">
+                    Veure agenda
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden border-b border-borderline">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 flex flex-col items-start text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream-alt border border-borderline text-bronze-dark text-xs sm:text-sm font-medium mb-6">
+                            <span class="w-2 h-2 rounded-full bg-bronze animate-pulse" aria-hidden="true"></span>
+                            Consulta Sanitaria en Valencia Centro · Col. CV17270
+                        </div>
+
+                        <h1 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-charcoal leading-[1.15] mb-6 font-normal">
+                            Aprende a <span class="italic font-normal text-bronze">ponerte límites</span> y sanar la relación contigo mismo/a.
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-charcoal-soft leading-relaxed max-w-2xl mb-8">
+                            Supera la autoexigencia destructiva, el miedo a decepcionar y la complacencia hacia los demás. Terapia presencial en <strong class="text-charcoal font-semibold">Carrer de Sant Vicent Màrtir, 85</strong> y online.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10">
+                            <a href="#reservar" 
+                               data-gtm="cta-hero-agenda"
+                               class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-bronze hover:bg-bronze-dark text-white font-semibold text-sm uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg text-center">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-width="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="8" y1="2" x2="8" y2="6" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="3" y1="10" x2="21" y2="10" stroke-width="2"/>
+                                </svg>
+                                Iniciar terapia
+                            </a>
+
+                            <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20me%20gustar%C3%ADa%20consultar%20dudas%20para%20terapia%20de%20autoestima%20en%20Valencia." 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               data-gtm="cta-hero-whatsapp"
+                               class="inline-flex items-center justify-center px-7 py-4 rounded-full bg-white hover:bg-cream-alt text-charcoal border border-borderline font-medium text-sm transition-all duration-200 text-center shadow-soft-card hover:border-bronze">
+                                <svg class="w-5 h-5 mr-2 text-whatsapp" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
+                                    <path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.396A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.062c-1.614 0-3.12-.465-4.401-1.273l-.316-.197-2.97.832.846-2.898-.205-.327A8.04 8.04 0 013.938 12c0-4.446 3.616-8.062 8.062-8.062s8.062 3.616 8.062 8.062-3.616 8.062-8.062 8.062z"/>
+                                </svg>
+                                WhatsApp
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-borderline w-full text-xs text-charcoal-soft">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-bronze flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span>Límites sin culpa</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-bronze flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                                <span>Espacio confidencial</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-bronze flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                <span>Base científica</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 relative flex justify-center">
+                        <div class="relative w-full max-w-sm sm:max-w-md">
+                            <div class="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-bronze/20 to-cream-alt transform -rotate-1" aria-hidden="true"></div>
+                            <div class="relative rounded-xl overflow-hidden bg-white border border-borderline shadow-soft-card">
+                                <img src="/img/foto4.webp" 
+                                     alt="Mireia Felici, especialista en autoestima y crecimiento personal en Valencia" 
+                                     width="600" 
+                                     height="750" 
+                                     class="w-full h-auto object-cover object-center"
+                                     fetchpriority="high">
+                                <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-3.5 rounded-lg border border-borderline shadow-sm">
+                                    <p class="font-display text-sm font-medium text-charcoal">Mireia Felici Peris</p>
+                                    <p class="text-xs text-charcoal-soft">Especialista en Autoestima y Vínculos Afectivos · CV17270</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. IDENTIFICAR PATRONES -->
+        <section class="py-16 md:py-24 border-b border-borderline">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-xs uppercase tracking-widest text-bronze font-semibold">El crítico interno</span>
+                    <h2 class="font-display text-2xl sm:text-3xl md:text-4xl text-charcoal mt-2 mb-4">
+                        Cómo se desgasta la relación contigo mismo/a
+                    </h2>
+                    <p class="text-charcoal-soft text-base leading-relaxed">
+                        Tener dificultades de autoestima no significa únicamente sentirse inseguro/a; suele traducirse en complacencia constante, miedo a la soledad y una autoexigencia implacable.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-2xl border border-borderline shadow-soft-card">
+                        <div class="w-10 h-10 rounded-lg bg-bronze/10 text-bronze flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                        </div>
+                        <h3 class="font-display text-lg text-charcoal mb-2">Miedo a Poner Límites</h3>
+                        <p class="text-xs text-charcoal-soft leading-relaxed">
+                            Incapacidad para decir «no» a familiares, amigos o compañeros de trabajo por temor a que se enfaden o dejen de quererte.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl border border-borderline shadow-soft-card">
+                        <div class="w-10 h-10 rounded-lg bg-bronze/10 text-bronze flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                        </div>
+                        <h3 class="font-display text-lg text-charcoal mb-2">Dependencia Emocional</h3>
+                        <p class="text-xs text-charcoal-soft leading-relaxed">
+                            Hacer depender toda tu estabilidad del estado de ánimo de otra persona, tolerando dinámicas desequilibradas por pánico al abandono.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl border border-borderline shadow-soft-card">
+                        <div class="w-10 h-10 rounded-lg bg-bronze/10 text-bronze flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <h3 class="font-display text-lg text-charcoal mb-2">Síndrome del Impostor</h3>
+                        <p class="text-xs text-charcoal-soft leading-relaxed">
+                            Sentir que tus logros son fruto de la casualidad y vivir con miedo constante a que descubran que «no eres suficiente».
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ENFOQUE CLÍNICO -->
+        <section class="py-16 md:py-24 bg-cream-alt/50 border-b border-borderline">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-xs uppercase tracking-widest text-bronze font-semibold">Transformación interior</span>
+                    <h2 class="font-display text-2xl sm:text-3xl md:text-4xl text-charcoal mt-2 mb-4">
+                        De la complacencia externa al respeto propio
+                    </h2>
+                    <p class="text-charcoal-soft text-base">
+                        En consulta no practicamos el positivismo forzado; te dotamos de herramientas clínicas para reprogramar tu diálogo interno y relacionarte con seguridad.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-xl border border-borderline flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-full bg-bronze text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="font-display text-lg text-charcoal font-medium">Desactivar el Crítico Interno Hostil</h3>
+                            <p class="text-sm text-charcoal-soft mt-1 leading-relaxed">
+                                Identificamos de dónde proceden las voces de exigencia y aprendemos a sustituir el autocastigo por un diálogo interno compasivo, firme y realista.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-borderline flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-full bg-bronze text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="font-display text-lg text-charcoal font-medium">Entrenamiento Asertivo en Límites</h3>
+                            <p class="text-sm text-charcoal-soft mt-1 leading-relaxed">
+                                Practicamos cómo decir «no», cómo pedir cambios de conducta a terceras personas y cómo tolerar la culpa inicial sin dar marcha atrás.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-borderline flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-full bg-bronze text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="font-display text-lg text-charcoal font-medium">Autonomía y Desactivación de la Dependencia</h3>
+                            <p class="text-sm text-charcoal-soft mt-1 leading-relaxed">
+                                Reconstruimos tus valores, tus aficiones y tus espacios propios para que tus relaciones se elijan desde la plenitud y nunca desde la necesidad.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TARIFAS Y UBICACIÓN -->
+        <section class="py-16 md:py-24 border-b border-borderline">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6">
+                
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-xs uppercase tracking-widest text-bronze font-semibold">Condiciones prácticas</span>
+                    <h2 class="font-display text-2xl sm:text-3xl md:text-4xl text-charcoal mt-2 mb-4">
+                        Tarifas y ubicación en Valencia Centro
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white rounded-2xl p-8 border-2 border-bronze shadow-soft-card flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs uppercase tracking-wider text-bronze font-bold">Sesión Individual</span>
+                            <h3 class="font-display text-2xl text-charcoal mt-1 mb-4">Terapia de Autoestima y Asertividad</h3>
+                            <div class="flex items-baseline gap-2 mb-6 pb-6 border-b border-borderline">
+                                <span class="font-display text-4xl font-semibold text-charcoal">65 €</span>
+                                <span class="text-sm text-charcoal-soft">/ sesión de 60 minutos</span>
+                            </div>
+                            <ul class="text-xs text-charcoal-soft space-y-2.5">
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-bronze flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span><strong>Pago al finalizar cada sesión</strong> (transferencia o efectivo).</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-bronze flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Atención individualizada en Carrer de Sant Vicent Màrtir, 85.</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-bronze flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Ejercicios prácticos entre sesiones para consolidar avances.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 flex gap-3">
+                            <a href="#reservar" class="flex-1 py-3 px-5 rounded-full bg-bronze hover:bg-bronze-dark text-white text-xs uppercase tracking-wider font-semibold transition-colors text-center">
+                                Reservar cita
+                            </a>
+                            <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20me%20gustar%C3%ADa%20consultar%20dudas%20para%20terapia%20de%20autoestima." target="_blank" rel="noopener noreferrer" class="py-3 px-5 rounded-full bg-white hover:bg-cream-alt border border-borderline text-charcoal text-xs font-semibold transition-colors text-center">
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-8 border border-borderline shadow-soft-card flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs uppercase tracking-wider text-bronze font-bold">Ubicación</span>
+                            <h3 class="font-display text-2xl text-charcoal mt-1 mb-4">Consulta en Valencia Centro</h3>
+                            <address class="not-italic text-sm text-charcoal mb-4">
+                                <p class="font-semibold text-base">Carrer de Sant Vicent Màrtir, 85</p>
+                                <p class="text-charcoal-soft">46007 Valencia (Junto a Plaza España)</p>
+                            </address>
+                            <div class="space-y-3 text-xs text-charcoal-soft">
+                                <p><strong>Metro:</strong> Plaza España (L1, L2) a 2 min · Xàtiva (L3, L5, L9) a 4 min.</p>
+                                <p><strong>Tren:</strong> Estació del Nord a 5 min · Joaquín Sorolla a 8 min.</p>
+                                <p><strong>EMT:</strong> Líneas 10, 27, 64, 67, 70, 71, 72, 93.</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-borderline">
+                            <a href="https://maps.app.goo.gl/LkHjTh6MvpqpQiar5" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               data-gtm="map-directions-click"
+                               class="inline-flex items-center text-xs font-semibold text-bronze hover:text-bronze-dark uppercase tracking-wider underline">
+                                Abrir en Google Maps (Cómo llegar) →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="bg-white rounded-2xl border border-borderline overflow-hidden shadow-soft-card min-h-[350px]">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.1!2d-0.3804634!3d39.4671135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604facf27ff87b%3A0x27d5681cd0b761c6!2sMireia%20Felici%20%C2%B7%20Psic%C3%B3loga%20Valencia!5e0!3m2!1ses!2ses!4v1" 
+                        title="Mapa de Google Maps de la consulta de psicología en Valencia"
+                        class="w-full h-[360px] border-0"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. PREGUNTAS FRECUENTES -->
+        <section class="py-16 md:py-24 border-b border-borderline">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs uppercase tracking-widest text-bronze font-semibold">Dudas habituales</span>
+                    <h2 class="font-display text-2xl sm:text-3xl md:text-4xl text-charcoal mt-2 mb-4">
+                        Preguntas frecuentes sobre la terapia de autoestima
+                    </h2>
+                </div>
+
+                <div class="space-y-4">
+                    <details name="faq-group" class="group bg-white rounded-xl border border-borderline p-5 sm:p-6 transition-all open:shadow-soft-card" open>
+                        <summary class="flex justify-between items-center cursor-pointer list-none font-display text-lg text-charcoal font-medium">
+                            <span>¿Poner límites me convertirá en una persona egoísta?</span>
+                            <span class="ml-4 flex-shrink-0 text-bronze">
+                                <svg class="w-5 h-5 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </span>
+                        </summary>
+                        <div class="mt-4 pt-4 border-t border-borderline/60 text-sm text-charcoal-soft leading-relaxed">
+                            <p>No. La asertividad es la capacidad de expresar tus derechos sin agredir a los demás. Cuidar de tu bienestar no perjudica a quien te quiere sanamente; solo incomoda a quien se beneficiaba de tu incapacidad para decir que no.</p>
+                        </div>
+                    </details>
+
+                    <details name="faq-group" class="group bg-white rounded-xl border border-borderline p-5 sm:p-6 transition-all open:shadow-soft-card">
+                        <summary class="flex justify-between items-center cursor-pointer list-none font-display text-lg text-charcoal font-medium">
+                            <span>¿Por qué caigo siempre en relaciones de dependencia afectiva?</span>
+                            <span class="ml-4 flex-shrink-0 text-bronze">
+                                <svg class="w-5 h-5 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </span>
+                        </summary>
+                        <div class="mt-4 pt-4 border-t border-borderline/60 text-sm text-charcoal-soft leading-relaxed">
+                            <p>Suele responder a patrones de apego aprendidos y a la creencia inconsciente de que el afecto se gana complaciendo a otros. En terapia sanamos esa base para que elijas tus vínculos desde la igualdad y no desde el miedo al desamparo.</p>
+                        </div>
+                    </details>
+
+                    <details name="faq-group" class="group bg-white rounded-xl border border-borderline p-5 sm:p-6 transition-all open:shadow-soft-card">
+                        <summary class="flex justify-between items-center cursor-pointer list-none font-display text-lg text-charcoal font-medium">
+                            <span>¿Cómo se abonan las sesiones?</span>
+                            <span class="ml-4 flex-shrink-0 text-bronze">
+                                <svg class="w-5 h-5 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </span>
+                        </summary>
+                        <div class="mt-4 pt-4 border-t border-borderline/60 text-sm text-charcoal-soft leading-relaxed">
+                            <p>El importe de 65 € se abona al finalizar cada sesión individual a través de <strong>transferencia bancaria o en efectivo</strong>.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. ZONA DE CONVERSIÓN Y AGENDA -->
+        <section id="reservar" class="py-16 md:py-24 bg-cream-alt/70">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs uppercase tracking-widest text-bronze font-semibold">Comienza hoy</span>
+                    <h2 class="font-display text-2xl sm:text-3xl md:text-4xl text-charcoal mt-2 mb-3">
+                        Empieza a estar de tu parte
+                    </h2>
+                    <p class="text-charcoal-soft text-sm sm:text-base">
+                        Sin formularios extensos: reserva tu cita directamente en la agenda oficial o escríbeme por WhatsApp.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                    <div class="bg-white rounded-2xl p-7 sm:p-8 border-2 border-bronze/40 shadow-soft-card flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-bronze/10 text-bronze flex items-center justify-center mb-5">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke-width="2"/></svg>
+                            </div>
+                            <h3 class="font-display text-2xl text-charcoal mb-2">Google Calendar</h3>
+                            <p class="text-sm text-charcoal-soft leading-relaxed mb-6">
+                                Consulta la disponibilidad en tiempo real y asegura tu primera sesión presencial u online.
+                            </p>
+                        </div>
+                        <a href="https://calendar.app.google/Rb6xVey4wbDNE3jT8" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           data-gtm="cta-calendar-agenda"
+                           class="w-full inline-flex items-center justify-center py-4 px-6 rounded-full bg-bronze hover:bg-bronze-dark text-white text-xs uppercase tracking-wider font-semibold transition-all shadow-md text-center">
+                            <span>Abrir agenda y reservar</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-7 sm:p-8 border border-borderline shadow-soft-card flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-whatsapp/10 text-whatsapp flex items-center justify-center mb-5">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
+                                    <path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.396A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.062c-1.614 0-3.12-.465-4.401-1.273l-.316-.197-2.97.832.846-2.898-.205-.327A8.04 8.04 0 013.938 12c0-4.446 3.616-8.062 8.062-8.062s8.062 3.616 8.062 8.062-3.616 8.062-8.062 8.062z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-display text-2xl text-charcoal mb-2">WhatsApp Directo</h3>
+                            <p class="text-sm text-charcoal-soft leading-relaxed mb-6">
+                                Resuelve cualquier duda o solicita información sobre el formato de consulta.
+                            </p>
+                        </div>
+                        <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20para%20terapia%20de%20autoestima%20en%20Valencia." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           data-gtm="cta-whatsapp-reserva"
+                           class="w-full inline-flex items-center justify-center py-4 px-6 rounded-full bg-whatsapp hover:bg-whatsapp-dark text-white text-xs uppercase tracking-wider font-semibold transition-all shadow-md text-center">
+                            <span>Escribir por WhatsApp</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-borderline p-6 sm:p-10 shadow-soft-card">
+                    <div class="text-center mb-6">
+                        <span class="text-xs uppercase tracking-widest text-bronze font-semibold">Calendario en vivo</span>
+                        <h3 class="font-display text-xl sm:text-2xl text-charcoal mt-1">Selecciona día y hora para tu primera cita</h3>
+                    </div>
+                    <div class="w-full h-[680px] rounded-xl overflow-hidden border border-borderline bg-cream calendar-embed-box">
+                        <iframe 
+                            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0N-yloEDRl4NsjerJCOXi95Y7PE0CD2AYT821FQk8xcefTFoOxp-LrCsIfixaWIeGWYpMBmHE4?gv=true" 
+                            title="Agenda interactiva de citas de Google Calendar con Mireia Felici"
+                            class="w-full h-full border-0"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER LEGAL -->
+    <footer class="bg-cream border-t border-borderline py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="bg-cream-alt p-5 rounded-xl border-l-4 border-bronze mb-8 text-xs text-charcoal-soft leading-relaxed">
+                <p>
+                    <strong class="text-charcoal">Nota clínica de urgencias:</strong> Esta consulta privada no dispone de atención de urgencias 24 horas. Si estás atravesando una crisis severa o riesgo vital, llama al <strong>024</strong> (Línea de atención a la conducta suicida), al <strong>112</strong> (Emergencias) o acude al centro sanitario más próximo.
+                </p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-6 border-t border-borderline/60 text-xs text-charcoal-muted">
+                <div>
+                    <p>© 2026 Mireia Felici Peris · Psicòloga General Sanitària (Col. N.º CV17270).</p>
+                    <p class="mt-1">Carrer de Sant Vicent Màrtir, 85 · 46007 Valencia, España.</p>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="/va/aviso-legal" class="hover:text-bronze transition-colors">Avís Legal</a>
+                    <a href="/va/politica-privacidad" class="hover:text-bronze transition-colors">Política de Privadesa</a>
+                    <a href="https://maps.app.goo.gl/LkHjTh6MvpqpQiar5" target="_blank" rel="noopener noreferrer" class="hover:text-bronze transition-colors">Com arribar</a>
+                    <a href="/terapia-autoestima-valencia" class="hover:text-bronze transition-colors lang-btn" data-lang="es">Versión en Castellano (ES)</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE PERSISTENTE DE WHATSAPP -->
+    <aside class="fixed bottom-6 right-6 z-40">
+        <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20me%20gustar%C3%ADa%20consultar%20dudas%20para%20terapia%20de%20autoestima%20en%20Valencia." 
+           target="_blank" 
+           rel="noopener noreferrer"
+           data-gtm="cta-whatsapp-floating"
+           aria-label="Contactar por WhatsApp para cita de terapia de autoestima"
+           class="group flex items-center gap-2.5 bg-whatsapp hover:bg-whatsapp-dark text-white px-4 py-3.5 rounded-full shadow-float-btn transition-all duration-300 hover:scale-105 active:scale-95">
+            <svg class="w-6 h-6 fill-current flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.396A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.062c-1.614 0-3.12-.465-4.401-1.273l-.316-.197-2.97.832.846-2.898-.205-.327A8.04 8.04 0 013.938 12c0-4.446 3.616-8.062 8.062-8.062s8.062 3.616 8.062 8.062-3.616 8.062-8.062 8.062z"/>
+            </svg>
+            <span class="text-xs font-semibold tracking-wide hidden sm:inline-block">Dubtes? Escriu-me</span>
+        </a>
+    </aside>
+
+    <!-- BANNER DE COOKIES RGPD (Consent Mode v2) -->
+    <div id="cookie-banner" 
+         role="dialog" 
+         aria-label="Consentimiento de cookies" 
+         aria-hidden="true" 
+         class="fixed bottom-6 left-6 right-6 sm:right-auto sm:max-w-md bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-borderline shadow-hover-card z-50 transition-all duration-300 translate-y-4 opacity-0 pointer-events-none [&.show]:translate-y-0 [&.show]:opacity-100 [&.show]:pointer-events-auto">
+        <div class="text-xs text-charcoal-soft leading-relaxed mb-4">
+            <p>
+                Utilitzem cookies analítiques per a mesurar de manera anònima el trànsit de la web i millorar la teua experiència. Pots acceptar-les o rebutjar-les. Més informació en la nostra <a href="/va/politica-privacidad" class="underline text-bronze hover:text-bronze-dark">política de privadesa</a>.
+            </p>
+        </div>
+        <div class="flex items-center gap-3">
+            <button id="accept-cookies" 
+                    type="button" 
+                    class="flex-1 py-2.5 px-4 rounded-full bg-charcoal hover:bg-bronze text-white text-xs font-semibold uppercase tracking-wider transition-colors text-center cursor-pointer">
+                Aceptar
+            </button>
+            <button id="reject-cookies" 
+                    type="button" 
+                    class="py-2.5 px-4 rounded-full bg-transparent hover:bg-cream-alt text-charcoal-soft hover:text-charcoal border border-borderline text-xs font-semibold uppercase tracking-wider transition-colors text-center cursor-pointer">
+                Rechazar
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE MEDICIÓN GTM Y CONSENTIMIENTO DE COOKIES -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.dataLayer = window.dataLayer || [];
+
+            // 1. Gestión del banner de cookies y Consent Mode v2
+            const banner = document.getElementById('cookie-banner');
+            const btnAccept = document.getElementById('accept-cookies');
+            const btnReject = document.getElementById('reject-cookies');
+            const consent = localStorage.getItem('cookie-consent');
+
+            if (banner && btnAccept && btnReject) {
+                if (consent === null) {
+                    setTimeout(() => {
+                        banner.classList.add('show');
+                        banner.setAttribute('aria-hidden', 'false');
+                    }, 1000);
+                }
+
+                btnAccept.addEventListener('click', () => {
+                    localStorage.setItem('cookie-consent', 'accepted');
+                    banner.classList.remove('show');
+                    banner.setAttribute('aria-hidden', 'true');
+                    if (typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                            'analytics_storage': 'granted',
+                            'ad_storage': 'granted',
+                            'ad_user_data': 'granted',
+                            'ad_personalization': 'granted'
+                        });
+                    }
+                });
+
+                btnReject.addEventListener('click', () => {
+                    localStorage.setItem('cookie-consent', 'rejected');
+                    banner.classList.remove('show');
+                    banner.setAttribute('aria-hidden', 'true');
+                    if (typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                            'analytics_storage': 'denied',
+                            'ad_storage': 'denied',
+                            'ad_user_data': 'denied',
+                            'ad_personalization': 'denied'
+                        });
+                    }
+                });
+            }
+
+            // Manejador de botones de selección de idioma
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    if (lang) {
+                        localStorage.setItem('mf_lang', lang);
+                    }
+                });
+            });
+
+            // 2. Medición de clics en llamadas a la acción (Event Tracking)
+            document.querySelectorAll('[data-gtm]').forEach(element => {
+                element.addEventListener('click', () => {
+                    const eventName = element.getAttribute('data-gtm');
+                    window.dataLayer.push({
+                        event: eventName,
+                        ctaText: element.textContent.trim(),
+                        destination: element.getAttribute('href') || '',
+                        pageLocation: window.location.pathname,
+                        timestamp: new Date().toISOString()
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

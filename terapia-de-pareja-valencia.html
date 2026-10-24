@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Detección y redirección automática si el navegador está en catalán/valenciano -->
+    <script>
+        (function() {
+            try {
+                var pref = localStorage.getItem('mf_lang');
+                if (pref === 'es') return;
+                var isCa = (pref === 'va');
+                if (!isCa && !pref) {
+                    var langs = navigator.languages || [navigator.language || navigator.userLanguage || ''];
+                    for (var i = 0; i < langs.length; i++) {
+                        var l = (langs[i] || '').toLowerCase();
+                        if (l.indexOf('ca') === 0 || l.indexOf('val') === 0) { isCa = true; break; }
+                        if (l.indexOf('es') === 0) { isCa = false; break; }
+                    }
+                }
+                if (isCa) {
+                    var p = window.location.pathname;
+                    if (!p.startsWith('/va')) {
+                        var target = '/va' + (p === '/' ? '/' : p);
+                        window.location.replace(target + window.location.search + window.location.hash);
+                    }
+                }
+            } catch(e) {}
+        })();
+    </script>
+
+
     <!-- Google Consent Mode v2 & Google Analytics 4 (GA4) -->
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -40,6 +67,9 @@
     <meta name="description" content="Espacio neutral en Valencia centro para resolver crisis, mejorar la comunicación y reconstruir el vínculo. Sesiones de 75 min. Pide tu cita.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://mireiafelici.es/terapia-de-pareja-valencia">
+    <link rel="alternate" hreflang="es" href="https://mireiafelici.es/terapia-de-pareja-valencia">
+    <link rel="alternate" hreflang="ca" href="https://mireiafelici.es/va/terapia-de-pareja-valencia">
+    <link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/terapia-de-pareja-valencia">
 
     <!-- Open Graph / Redes Sociales -->
     <meta property="og:type" content="website">
@@ -172,6 +202,13 @@
             </div>
 
             <div class="flex items-center gap-3">
+                <!-- Selector de idioma -->
+                <div class="inline-flex items-center text-xs font-semibold rounded-full border border-borderline bg-white px-2.5 py-1 text-charcoal shadow-sm mr-1">
+                    <a href="/terapia-de-pareja-valencia" class="lang-btn text-bronze font-bold hover:text-bronze-dark px-1" data-lang="es" aria-label="Español">ES</a>
+                    <span class="text-charcoal-muted px-0.5" aria-hidden="true">/</span>
+                    <a href="/va/terapia-de-pareja-valencia" class="lang-btn text-charcoal-soft hover:text-bronze px-1" data-lang="va" aria-label="Valencià">VA</a>
+                </div>
+                
                 <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20nos%20gustar%C3%ADa%20consultar%20dudas%20para%20una%20sesi%C3%B3n%20de%20pareja%20en%20Valencia." 
                    target="_blank" 
                    rel="noopener noreferrer"
@@ -602,6 +639,7 @@
                     <a href="/aviso-legal" class="hover:text-bronze transition-colors">Aviso Legal</a>
                     <a href="/politica-privacidad" class="hover:text-bronze transition-colors">Política de Privacidad</a>
                     <a href="https://maps.app.goo.gl/LkHjTh6MvpqpQiar5" target="_blank" rel="noopener noreferrer" class="hover:text-bronze transition-colors">Cómo llegar</a>
+                    <a href="/va/terapia-de-pareja-valencia" class="hover:text-bronze transition-colors lang-btn" data-lang="va">Valencià (VA)</a>
                 </div>
             </div>
         </div>
@@ -695,6 +733,16 @@
                     }
                 });
             }
+
+            // Manejador de botones de selección de idioma
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    if (lang) {
+                        localStorage.setItem('mf_lang', lang);
+                    }
+                });
+            });
 
             // 2. Medición de clics en llamadas a la acción (Event Tracking)
             document.querySelectorAll('[data-gtm]').forEach(element => {

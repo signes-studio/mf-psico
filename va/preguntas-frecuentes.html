@@ -1,0 +1,397 @@
+<!--
+    Disseny, desenvolupament web i comunicació per SIGNES.STUDIO
+    https://signes.studio · 2026
+-->
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Comprobació de preferència d'idioma -->
+    <script>
+        (function() {
+            try {
+                var pref = localStorage.getItem('mf_lang');
+                if (pref === 'es') {
+                    var p = window.location.pathname;
+                    var target = p.replace(/^\/va(\/|$)/, '/');
+                    window.location.replace(target + window.location.search + window.location.hash);
+                }
+            } catch(e) {}
+        })();
+    </script>
+
+    <!-- Google Consent Mode v2 & Google Analytics 4 (GA4) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        var consentChoice = localStorage.getItem('cookie-consent');
+        var initialConsent = consentChoice === 'accepted' ? 'granted' : 'denied';
+
+        gtag('consent', 'default', {
+            'analytics_storage': initialConsent,
+            'ad_storage': initialConsent,
+            'ad_user_data': initialConsent,
+            'ad_personalization': initialConsent,
+            'wait_for_update': 500
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T9QL4373');</script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5LLV906RW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F5LLV906RW');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
+    
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.png">
+
+    <title>Preguntes Freqüents de Psicologia · Tarifes i Dubtes | Mireia Felici</title>
+    <meta name="description" content="Respostes directes sobre teràpia psicològica: preus (65€/h), duració del procés, primera sessió, confidencialitat i teràpia online a València.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://mireiafelici.es/va/preguntas-frecuentes">
+    <link rel="alternate" hreflang="es" href="https://mireiafelici.es/preguntas-frecuentes">
+    <link rel="alternate" hreflang="ca" href="https://mireiafelici.es/va/preguntas-frecuentes">
+    <link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/preguntas-frecuentes">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <!-- Geo & Coverage Meta -->
+    <meta name="geo.region" content="ES-VC">
+    <meta name="geo.placename" content="Valencia, España">
+    <meta name="geo.position" content="39.4667;-0.3801">
+    <meta name="ICBM" content="39.4667, -0.3801">
+    <meta name="coverage" content="Spain">
+    <meta name="distribution" content="global">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mireiafelici.es/va/preguntas-frecuentes">
+    <meta property="og:title" content="Preguntes Freqüents de Psicologia · Tarifes i Dubtes | Mireia Felici">
+    <meta property="og:description" content="Tot el que necessites saber abans de demanar cita: preus (65€), duració, primera sessió i teràpia online.">
+    <meta property="og:image" content="https://mireiafelici.es/img/og-image.jpg">
+    <meta property="og:image:secure_url" content="https://mireiafelici.es/img/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Preguntes Freqüents - Mireia Felici Psicologia">
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:site_name" content="Mireia Felici Psicologia">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Preguntes Freqüents de Psicologia · Tarifes i Dubtes | Mireia Felici">
+    <meta name="twitter:description" content="Dubtes freqüents sobre preus, duració, primera sessió i teràpia online a València.">
+    <meta name="twitter:image" content="https://mireiafelici.es/img/og-image.jpg">
+    <meta name="twitter:image:alt" content="Preguntes Freqüents Mireia Felici Psicologia">
+
+    <meta name="theme-color" content="#faf9f6">
+
+    <!-- Schema.org Knowledge Graph: FAQPage + Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quant costa una sessió?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La teràpia individual té un preu de 65 € per sessió d'1 hora. La teràpia de parella costa 80 € per sessió de 75 minuts. No es requereix cap pagament previ per a reservar, i l'abonament es realitza en finalitzar cada sessió."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quant dura un procés terapèutic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depén de cada persona i del motiu de consulta. Els processos centrats en ansietat o dol solen treballar-se en 3 a 6 mesos. Per a objectius d'autoconeixement o canvis més profunds, el temps habitual és de 6 a 12 mesos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Què passa en la primera sessió?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La primera sessió és d'escolta i valoració. Em comptes què et passa, què t'ha portat a consulta i què esperes de la teràpia. Sense judicis ni pressions: en finalitzar, t'explique com podria estructurar-se el procés."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quina és la diferència entre un psicòleg i un psiquiatre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El psicòleg treballa a través de la conversa terapèutica per a comprendre i transformar patrons emocionals i de conducta. El psiquiatre és metge i pot prescriure fàrmacs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Com sé si necessite anar al psicòleg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No cal tindre un diagnòstic ni estar en crisi greu. Si sents que l'ansietat, la tristesa o les dificultats en les teues relacions afecten el teu dia a dia, ja és motiu suficient per a consultar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ofereixes teràpia online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Les sessions online es realitzen mitjançant videotrucada segura per a pacients de tota Espanya, amb idèntica duració, tarifa i rigor clínic que la teràpia presencial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "On està la consulta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La consulta presencial està situada al Carrer de Sant Vicent Màrtir, 85, 46007, València, en ple centre i al costat de Plaça d'Espanya i Metro Xàtiva."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "És confidencial el que conte en teràpia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Tot allò parlat en sessió està estrictament protegit pel secret professional i el Codi Deontològic del Col·legi Oficial de Psicologia (CV17270) i pel RGPD europeu."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inici",
+          "item": "https://mireiafelici.es/va/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Preguntes freqüents",
+          "item": "https://mireiafelici.es/va/preguntas-frecuentes"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9QL4373"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Banner de Cookies Minimalista -->
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true" role="dialog" aria-label="Consentiment de cookies">
+    <div class="cookie-content">
+        <p>Utilitzem cookies pròpies i de tercers per a analitzar de manera anònima el trànsit de la web i millorar la teua experiència.</p>
+        <div class="cookie-buttons">
+            <button id="accept-cookies" class="btn-cookie-primary">Acceptar</button>
+            <button id="reject-cookies" class="btn-cookie-secondary">Rebutjar</button>
+        </div>
+    </div>
+</div>
+
+<header>
+    <nav class="navbar" id="navbar" aria-label="Navegació principal">
+        <div class="logo">
+            <a href="/va/">Mireia Felici</a>
+        </div>
+        <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="/va/sobre-mi">Sobre mi</a></li>
+            <li><a href="/va/enfoque">Enfocament</a></li>
+            <li><a href="/va/servicios">Serveis</a></li>
+            <li><a href="/va/contacto">Contacte</a></li>
+            <li class="lang-switch-item">
+                <div class="lang-switcher" aria-label="Selecció d'idioma / Selección de idioma">
+                    <a href="/preguntas-frecuentes" class="lang-btn" data-lang="es" aria-label="Castellà">ES</a>
+                    <span class="lang-divider" aria-hidden="true">/</span>
+                    <a href="/va/preguntas-frecuentes" class="lang-btn active" data-lang="va" aria-label="Valencià">VA</a>
+                </div>
+            </li>
+            <li><a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." class="nav-btn" target="_blank" rel="noopener noreferrer" aria-label="Demanar cita per WhatsApp (obri en nova pestanya)">Demanar cita</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Obrir menú" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<main class="container">
+    <div class="services-hero">
+        <span class="section-label">Abans de començar</span>
+        <h1>Preguntes freqüents</h1>
+        <p>El que solen preguntar abans de la primera sessió, respost amb claredat.</p>
+    </div>
+
+    <section class="faq-list" aria-label="Preguntes freqüents sobre teràpia psicològica a València">
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" id="faq-btn-1" aria-expanded="false" aria-controls="faq-ans-1">
+                <span class="faq-question-text" itemprop="name">Quant costa una sessió?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+                <div class="faq-answer-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">La teràpia individual té un preu de <strong>65 € per sessió d'1 hora</strong>. La teràpia de parella costa <strong>80 € per sessió de 75 minuts</strong>. No es requereix cap pagament previ per a reservar, i l'abonament es realitza en finalitzar cada sessió.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">
+                <span class="faq-question-text" itemprop="name">Quant dura un procés terapèutic?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+                <div class="faq-answer-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Depén de cada persona i del motiu de consulta. Els processos centrats en ansietat o dol solen treballar-se en <strong>3 a 6 mesos</strong>. Per a objectius d'autoconeixement o canvis més profunds, el temps habitual és de <strong>6 a 12 mesos</strong>. No existeix un nombre fix de sessions: el procés avança al teu ritme i es revisa periòdicament de manera conjunta.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">
+                <span class="faq-question-text" itemprop="name">Què passa en la primera sessió?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+                <div class="faq-answer-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">La primera sessió és d'escolta i valoració. Em comptes què et passa, què t'ha portat a consulta i què esperes de la teràpia. No calen respostes preparades: no hi ha preguntes incorrectes ni s'espera que ho tingues tot clar. Al final faig una primera valoració i t'explique com podria estructurar-se el procés si decideixes continuar.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">
+                <span class="faq-question-text" itemprop="name">Quina és la diferència entre un psicòleg i un psiquiatre?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+                <div class="faq-answer-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">El psicòleg treballa a través de la conversa terapèutica: ajuda a comprendre i transformar pensaments, emocions i comportaments. El psiquiatre és metge i pot prescriure medicació. En molts casos treballen de manera complementària. Si en la teua situació considerara útil una valoració psiquiàtrica, t'ho faré saber i t'orientaré amb rigor.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" id="faq-btn-5" aria-expanded="false" aria-controls="faq-ans-5">
+                <span class="faq-question-text" itemprop="name">Com sé si necessite anar al psicòleg?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+                <div class="faq-answer-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">No cal tindre un diagnòstic ni estar en crisi. Alguns indicadors habituals són: sentir que les emocions et desborden amb freqüència, dificultat per a dormir o concentrar-te, relacions que generen malestar repetit, sensació de bloqueig vital o simplement voler entendre't millor. Si alguna cosa et preocupa i està afectant el teu dia a dia, ja és motiu suficient per a consultar.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" id="faq-btn-6" aria-expanded="false" aria-controls="faq-ans-6">
+                <span class="faq-question-text" itemprop="name">Ofereixes teràpia online?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6">
+                <div class="faq-answer-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Sí. Les sessions online es realitzen per videotrucada, amb la mateixa duració i preu que les presencials. És una opció vàlida si prefereixes no desplaçar-te o si vius fora de València. La connexió és privada, segura i confidencial.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" id="faq-btn-7" aria-expanded="false" aria-controls="faq-ans-7">
+                <span class="faq-question-text" itemprop="name">On està la consulta?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-ans-7" role="region" aria-labelledby="faq-btn-7">
+                <div class="faq-answer-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">La consulta presencial està al <strong>Carrer de Sant Vicent Màrtir, 85 · 46007 València</strong>, al centre de la ciutat i molt ben comunicada en transport públic (a prop de Metro Xàtiva i Plaça d'Espanya). Per a sessions online no és necessari desplaçar-se.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" id="faq-btn-8" aria-expanded="false" aria-controls="faq-ans-8">
+                <span class="faq-question-text" itemprop="name">És confidencial el que conte en teràpia?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-ans-8" role="region" aria-labelledby="faq-btn-8">
+                <div class="faq-answer-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Sí. Tot allò parlat en sessió està protegit pel secret professional. Com a psicòloga col·legiada (CV17270), estic subjecta al Codi Deontològic del Col·legi Oficial de Psicologia, que estableix la confidencialitat com a obligació fonamental. Únicament en situacions excepcionals de risc greu per a tu o per a tercers existeix l'obligació legal d'actuar.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="faq-cta">
+        <p>Tens algun dubte que no estiga ací?</p>
+        <a href="/va/contacto" class="btn-primary">Escriu-me</a>
+        <p class="cta-note">També pots escriure'm directament per <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 500;">WhatsApp</a> si ho prefereixes.</p>
+    </div>
+</main>
+
+<footer class="footer-fixed-bottom">
+    <div class="footer-content-three-cols">
+        <div class="footer-col footer-col-left">
+            <a href="mailto:hola@mireiafelici.es">hola@mireiafelici.es</a>
+            <a href="tel:+34614172009">+34 614 17 20 09</a>
+        </div>
+        <div class="footer-col footer-col-center">
+            <nav class="footer-social-links" aria-label="Xarxes socials del peu">
+                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </nav>
+            <a href="/va/preguntas-frecuentes" class="footer-faq-link">Preguntes freqüents</a>
+        </div>
+        <div class="footer-col footer-col-right">
+            <p class="col-num">N.º Col. CV17270</p>
+            <p class="col-name">Mireia Felici Peris</p>
+            <p class="col-address">València, Espanya</p>
+        </div>
+    </div>
+    <div class="footer-bottom-copy">
+        <p>© 2026 Mireia Felici. Tots els drets reservats.</p>
+        <p style="margin-top: 8px;">
+            <a href="/va/aviso-legal" class="footer-legal-link">Avís Legal</a> | 
+            <a href="/va/politica-privacidad" class="footer-legal-link">Política de Privadesa</a> | 
+            <a href="/preguntas-frecuentes" class="footer-legal-link lang-btn" data-lang="es">Versión en Castellano (ES)</a>
+        </p>
+    </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
+

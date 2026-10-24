@@ -1,0 +1,353 @@
+<!--
+    Disseny, desenvolupament web i comunicació per SIGNES.STUDIO
+    https://signes.studio · 2026
+-->
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Comprobació de preferència d'idioma -->
+    <script>
+        (function() {
+            try {
+                var pref = localStorage.getItem('mf_lang');
+                if (pref === 'es') {
+                    var p = window.location.pathname;
+                    var target = p.replace(/^\/va(\/|$)/, '/');
+                    window.location.replace(target + window.location.search + window.location.hash);
+                }
+            } catch(e) {}
+        })();
+    </script>
+
+    <!-- Google Consent Mode v2 & Google Analytics 4 (GA4) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        var consentChoice = localStorage.getItem('cookie-consent');
+        var initialConsent = consentChoice === 'accepted' ? 'granted' : 'denied';
+
+        gtag('consent', 'default', {
+            'analytics_storage': initialConsent,
+            'ad_storage': initialConsent,
+            'ad_user_data': initialConsent,
+            'ad_personalization': initialConsent,
+            'wait_for_update': 500
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T9QL4373');</script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5LLV906RW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F5LLV906RW');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
+    
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Favicon Estàndard i per a Dispositius Mòbils -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.png">
+
+    <title>Demanar Cita i Contacte · Mireia Felici Psicòloga | València i Online</title>
+    <meta name="description" content="Sol·licita la teua primera sessió de psicologia amb Mireia Felici (CV17270). Consulta presencial a València i teràpia online per a tota Espanya. Reserva en l'agenda.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://mireiafelici.es/va/contacto">
+    <link rel="alternate" hreflang="es" href="https://mireiafelici.es/contacto">
+    <link rel="alternate" hreflang="ca" href="https://mireiafelici.es/va/contacto">
+    <link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/contacto">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <!-- Geo & Coverage Meta -->
+    <meta name="geo.region" content="ES-VC">
+    <meta name="geo.placename" content="Valencia, España">
+    <meta name="geo.position" content="39.4667;-0.3801">
+    <meta name="ICBM" content="39.4667, -0.3801">
+    <meta name="coverage" content="Spain">
+    <meta name="distribution" content="global">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mireiafelici.es/va/contacto">
+    <meta property="og:title" content="Demanar Cita i Contacte · Mireia Felici Psicòloga | València i Online">
+    <meta property="og:description" content="Escriu-me i comencem. Consulta presencial al Carrer Sant Vicent Màrtir 85, València o per videotrucada per a tota Espanya.">
+    <meta property="og:image" content="https://mireiafelici.es/img/og-image.jpg">
+    <meta property="og:image:secure_url" content="https://mireiafelici.es/img/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Contacte Mireia Felici Psicologia - València i Online">
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:site_name" content="Mireia Felici Psicologia">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Demanar Cita i Contacte · Mireia Felici Psicòloga | València i Online">
+    <meta name="twitter:description" content="Consulta de Psicologia a València i online. Escriu-me per a sol·licitar la teua primera cita.">
+    <meta name="twitter:image" content="https://mireiafelici.es/img/og-image.jpg">
+    <meta name="twitter:image:alt" content="Contacte Mireia Felici Psicologia">
+
+    <meta name="theme-color" content="#faf9f6">
+
+    <!-- Schema.org Knowledge Graph: MedicalBusiness + ContactPoint + Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["MedicalBusiness", "LocalBusiness"],
+          "@id": "https://mireiafelici.es/#business",
+          "name": "Mireia Felici Psicologia",
+          "telephone": "+34614172009",
+          "email": "hola@mireiafelici.es",
+          "url": "https://mireiafelici.es/va/contacto",
+          "image": "https://mireiafelici.es/img/og-image.jpg",
+          "priceRange": "€€",
+          "isAcceptingNewPatients": true,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Carrer de Sant Vicent Màrtir, 85",
+            "addressLocality": "València",
+            "postalCode": "46007",
+            "addressRegion": "València",
+            "addressCountry": "ES"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.4667,
+            "longitude": -0.3801
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+              "opens": "09:00",
+              "closes": "20:00"
+            }
+          ],
+          "paymentAccepted": "Efectivo, Transferencia bancaria"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inici",
+              "item": "https://mireiafelici.es/va/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contacte",
+              "item": "https://mireiafelici.es/va/contacto"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9QL4373"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Banner de Cookies Minimalista -->
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true" role="dialog" aria-label="Consentiment de cookies">
+    <div class="cookie-content">
+        <p>Utilitzem cookies pròpies i de tercers per a analitzar de manera anònima el trànsit de la web i millorar la teua experiència.</p>
+        <div class="cookie-buttons">
+            <button id="accept-cookies" class="btn-cookie-primary">Acceptar</button>
+            <button id="reject-cookies" class="btn-cookie-secondary">Rebutjar</button>
+        </div>
+    </div>
+</div>
+
+<header>
+    <nav class="navbar" id="navbar" aria-label="Navegació principal">
+        <div class="logo">
+            <a href="/va/">Mireia Felici</a>
+        </div>
+        <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="/va/sobre-mi">Sobre mi</a></li>
+            <li><a href="/va/enfoque">Enfocament</a></li>
+            <li><a href="/va/servicios">Serveis</a></li>
+            <li><a href="/va/contacto" class="active">Contacte</a></li>
+            <li class="lang-switch-item">
+                <div class="lang-switcher" aria-label="Selecció d'idioma / Selección de idioma">
+                    <a href="/contacto" class="lang-btn" data-lang="es" aria-label="Castellà">ES</a>
+                    <span class="lang-divider" aria-hidden="true">/</span>
+                    <a href="/va/contacto" class="lang-btn active" data-lang="va" aria-label="Valencià">VA</a>
+                </div>
+            </li>
+            <li><a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." class="nav-btn" target="_blank" rel="noopener noreferrer" aria-label="Demanar cita per WhatsApp (obri en nova pestanya)">Demanar cita</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Obrir menú" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<main class="container">
+    <div class="contact-intro">
+        <span class="section-label">Primer pas</span>
+        <h1>Reserva la teua cita · Mireia Felici</h1>
+        <p>Selecciona en el calendari el dia i l'hora que millor et vinguen per a la teua primera sessió (presencial a València o teràpia online per a tota Espanya).</p>
+    </div>
+
+    <!-- Zona principal: Calendari dalt de tot sense necessitat de scroll -->
+    <section class="calendar-booking-section" aria-label="Reserva de cita en calendari">
+        <div class="calendar-booking-card">
+            <div class="calendar-iframe-wrapper">
+                <iframe 
+                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0N-yloEDRl4NsjerJCOXi95Y7PE0CD2AYT821FQk8xcefTFoOxp-LrCsIfixaWIeGWYpMBmHE4?gv=true" 
+                    title="Calendari per a reserva de cita amb Mireia Felici"
+                    loading="lazy"
+                    allow="fullscreen">
+                </iframe>
+            </div>
+
+            <div class="calendar-footer-note">
+                <div class="calendar-footer-text">
+                    <p><strong>Prefereixes gestionar la teua cita a pantalla completa o des de la teua app de Google?</strong></p>
+                    <p>Pots obrir directament la plataforma oficial de cites de Google Calendar.</p>
+                </div>
+                <a href="https://calendar.app.google/Rb6xVey4wbDNE3jT8" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn-primary calendar-direct-btn"
+                   aria-label="Obrir calendari de cites en Google Calendar (obri en nova pestanya)">
+                    Obrir en Google Calendar ↗
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Franja horitzontal única amb totes les dades de contacte sota el calendari -->
+    <section class="contact-strip-section" aria-label="Informació de contacte de la consulta">
+        <div class="contact-strip-header">
+            <span class="section-label">Contacte directe</span>
+            <h2>Informació de la consulta</h2>
+            <p>Si tens qualsevol dubte clínic previ, necessites un altre horari o requereixes indicacions per a la consulta presencial:</p>
+        </div>
+
+        <div class="contact-strip-bar">
+            <!-- Consulta Presencial -->
+            <div class="strip-item">
+                <div class="strip-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                <div class="strip-info">
+                    <span class="strip-label">Consulta Presencial</span>
+                    <address style="font-style: normal;">Carrer de Sant Vicent Màrtir, 85<br>46007 València</address>
+                    <a href="https://maps.app.goo.gl/LkHjTh6MvpqpQiar5" target="_blank" rel="noopener noreferrer" class="strip-link">Veure en Google Maps →</a>
+                </div>
+            </div>
+
+            <div class="strip-divider" aria-hidden="true"></div>
+
+            <!-- WhatsApp i Telèfon -->
+            <div class="strip-item">
+                <div class="strip-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <div class="strip-info">
+                    <span class="strip-label">WhatsApp i Telèfon</span>
+                    <p><a href="tel:+34614172009" class="strip-main">+34 614 17 20 09</a></p>
+                    <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." target="_blank" rel="noopener noreferrer" class="strip-link">Escriure per WhatsApp →</a>
+                </div>
+            </div>
+
+            <div class="strip-divider" aria-hidden="true"></div>
+
+            <!-- Email i Col·legiació -->
+            <div class="strip-item">
+                <div class="strip-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </div>
+                <div class="strip-info">
+                    <span class="strip-label">Email i Col·legiació</span>
+                    <p><a href="mailto:hola@mireiafelici.es" class="strip-main">hola@mireiafelici.es</a></p>
+                    <span class="strip-sub">N.º Col. CV17270 (COPCV)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Xarxes socials centrades -->
+        <nav class="social-links contact-social-center" aria-label="Xarxes socials">
+            <a href="https://www.linkedin.com/in/mireia-felici-peris/" class="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.instagram.com/mireiafelici.psico/" class="social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." class="social-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </nav>
+    </section>
+
+    <!-- Avís clínic d'urgències -->
+    <aside class="crisis-notice" role="note">
+        <p><strong>Nota d'atenció clínica:</strong> Aquesta consulta no disposa de servei d'urgències mèdiques immediates 24 hores. Si estàs passant per un moment de crisi severa o risc imminent, per favor telefona al <strong>024</strong> (Línia d'atenció a la conducta suïcida), al <strong>112</strong> (Emergències) o acudeix al centre de salut més proper.</p>
+    </aside>
+</main>
+
+<footer class="footer-fixed-bottom">
+    <div class="footer-content-three-cols">
+        <div class="footer-col footer-col-left">
+            <a href="mailto:hola@mireiafelici.es">hola@mireiafelici.es</a>
+            <a href="tel:+34614172009">+34 614 17 20 09</a>
+        </div>
+        <div class="footer-col footer-col-center">
+            <nav class="footer-social-links" aria-label="Xarxes socials del peu">
+                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </nav>
+            <a href="/va/preguntas-frecuentes" class="footer-faq-link">Preguntes freqüents</a>
+        </div>
+        <div class="footer-col footer-col-right">
+            <p class="col-num">N.º Col. CV17270</p>
+            <p class="col-name">Mireia Felici Peris</p>
+            <p class="col-address">València, Espanya</p>
+        </div>
+    </div>
+    <div class="footer-bottom-copy">
+        <p>© 2026 Mireia Felici. Tots els drets reservats.</p>
+        <p style="margin-top: 8px;">
+            <a href="/va/aviso-legal" class="footer-legal-link">Avís Legal</a> | 
+            <a href="/va/politica-privacidad" class="footer-legal-link">Política de Privadesa</a> | 
+            <a href="/contacto" class="footer-legal-link lang-btn" data-lang="es">Versión en Castellano (ES)</a>
+        </p>
+    </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
+

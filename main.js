@@ -43,7 +43,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 5. Formulario de contacto asíncrono y accesible
     initContactForm();
+
+    // 6. Conmutador accesible de selección de idioma (ES / VA)
+    initLanguageSwitcher();
 });
+
+/**
+ * Persistencia de la preferencia de idioma seleccionada manualmente
+ */
+function initLanguageSwitcher() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            if (lang) {
+                localStorage.setItem('mf_lang', lang);
+            }
+        });
+    });
+}
 
 /**
  * Gestión del consentimiento de cookies (RGPD / LOPD-GDD / Consent Mode v2)

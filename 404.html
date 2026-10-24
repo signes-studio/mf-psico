@@ -8,6 +8,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Detección y redirección automática si el navegador está en catalán/valenciano -->
+    <script>
+        (function() {
+            try {
+                var pref = localStorage.getItem('mf_lang');
+                if (pref === 'es') return;
+                var isCa = (pref === 'va');
+                if (!isCa && !pref) {
+                    var langs = navigator.languages || [navigator.language || navigator.userLanguage || ''];
+                    for (var i = 0; i < langs.length; i++) {
+                        var l = (langs[i] || '').toLowerCase();
+                        if (l.indexOf('ca') === 0 || l.indexOf('val') === 0) { isCa = true; break; }
+                        if (l.indexOf('es') === 0) { isCa = false; break; }
+                    }
+                }
+                if (isCa) {
+                    var p = window.location.pathname;
+                    if (!p.startsWith('/va')) {
+                        var target = '/va' + (p === '/' ? '/' : p);
+                        window.location.replace(target + window.location.search + window.location.hash);
+                    }
+                }
+            } catch(e) {}
+        })();
+    </script>
+
     <!-- Google Consent Mode v2 & Google Analytics 4 (GA4) -->
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -86,6 +112,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="/enfoque">Enfoque</a></li>
             <li><a href="/servicios">Servicios</a></li>
             <li><a href="/contacto">Contacto</a></li>
+            <li class="lang-switch-item">
+                <div class="lang-switcher" aria-label="Selección de idioma / Selecció d'idioma">
+                    <a href="/404" class="lang-btn active" data-lang="es" aria-label="Español">ES</a>
+                    <span class="lang-divider" aria-hidden="true">/</span>
+                    <a href="/va/404" class="lang-btn" data-lang="va" aria-label="Valencià">VA</a>
+                </div>
+            </li>
             <li><a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20visto%20tu%20web%20y%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20para%20una%20primera%20cita." class="nav-btn" target="_blank" rel="noopener noreferrer" aria-label="Pedir cita por WhatsApp (abre en nueva pestaña)">Pedir cita</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
@@ -125,7 +158,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>© 2026 Mireia Felici. Todos los derechos reservados.</p>
         <p style="margin-top: 8px;">
             <a href="/aviso-legal" class="footer-legal-link">Aviso Legal</a> | 
-            <a href="/politica-privacidad" class="footer-legal-link">Política de Privacidad</a>
+            <a href="/politica-privacidad" class="footer-legal-link">Política de Privacidad</a> | 
+            <a href="/va/404" class="footer-legal-link lang-btn" data-lang="va">Versió en Valencià (VA)</a>
         </p>
     </div>
 </footer>

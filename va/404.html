@@ -1,0 +1,157 @@
+<!--
+    Disseny, desenvolupament web i comunicació per SIGNES.STUDIO
+    https://signes.studio · 2026
+-->
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Comprobació de preferència d'idioma -->
+    <script>
+        (function() {
+            try {
+                var pref = localStorage.getItem('mf_lang');
+                if (pref === 'es') {
+                    var p = window.location.pathname;
+                    var target = p.replace(/^\/va(\/|$)/, '/');
+                    window.location.replace(target + window.location.search + window.location.hash);
+                }
+            } catch(e) {}
+        })();
+    </script>
+
+    <!-- Google Consent Mode v2 & Google Analytics 4 (GA4) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        var consentChoice = localStorage.getItem('cookie-consent');
+        var initialConsent = consentChoice === 'accepted' ? 'granted' : 'denied';
+
+        gtag('consent', 'default', {
+            'analytics_storage': initialConsent,
+            'ad_storage': initialConsent,
+            'ad_user_data': initialConsent,
+            'ad_personalization': initialConsent,
+            'wait_for_update': 500
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T9QL4373');</script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5LLV906RW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F5LLV906RW');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
+    
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Favicon Estàndard i per a Dispositius Mòbils -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.png">
+
+    <title>Pàgina no trobada · Mireia Felici</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#faf9f6">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9QL4373"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Banner de Cookies Minimalista -->
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true" role="dialog" aria-label="Consentiment de cookies">
+    <div class="cookie-content">
+        <p>Utilitzem cookies pròpies i de tercers per a analitzar de manera anònima el trànsit de la web i millorar la teua experiència.</p>
+        <div class="cookie-buttons">
+            <button id="accept-cookies" class="btn-cookie-primary">Acceptar</button>
+            <button id="reject-cookies" class="btn-cookie-secondary">Rebutjar</button>
+        </div>
+    </div>
+</div>
+
+<header>
+    <nav class="navbar" id="navbar" aria-label="Navegació principal">
+        <div class="logo">
+            <a href="/va/">Mireia Felici</a>
+        </div>
+        <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="/va/sobre-mi">Sobre mi</a></li>
+            <li><a href="/va/enfoque">Enfocament</a></li>
+            <li><a href="/va/servicios">Serveis</a></li>
+            <li><a href="/va/contacto">Contacte</a></li>
+            <li class="lang-switch-item">
+                <div class="lang-switcher" aria-label="Selecció d'idioma / Selección de idioma">
+                    <a href="/404" class="lang-btn" data-lang="es" aria-label="Castellà">ES</a>
+                    <span class="lang-divider" aria-hidden="true">/</span>
+                    <a href="/va/404" class="lang-btn active" data-lang="va" aria-label="Valencià">VA</a>
+                </div>
+            </li>
+            <li><a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." class="nav-btn" target="_blank" rel="noopener noreferrer" aria-label="Demanar cita per WhatsApp (obri en nova pestanya)">Demanar cita</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Obrir menú" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<main class="container" style="text-align: center; padding-top: clamp(80px, 12vh, 140px); padding-bottom: clamp(80px, 12vh, 140px);">
+    <span class="section-label">Error 404</span>
+    <h1 style="font-family: var(--ff-display); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; margin-bottom: 16px;">Pàgina no trobada</h1>
+    <p style="color: var(--text-soft); max-width: 480px; margin: 0 auto 36px auto; font-size: 1.02rem; line-height: 1.7;">L'enllaç que has seguit pot estar trencat, haver canviat d'adreça o la pàgina ja no existeix.</p>
+    <a href="/va/" class="btn-primary">Tornar a la pàgina d'inici</a>
+</main>
+
+<footer class="footer-fixed-bottom">
+    <div class="footer-content-three-cols">
+        <div class="footer-col footer-col-left">
+            <a href="mailto:hola@mireiafelici.es">hola@mireiafelici.es</a>
+            <a href="tel:+34614172009">+34 614 17 20 09</a>
+        </div>
+        <div class="footer-col footer-col-center">
+            <nav class="footer-social-links" aria-label="Xarxes socials del peu">
+                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </nav>
+            <a href="/va/preguntas-frecuentes" class="footer-faq-link">Preguntes freqüents</a>
+        </div>
+        <div class="footer-col footer-col-right">
+            <p class="col-num">N.º Col. CV17270</p>
+            <p class="col-name">Mireia Felici Peris</p>
+            <p class="col-address">València, Espanya</p>
+        </div>
+    </div>
+    <div class="footer-bottom-copy">
+        <p>© 2026 Mireia Felici. Tots els drets reservats.</p>
+        <p style="margin-top: 8px;">
+            <a href="/va/aviso-legal" class="footer-legal-link">Avís Legal</a> | 
+            <a href="/va/politica-privacidad" class="footer-legal-link">Política de Privadesa</a> | 
+            <a href="/404" class="footer-legal-link lang-btn" data-lang="es">Versión en Castellano (ES)</a>
+        </p>
+    </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>

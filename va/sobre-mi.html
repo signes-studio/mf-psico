@@ -1,0 +1,327 @@
+<!--
+    Disseny, desenvolupament web i comunicació per SIGNES.STUDIO
+    https://signes.studio · 2026
+-->
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Comprobació de preferència d'idioma -->
+    <script>
+        (function() {
+            try {
+                var pref = localStorage.getItem('mf_lang');
+                if (pref === 'es') {
+                    var p = window.location.pathname;
+                    var target = p.replace(/^\/va(\/|$)/, '/');
+                    window.location.replace(target + window.location.search + window.location.hash);
+                }
+            } catch(e) {}
+        })();
+    </script>
+
+    <!-- Google Consent Mode v2 & Google Analytics 4 (GA4) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        var consentChoice = localStorage.getItem('cookie-consent');
+        var initialConsent = consentChoice === 'accepted' ? 'granted' : 'denied';
+
+        gtag('consent', 'default', {
+            'analytics_storage': initialConsent,
+            'ad_storage': initialConsent,
+            'ad_user_data': initialConsent,
+            'ad_personalization': initialConsent,
+            'wait_for_update': 500
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T9QL4373');</script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5LLV906RW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F5LLV906RW');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
+    
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Favicon Estàndard i per a Dispositius Mòbils -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.png">
+
+    <title>Sobre mi · Mireia Felici | Psicòloga Sanitària Col·legiada CV17270</title>
+    <meta name="description" content="Coneix a Mireia Felici, Psicòloga General Sanitària a València i consulta online. Trajectòria, formació i metodologia terapèutica integradora.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://mireiafelici.es/va/sobre-mi">
+    <link rel="alternate" hreflang="es" href="https://mireiafelici.es/sobre-mi">
+    <link rel="alternate" hreflang="ca" href="https://mireiafelici.es/va/sobre-mi">
+    <link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/sobre-mi">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <!-- Geo & Coverage Meta -->
+    <meta name="geo.region" content="ES-VC">
+    <meta name="geo.placename" content="Valencia, España">
+    <meta name="geo.position" content="39.4667;-0.3801">
+    <meta name="ICBM" content="39.4667, -0.3801">
+    <meta name="coverage" content="Spain">
+    <meta name="distribution" content="global">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://mireiafelici.es/va/sobre-mi">
+    <meta property="og:title" content="Sobre mi · Mireia Felici | Psicòloga Sanitària Col·legiada CV17270">
+    <meta property="og:description" content="Psicòloga General Sanitària a València i online. Enfocament integrador, proximitat i espai segur sense judicis.">
+    <meta property="og:image" content="https://mireiafelici.es/img/og-image.jpg">
+    <meta property="og:image:secure_url" content="https://mireiafelici.es/img/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Mireia Felici - Psicòloga General Sanitària Col·legiada">
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:site_name" content="Mireia Felici Psicologia">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sobre mi · Mireia Felici | Psicòloga Sanitària Col·legiada CV17270">
+    <meta name="twitter:description" content="Psicòloga General Sanitària a València i online. Enfocament integrador i espai segur.">
+    <meta name="twitter:image" content="https://mireiafelici.es/img/og-image.jpg">
+    <meta name="twitter:image:alt" content="Mireia Felici - Psicòloga General Sanitària Col·legiada">
+
+    <meta name="theme-color" content="#faf9f6">
+
+    <!-- Schema.org Knowledge Graph: Person + Professional Credentials -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://mireiafelici.es/#person",
+          "name": "Mireia Felici Peris",
+          "jobTitle": "Psicòloga General Sanitària",
+          "url": "https://mireiafelici.es/va/sobre-mi",
+          "image": "https://mireiafelici.es/img/foto1.webp",
+          "description": "Psicòloga General Sanitària col·legiada (CV17270) amb consulta presencial a València i teràpia online per a tota Espanya. Especialitzada en ansietat, depressió, dol i teràpia de parella.",
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Psicòloga General Sanitària",
+            "occupationalCategory": "2634"
+          },
+          "knowsAbout": [
+            "Teràpia cognitivoconductual",
+            "Psicologia humanista",
+            "Gestió de l'ansietat",
+            "Tractament de la depressió",
+            "Processos de dol",
+            "Autoconeixement",
+            "Teràpia de parella",
+            "Gestió emocional",
+            "Psicoteràpia integradora",
+            "Teràpia online a Espanya"
+          ],
+          "alumniOf": [
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "Universitat de València",
+              "url": "https://www.uv.es"
+            }
+          ],
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "Grau en Psicologia",
+              "credentialCategory": "degree",
+              "recognizedBy": {
+                "@type": "CollegeOrUniversity",
+                "name": "Universitat de València",
+                "url": "https://www.uv.es"
+              }
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "Màster en Psicologia General Sanitària",
+              "credentialCategory": "degree",
+              "recognizedBy": {
+                "@type": "CollegeOrUniversity",
+                "name": "Universitat de València",
+                "url": "https://www.uv.es"
+              }
+            }
+          ],
+          "worksFor": {
+            "@type": "MedicalBusiness",
+            "@id": "https://mireiafelici.es/#business",
+            "name": "Mireia Felici Psicologia",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carrer de Sant Vicent Màrtir, 85",
+              "addressLocality": "València",
+              "postalCode": "46007",
+              "addressRegion": "València",
+              "addressCountry": "ES"
+            }
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/mireia-felici-peris/",
+            "https://www.instagram.com/mireiafelici.psico/"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inici",
+              "item": "https://mireiafelici.es/va/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sobre mi",
+              "item": "https://mireiafelici.es/va/sobre-mi"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9QL4373"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Banner de Cookies Minimalista -->
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true" role="dialog" aria-label="Consentiment de cookies">
+    <div class="cookie-content">
+        <p>Utilitzem cookies pròpies i de tercers per a analitzar de manera anònima el trànsit de la web i millorar la teua experiència.</p>
+        <div class="cookie-buttons">
+            <button id="accept-cookies" class="btn-cookie-primary">Acceptar</button>
+            <button id="reject-cookies" class="btn-cookie-secondary">Rebutjar</button>
+        </div>
+    </div>
+</div>
+
+<header>
+    <nav class="navbar" id="navbar" aria-label="Navegació principal">
+        <div class="logo">
+            <a href="/va/">Mireia Felici</a>
+        </div>
+        <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="/va/sobre-mi" class="active">Sobre mi</a></li>
+            <li><a href="/va/enfoque">Enfocament</a></li>
+            <li><a href="/va/servicios">Serveis</a></li>
+            <li><a href="/va/contacto">Contacte</a></li>
+            <li class="lang-switch-item">
+                <div class="lang-switcher" aria-label="Selecció d'idioma / Selección de idioma">
+                    <a href="/sobre-mi" class="lang-btn" data-lang="es" aria-label="Castellà">ES</a>
+                    <span class="lang-divider" aria-hidden="true">/</span>
+                    <a href="/va/sobre-mi" class="lang-btn active" data-lang="va" aria-label="Valencià">VA</a>
+                </div>
+            </li>
+            <li><a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." class="nav-btn" target="_blank" rel="noopener noreferrer" aria-label="Demanar cita per WhatsApp (obri en nova pestanya)">Demanar cita</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Obrir menú" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<main class="container">
+    <!-- CAPÇALERA GLOBAL -->
+    <div class="services-hero">
+        <span class="section-label">Coneix-me</span>
+        <h1>Sobre mi</h1>
+        <p>La meua trajectòria professional i la meua manera d'entendre l'acompanyament terapèutic.</p>
+    </div>
+
+    <!-- BIOGRAFIA -->
+    <section class="about-grid" aria-label="Biografia de Mireia Felici">
+        <!-- Bloc de Text -->
+        <div class="about-text">
+            <h2>Mireia Felici Peris</h2>
+            <span class="subtitle">Psicòloga General Sanitària · N.º Col. CV17270</span>
+
+            <p>La meua experiència com a psicoterapeuta m'ha ensenyat el valuosa que pot ser aquesta professió: ajudar les persones a trobar un <strong>suport</strong>, una <strong>guia</strong> i <strong>eines</strong> concretes per a millorar la seua vida i les seues relacions.</p>
+
+            <p>Actualment estic centrada en l'<strong>àmbit de la salut mental</strong>, acompanyant persones amb trastorns d'ansietat, depressió, processos de dol, i a qui busca major autoconeixement o nous objectius vitals. Anteriorment vaig treballar en Serveis Socials i al Centre Dona Rural.</p>
+
+            <p>La meua manera de treballar parteix d'un <strong>enfocament integrador</strong>: adapte les eines terapèutiques a cada persona i al seu moment. El que sempre estarà present si acudeixes a teràpia amb mi és la <strong>proximitat</strong>, l'<strong>empatia</strong> i un <strong>espai segur, sense judicis</strong>, on poder ser honesta/honest amb tu mateixa/mateix.</p>
+
+            <div class="credentials" role="list" aria-label="Formació i experiència professional">
+                <div class="credential" role="listitem">Graduada en Psicologia · Universitat de València</div>
+                <div class="credential" role="listitem">Màster en Psicologia General Sanitària</div>
+                <div class="credential" role="listitem">Experiència en Serveis Socials i Centre Dona Rural</div>
+                <div class="credential" role="listitem">Col·legiada CV17270 · Col·legi Oficial de Psicologia de la CV</div>
+            </div>
+        </div>
+
+        <!-- Bloc d'Imatge LCP -->
+        <div class="about-image about-image-ratio">
+            <img
+                src="/img/foto1.webp"
+                alt="Mireia Felici, psicòloga general sanitària col·legiada CV17270 a València i consulta online"
+                width="600"
+                height="750"
+                fetchpriority="high"
+            >
+        </div>
+    </section>
+</main>
+
+<footer class="footer-fixed-bottom">
+    <div class="footer-content-three-cols">
+        <div class="footer-col footer-col-left">
+            <a href="mailto:hola@mireiafelici.es">hola@mireiafelici.es</a>
+            <a href="tel:+34614172009">+34 614 17 20 09</a>
+        </div>
+        <div class="footer-col footer-col-center">
+            <nav class="footer-social-links" aria-label="Xarxes socials del peu">
+                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </nav>
+            <a href="/va/preguntas-frecuentes" class="footer-faq-link">Preguntes freqüents</a>
+        </div>
+        <div class="footer-col footer-col-right">
+            <p class="col-num">N.º Col. CV17270</p>
+            <p class="col-name">Mireia Felici Peris</p>
+            <p class="col-address">València, Espanya</p>
+        </div>
+    </div>
+    <div class="footer-bottom-copy">
+        <p>© 2026 Mireia Felici. Tots els drets reservats.</p>
+        <p style="margin-top: 8px;">
+            <a href="/va/aviso-legal" class="footer-legal-link">Avís Legal</a> | 
+            <a href="/va/politica-privacidad" class="footer-legal-link">Política de Privadesa</a> | 
+            <a href="/sobre-mi" class="footer-legal-link lang-btn" data-lang="es">Versión en Castellano (ES)</a>
+        </p>
+    </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
+

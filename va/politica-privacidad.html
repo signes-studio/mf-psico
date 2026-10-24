@@ -1,0 +1,174 @@
+<!--
+    Disseny, desenvolupament web i comunicació per SIGNES.STUDIO
+    https://signes.studio · 2026
+-->
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Comprobació de preferència d'idioma -->
+    <script>
+        (function() {
+            try {
+                var pref = localStorage.getItem('mf_lang');
+                if (pref === 'es') {
+                    var p = window.location.pathname;
+                    var target = p.replace(/^\/va(\/|$)/, '/');
+                    window.location.replace(target + window.location.search + window.location.hash);
+                }
+            } catch(e) {}
+        })();
+    </script>
+
+    <!-- Google Consent Mode v2 & Google Analytics 4 (GA4) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        var consentChoice = localStorage.getItem('cookie-consent');
+        var initialConsent = consentChoice === 'accepted' ? 'granted' : 'denied';
+
+        gtag('consent', 'default', {
+            'analytics_storage': initialConsent,
+            'ad_storage': initialConsent,
+            'ad_user_data': initialConsent,
+            'ad_personalization': initialConsent,
+            'wait_for_update': 500
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T9QL4373');</script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5LLV906RW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F5LLV906RW');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
+    
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.png">
+
+    <title>Política de Privadesa · Mireia Felici, Psicòloga a València</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://mireiafelici.es/va/politica-privacidad">
+    <link rel="alternate" hreflang="es" href="https://mireiafelici.es/politica-privacidad">
+    <link rel="alternate" hreflang="ca" href="https://mireiafelici.es/va/politica-privacidad">
+    <link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/politica-privacidad">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9QL4373"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Banner de Cookies Minimalista -->
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true" role="dialog" aria-label="Consentiment de cookies">
+    <div class="cookie-content">
+        <p>Utilitzem cookies pròpies i de tercers per a analitzar de manera anònima el trànsit de la web i millorar la teua experiència.</p>
+        <div class="cookie-buttons">
+            <button id="accept-cookies" class="btn-cookie-primary">Acceptar</button>
+            <button id="reject-cookies" class="btn-cookie-secondary">Rebutjar</button>
+        </div>
+    </div>
+</div>
+
+<header>
+    <nav class="navbar" id="navbar" aria-label="Navegació principal">
+        <div class="logo">
+            <a href="/va/">Mireia Felici</a>
+        </div>
+        <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="/va/sobre-mi">Sobre mi</a></li>
+            <li><a href="/va/enfoque">Enfocament</a></li>
+            <li><a href="/va/servicios">Serveis</a></li>
+            <li><a href="/va/contacto">Contacte</a></li>
+            <li class="lang-switch-item">
+                <div class="lang-switcher" aria-label="Selecció d'idioma / Selección de idioma">
+                    <a href="/politica-privacidad" class="lang-btn" data-lang="es" aria-label="Castellà">ES</a>
+                    <span class="lang-divider" aria-hidden="true">/</span>
+                    <a href="/va/politica-privacidad" class="lang-btn active" data-lang="va" aria-label="Valencià">VA</a>
+                </div>
+            </li>
+            <li><a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." class="nav-btn" target="_blank" rel="noopener noreferrer" aria-label="Demanar cita per WhatsApp (obri en nova pestanya)">Demanar cita</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Obrir menú" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<main class="container legal-container">
+    <span class="section-label">Privadesa</span>
+    <h1>Política de Privadesa</h1>
+    
+    <div>
+        <p>Mireia Felici Peris, conforme al Reglament General de Protecció de Dades (RGPD) de la UE 2016/679 i la Llei Orgànica 3/2018 (LOPDGDD), garanteix el correcte tractament, seguretat i confidencialitat de les teues dades de caràcter personal.</p>
+
+        <h2>1. Responsable del Tractament</h2>
+        <p>La responsable legal de les teues dades és Mireia Felici Peris (Col·legiada CV17270), amb correu de contacte <strong>hola@mireiafelici.es</strong>. La recollida de dades es limita exclusivament a les consultes realitzades per email, WhatsApp o mitjançant el nostre formulari de contacte web.</p>
+
+        <h2>2. Finalitat del Tractament</h2>
+        <p>Les dades facilitades (Nom, Email, Telèfon i missatge explicatiu) s'utilitzen única i exclusivament per a resoldre els teus dubtes de salut mental, facilitar-te informació sobre les sessions o coordinar la vostra primera cita terapèutica. En cap cas es realitzaran enviaments massius de publicitat, butlletins comercials ni cessió o venda de dades a tercers.</p>
+
+        <h2>3. Deure de Secret Professional</h2>
+        <p>Com a Psicòloga General Sanitària col·legiada, tota la informació compartida relativa a la teua salut o motius de consulta està subjecta al secret professional més estricte i als deures deontològics del Col·legi Oficial de Psicologia.</p>
+
+        <h2>4. Els Teus Drets Legals</h2>
+        <p>Tens ple dret a accedir, rectificar, limitar o sol·licitar l'eliminació total de les teues dades personals dels nostres registres. Pots exercir aquests drets en qualsevol moment enviant una sol·licitud a <strong>hola@mireiafelici.es</strong>. Així mateix, si consideres que les teues dades no han sigut tractades adequadament, tens dret a presentar una reclamació davant l'Agència Espanyola de Protecció de Dades (AEPD).</p>
+    </div>
+</main>
+
+<footer class="footer-fixed-bottom">
+    <div class="footer-content-three-cols">
+        <div class="footer-col footer-col-left">
+            <a href="mailto:hola@mireiafelici.es">hola@mireiafelici.es</a>
+            <a href="tel:+34614172009">+34 614 17 20 09</a>
+        </div>
+        <div class="footer-col footer-col-center">
+            <nav class="footer-social-links" aria-label="Xarxes socials del peu">
+                <a href="https://www.instagram.com/mireiafelici.psico/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/mireia-felici-peris/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://wa.me/34614172009?text=Hola%20Mireia,%20he%20vist%20la%20teua%20web%20i%20m'agradaria%20demanar%20informaci%C3%B3%20per%20a%20una%20primera%20cita." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </nav>
+            <a href="/va/preguntas-frecuentes" class="footer-faq-link">Preguntes freqüents</a>
+        </div>
+        <div class="footer-col footer-col-right">
+            <p class="col-num">N.º Col. CV17270</p>
+            <p class="col-name">Mireia Felici Peris</p>
+            <p class="col-address">València, Espanya</p>
+        </div>
+    </div>
+    <div class="footer-bottom-copy">
+        <p>© 2026 Mireia Felici. Tots els drets reservats.</p>
+        <p style="margin-top: 8px;">
+            <a href="/va/aviso-legal" class="footer-legal-link">Avís Legal</a> | 
+            <a href="/va/politica-privacidad" class="footer-legal-link">Política de Privadesa</a> | 
+            <a href="/politica-privacidad" class="footer-legal-link lang-btn" data-lang="es">Versión en Castellano (ES)</a>
+        </p>
+    </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
