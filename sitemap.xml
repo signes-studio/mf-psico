@@ -14,23 +14,23 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/"/>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto1.webp</image:loc>
-      <image:title>Mireia Felici - Psicòloga General Sanitària a València</image:title>
-      <image:caption>Retrat professional de Mireia Felici, psicòloga col·legiada CV17270</image:caption>
+      <image:title>Mireia Felici - Psicóloga General Sanitaria en Valencia</image:title>
+      <image:caption>Retrato profesional de Mireia Felici, psicóloga colegiada CV17270</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto2.webp</image:loc>
-      <image:title>Consulta de psicologia a València - Mireia Felici</image:title>
-      <image:caption>Espai de consulta presencial a València i teràpia online</image:caption>
+      <image:title>Consulta de psicología en Valencia - Mireia Felici</image:title>
+      <image:caption>Espacio de consulta presencial en Valencia y terapia online</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto3.webp</image:loc>
-      <image:title>Sessions de psicoteràpia individual i de parella</image:title>
-      <image:caption>Teràpia psicològica individual i de parella presencial i online</image:caption>
+      <image:title>Sesiones de psicoterapia individual y de pareja</image:title>
+      <image:caption>Terapia psicológica individual y de pareja presencial y online</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://mireiafelici.es/img/og-image.jpg</image:loc>
-      <image:title>Mireia Felici Psicologia - València i Online</image:title>
-      <image:caption>Consulta de Psicologia General Sanitària a València</image:caption>
+      <image:title>Mireia Felici Psicología - Valencia y Online</image:title>
+      <image:caption>Consulta de Psicología General Sanitaria en Valencia</image:caption>
     </image:image>
   </url>
   <!-- servicios (Castellano) -->
@@ -44,13 +44,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/servicios"/>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto3.webp</image:loc>
-      <image:title>Teràpia individual presencial a València i online</image:title>
-      <image:caption>Sessions de teràpia psicològica individual per a adults</image:caption>
+      <image:title>Terapia individual presencial en Valencia y online</image:title>
+      <image:caption>Sesiones de terapia psicológica individual para adultos</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto4.webp</image:loc>
-      <image:title>Teràpia de parella a València i online</image:title>
-      <image:caption>Sessions de teràpia de parella i comunicació</image:caption>
+      <image:title>Terapia de pareja en Valencia y online</image:title>
+      <image:caption>Sesiones de terapia de pareja y comunicación</image:caption>
     </image:image>
   </url>
   <!-- sobre-mi (Castellano) -->
@@ -64,8 +64,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/sobre-mi"/>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto1.webp</image:loc>
-      <image:title>Mireia Felici Peris - Psicòloga Col·legiada CV17270</image:title>
-      <image:caption>Formació i trajectòria de Mireia Felici, psicòloga general sanitària</image:caption>
+      <image:title>Mireia Felici Peris - Psicóloga Colegiada CV17270</image:title>
+      <image:caption>Formación y trayectoria de Mireia Felici, psicóloga general sanitaria</image:caption>
     </image:image>
   </url>
   <!-- enfoque (Castellano) -->
@@ -79,8 +79,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/enfoque"/>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto2.webp</image:loc>
-      <image:title>Enfocament terapèutic integrador basat en l'evidència</image:title>
-      <image:caption>Metodologia terapèutica basada en l'evidència científica</image:caption>
+      <image:title>Enfoque terapéutico integrador basado en la evidencia</image:title>
+      <image:caption>Metodología terapéutica basada en la evidencia científica</image:caption>
     </image:image>
   </url>
   <!-- contacto (Castellano) -->
@@ -114,8 +114,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/psicologa-valencia"/>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto1.webp</image:loc>
-      <image:title>Mireia Felici - Psicòloga a València Centre</image:title>
-      <image:caption>Consulta presencial al Carrer de Sant Vicent Màrtir 85 València</image:caption>
+      <image:title>Mireia Felici - Psicóloga en Valencia Centro</image:title>
+      <image:caption>Consulta presencial en Calle San Vicente Mártir 85 Valencia</image:caption>
     </image:image>
   </url>
   <!-- terapia-ansiedad-valencia (Castellano) -->
@@ -129,8 +129,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/terapia-ansiedad-valencia"/>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto2.webp</image:loc>
-      <image:title>Teràpia d'Ansietat i Estrés a València - Mireia Felici</image:title>
-      <image:caption>Tractament d'ansietat i pànic a València centre</image:caption>
+      <image:title>Terapia de Ansiedad y Estrés en Valencia - Mireia Felici</image:title>
+      <image:caption>Tratamiento de ansiedad y pánico en Valencia centro</image:caption>
     </image:image>
   </url>
   <!-- terapia-de-pareja-valencia (Castellano) -->
@@ -144,8 +144,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/terapia-de-pareja-valencia"/>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto3.webp</image:loc>
-      <image:title>Teràpia de Parella a València - Mireia Felici</image:title>
-      <image:caption>Sessions de parella a València centre</image:caption>
+      <image:title>Terapia de Pareja en Valencia - Mireia Felici</image:title>
+      <image:caption>Sesiones de pareja en Valencia centro</image:caption>
     </image:image>
   </url>
   <!-- terapia-autoestima-valencia (Castellano) -->
@@ -159,8 +159,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/terapia-autoestima-valencia"/>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto4.webp</image:loc>
-      <image:title>Teràpia d'Autoestima a València - Mireia Felici</image:title>
-      <image:caption>Enfortiment d'autoestima i assertivitat a València</image:caption>
+      <image:title>Terapia de Autoestima en Valencia - Mireia Felici</image:title>
+      <image:caption>Fortalecimiento de autoestima y asertividad en Valencia</image:caption>
     </image:image>
   </url>
   <!-- terapia-duelo-valencia (Castellano) -->
@@ -174,8 +174,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mireiafelici.es/terapia-duelo-valencia"/>
     <image:image>
       <image:loc>https://mireiafelici.es/img/foto1.webp</image:loc>
-      <image:title>Teràpia de Dol i Pèrdues a València - Mireia Felici</image:title>
-      <image:caption>Acompanyament clínic en processos de dol a València</image:caption>
+      <image:title>Terapia de Duelo y Pérdidas en Valencia - Mireia Felici</image:title>
+      <image:caption>Acompañamiento clínico en procesos de duelo en Valencia</image:caption>
     </image:image>
   </url>
   <!-- Home (Valencià) -->

@@ -4,23 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Detección y redirección automática si el navegador está en catalán/valenciano -->
+        <!-- Detección y redirección si el dispositivo está configurado en catalán/valenciano -->
     <script>
         (function() {
             try {
-                var pref = localStorage.getItem('mf_lang');
-                if (pref === 'es') return;
+                if (localStorage.getItem('mf_lang') === 'es') return;
                 if (/[?&](gclid|gbraid|wbraid|utm_source|utm_medium)=/i.test(window.location.search)) return;
-                var isCa = (pref === 'va');
-                if (!isCa && !pref) {
-                    var langs = navigator.languages || [navigator.language || navigator.userLanguage || ''];
-                    for (var i = 0; i < langs.length; i++) {
-                        var l = (langs[i] || '').toLowerCase();
-                        if (l.indexOf('ca') === 0 || l.indexOf('val') === 0) { isCa = true; break; }
-                        if (l.indexOf('es') === 0) { isCa = false; break; }
-                    }
-                }
-                if (isCa) {
+                var devLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+                if (devLang.indexOf('ca') === 0 || devLang.indexOf('val') === 0) {
                     var p = window.location.pathname;
                     if (!p.startsWith('/va')) {
                         var target = '/va' + (p === '/' ? '/' : p);
@@ -155,8 +146,8 @@
       "medicalSpecialty": "Psychiatric",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Carrer de Sant Vicent Màrtir, 85",
-        "addressLocality": "València",
+        "streetAddress": "Calle San Vicente Mártir, 85",
+        "addressLocality": "Valencia",
         "postalCode": "46007",
         "addressRegion": "Valencia",
         "addressCountry": "ES"
@@ -725,7 +716,7 @@
                         <div class="lg:col-span-7 bg-cream-alt relative min-h-[340px] sm:min-h-[400px]">
                             <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.1!2d-0.3804634!3d39.4671135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604facf27ff87b%3A0x27d5681cd0b761c6!2sMireia%20Felici%20%C2%B7%20Psic%C3%B3loga%20Valencia!5e0!3m2!1ses!2ses!4v1" 
-                                title="Mapa de ubicación en Google Maps de Mireia Felici · Psicóloga Valencia en Carrer de Sant Vicent Màrtir 85"
+                                title="Mapa de ubicación en Google Maps de Mireia Felici · Psicóloga Valencia en Calle San Vicente Mártir, 85"
                                 class="w-full h-full min-h-[350px] border-0"
                                 loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade">

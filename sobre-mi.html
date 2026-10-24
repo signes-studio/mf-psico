@@ -8,23 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Detección y redirección automática si el navegador está en catalán/valenciano -->
+        <!-- Detección y redirección si el dispositivo está configurado en catalán/valenciano -->
     <script>
         (function() {
             try {
-                var pref = localStorage.getItem('mf_lang');
-                if (pref === 'es') return;
+                if (localStorage.getItem('mf_lang') === 'es') return;
                 if (/[?&](gclid|gbraid|wbraid|utm_source|utm_medium)=/i.test(window.location.search)) return;
-                var isCa = (pref === 'va');
-                if (!isCa && !pref) {
-                    var langs = navigator.languages || [navigator.language || navigator.userLanguage || ''];
-                    for (var i = 0; i < langs.length; i++) {
-                        var l = (langs[i] || '').toLowerCase();
-                        if (l.indexOf('ca') === 0 || l.indexOf('val') === 0) { isCa = true; break; }
-                        if (l.indexOf('es') === 0) { isCa = false; break; }
-                    }
-                }
-                if (isCa) {
+                var devLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+                if (devLang.indexOf('ca') === 0 || devLang.indexOf('val') === 0) {
                     var p = window.location.pathname;
                     if (!p.startsWith('/va')) {
                         var target = '/va' + (p === '/' ? '/' : p);

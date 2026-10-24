@@ -4,23 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Detección y redirección automática si el navegador está en catalán/valenciano -->
+        <!-- Detección y redirección si el dispositivo está configurado en catalán/valenciano -->
     <script>
         (function() {
             try {
-                var pref = localStorage.getItem('mf_lang');
-                if (pref === 'es') return;
+                if (localStorage.getItem('mf_lang') === 'es') return;
                 if (/[?&](gclid|gbraid|wbraid|utm_source|utm_medium)=/i.test(window.location.search)) return;
-                var isCa = (pref === 'va');
-                if (!isCa && !pref) {
-                    var langs = navigator.languages || [navigator.language || navigator.userLanguage || ''];
-                    for (var i = 0; i < langs.length; i++) {
-                        var l = (langs[i] || '').toLowerCase();
-                        if (l.indexOf('ca') === 0 || l.indexOf('val') === 0) { isCa = true; break; }
-                        if (l.indexOf('es') === 0) { isCa = false; break; }
-                    }
-                }
-                if (isCa) {
+                var devLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+                if (devLang.indexOf('ca') === 0 || devLang.indexOf('val') === 0) {
                     var p = window.location.pathname;
                     if (!p.startsWith('/va')) {
                         var target = '/va' + (p === '/' ? '/' : p);
@@ -146,8 +137,8 @@
       "medicalSpecialty": "Psychiatric",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Carrer de Sant Vicent Màrtir, 85",
-        "addressLocality": "València",
+        "streetAddress": "Calle San Vicente Mártir, 85",
+        "addressLocality": "Valencia",
         "postalCode": "46007",
         "addressRegion": "Valencia",
         "addressCountry": "ES"
@@ -248,7 +239,7 @@
                         </h1>
 
                         <p class="text-base sm:text-lg text-charcoal-soft leading-relaxed max-w-2xl mb-8">
-                            Superar discusiones repetitivas, el distanciamiento afectivo y las crisis de convivencia. Consulta profesional en <strong class="text-charcoal font-semibold">Carrer de Sant Vicent Màrtir, 85</strong> (Plaza España).
+                            Superar discusiones repetitivas, el distanciamiento afectivo y las crisis de convivencia. Consulta profesional en <strong class="text-charcoal font-semibold">Calle San Vicente Mártir, 85</strong> (Plaza España).
                         </p>
 
                         <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10">
@@ -458,7 +449,7 @@
                     <div class="bg-white rounded-2xl p-8 border border-borderline shadow-soft-card flex flex-col justify-between">
                         <div>
                             <span class="text-xs uppercase tracking-wider text-bronze font-bold">Ubicación céntrica</span>
-                            <h3 class="font-display text-2xl text-charcoal mt-1 mb-4">Consulta en Carrer de Sant Vicent Màrtir, 85</h3>
+                            <h3 class="font-display text-2xl text-charcoal mt-1 mb-4">Consulta en Calle San Vicente Mártir, 85</h3>
                             <address class="not-italic text-sm text-charcoal mb-4">
                                 <p class="font-semibold text-base">46007 Valencia (Junto a Plaza España)</p>
                                 <p class="text-charcoal-soft">Despacho discreto, climatizado y accesible.</p>
