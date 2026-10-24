@@ -1726,6 +1726,46 @@ textarea:focus:not(:focus-visible) {
     z-index: 50;
 }
 
+/* --- Enlaces sutiles de especialidades presenciales en pie de página (SEO On-Page) --- */
+.footer-services-strip {
+    padding: 16px 0 10px;
+    border-top: 1px solid var(--border);
+    margin-top: 24px;
+    text-align: center;
+}
+
+.footer-services-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 12px;
+    font-size: 0.74rem;
+    color: var(--text-soft);
+    letter-spacing: 0.02em;
+}
+
+.footer-services-title {
+    font-weight: 500;
+    color: var(--text);
+}
+
+.footer-services-nav a {
+    color: var(--text-soft);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-services-nav a:hover {
+    color: var(--accent);
+}
+
+.footer-services-sep {
+    color: var(--border);
+    user-select: none;
+    font-size: 0.7rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { 
         transition: none !important; 
