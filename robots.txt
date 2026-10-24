@@ -66,3 +66,10 @@ Allow: /
 # Sitemap y Host Canónico
 Sitemap: https://mireiafelici.es/sitemap.xml
 Host: mireiafelici.es
+
+# LLM & AI Discovery (Generative Engine Optimization)
+# Standard llms.txt reference for AI search engines (Perplexity, ChatGPT, Claude, Gemini)
+# https://llmstxt.org
+User-agent: *
+Allow: /llms.txt
+Allow: /llms-full.txt
