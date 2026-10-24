@@ -10,6 +10,7 @@
             try {
                 var pref = localStorage.getItem('mf_lang');
                 if (pref === 'es') return;
+                if (/[?&](gclid|gbraid|wbraid|utm_source|utm_medium)=/i.test(window.location.search)) return;
                 var isCa = (pref === 'va');
                 if (!isCa && !pref) {
                     var langs = navigator.languages || [navigator.language || navigator.userLanguage || ''];
