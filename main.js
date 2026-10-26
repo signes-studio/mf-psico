@@ -46,7 +46,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 6. Conmutador accesible de selección de idioma (ES / VA)
     initLanguageSwitcher();
+
+    // 7. Seguimiento analítico GTM / GA4 de elementos interactivos
+    initGtmTracking();
 });
+
+/**
+ * Medición de clics con Google Tag Manager (data-gtm)
+ */
+function initGtmTracking() {
+    document.querySelectorAll('[data-gtm]').forEach(element => {
+        element.addEventListener('click', () => {
+            const eventName = element.getAttribute('data-gtm');
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: eventName,
+                ctaText: element.textContent.trim(),
+                destination: element.getAttribute('href') || '',
+                pageLocation: window.location.pathname,
+                timestamp: new Date().toISOString()
+            });
+        });
+    });
+}
 
 /**
  * Persistencia de la preferencia de idioma seleccionada manualmente

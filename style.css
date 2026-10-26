@@ -1931,6 +1931,81 @@ textarea:focus:not(:focus-visible) {
     font-size: 0.7rem;
 }
 
+/* ============================================
+   BOTÓN FLOTANTE PERSISTENTE DE WHATSAPP
+   ============================================ */
+.whatsapp-floating {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 40;
+}
+
+.whatsapp-floating-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: #ffffff !important;
+    padding: 13px 18px 13px 14px;
+    border-radius: 9999px;
+    text-decoration: none !important;
+    box-shadow: 0 8px 24px -2px rgba(37, 211, 102, 0.4), 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.25s ease;
+    cursor: pointer;
+    font-family: var(--ff-body, 'DM Sans', sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+
+.whatsapp-floating-btn:hover {
+    background-color: #128C7E;
+    color: #ffffff !important;
+    transform: scale(1.05);
+    box-shadow: 0 12px 28px -2px rgba(18, 140, 126, 0.5), 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.whatsapp-floating-btn:active {
+    transform: scale(0.95);
+}
+
+.whatsapp-floating-btn:focus-visible {
+    outline: 2px solid #128C7E;
+    outline-offset: 3px;
+}
+
+.whatsapp-floating-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.whatsapp-floating-label {
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    .whatsapp-floating {
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-floating-btn {
+        width: 52px;
+        height: 52px;
+        padding: 0;
+        border-radius: 50%;
+    }
+    .whatsapp-floating-label {
+        display: none;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { 
         transition: none !important; 
